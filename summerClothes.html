@@ -8,10 +8,62 @@
     <link rel="stylesheet" href="CSS/summerClothes.css">
 </head>
 <body>
-    <div id="globalProducts">
-
+    <!-- filter section -->
+    <div id="filter">
+        <div id="byPrice" class="filterBox">
+            <label for="price">PRICE</label><br>
+            <select name="price" id="price">
+                <option value="any">Any Price</option>
+                <option value="upto2000">INR 0-2000</option>
+                <option value="upto5000">INR 2001-5000</option>
+                <option value="upto10000">INR 5001-10,000</option>
+                <option value="moreThan10000">INR 10,000+</option>
+            </select>
+        </div>
+        <div id="byCountry" class="filterBox">
+            <label for="price">IMPORTED FROM</label><br>
+            <select name="price" id="price">
+                <option value="any">Any Country</option>
+                <option value="uk">Imported from UK</option>
+                <option value="usa">Imported from USA</option>
+                <option value="india">Imported from India</option>
+                <option value="dc">DC Verified</option>
+            </select>
+        </div>
+        <div id="byDelivery" class="filterBox">
+            <label for="price">DELIVERY TIME</label><br>
+            <select name="price" id="price">
+                <option value="any">Any Price</option>
+                <option value="sameDay">INR 0-2000</option>
+                <option value="2day">INR 2001-5000</option>
+                <option value="3to5Days">INR 5001-10,000</option>
+                <option value=">5to8Days">INR 10,000+</option>
+            </select>
+        </div>
     </div>
 
+    <!-- horizontal line -->
+    <div class="hrLine"></div>
+    <!-- All product section -->
+    <div class="sectionHead">
+        <h1>Online Summer Clothes For Men Shopping Store</h1>
+    </div>
+    <div class="globalProducts" id="menContainer">
+        
+    </div>
+
+    <!-- horizontal line -->
+    <div class="hrLine"></div>
+    <!-- All product section -->
+    <div class="sectionHead">
+        <h1>Online Summer Dresses For Women Shopping Store</h1>
+    </div>
+    <div class="globalProducts" id="womenContainer">
+        
+    </div>
+     <!-- horizontal line -->
+     <div class="hrLine"></div>
+     
     <!-- Java_Script_Files -->
     <script src="javaScript/summerClothes.js"></script>
 </body>
