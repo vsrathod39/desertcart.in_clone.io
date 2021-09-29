@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>perfumeryHer</title>
+    <style>
+      div > div :nth-child(2) {
+        margin-left: 30px;
+        display: grid;
+      }
+      #products > div {
+        
+      }
+      #products > div:hover {
+        box-shadow: 2px 2px 2px 2px #EEEEEE;
+        /* opacity: 1.0; */
+      }
+
+      div > div {
+        width: 250px;
+        text-overflow: initial;
+      }
+      #addtocart_btn:hover {
+        background-color: blue;
+        
+      }
+      #products {
+        margin: 5% 5% 10% 5%;
+        width: auto;
+        height: 800px;
+        
+        display: grid;
+        grid-template-columns: 22% 22% 22% 22%;
+        grid-gap: 15px;
+        justify-content: center;
+        font-size: 0.75rem;
+       font-weight: 400;
+       font-family: Arial, Helvetica, sans-serif;
+        
+    }
+    div >div {
+     border: 1px solid rgb(207, 199, 199);
+     border-radius: 10px;
+     
+    }
+   
+    div >div :nth-last-child(1) {
+      width: 250px;
+      border: 2px wheat;
+      background-color: #EEEEEE;
+      color: #B0BEC5;
+      border-radius: 5px;
+    }
+       /* :hover {
+      font-size: 0.75rem;
+       font-weight: 400;
+       font-family: Arial, Helvetica, sans-serif;
+       text-shadow: tomato;
+        position:relative; */
+      
+      
+   
+   
+     /* width: 200px; */
+    /* height:auto;  */
+    /* display:block; */
+    /* z-index:100; */
+    
+      /* } */
+      
+     
+      h1 {
+        margin-left: 100px;
+        margin-top: 50px;
+      }
+      div {
+        /* margin-left: 100px; */
+        display: block;
+  margin-left: auto;
+  margin-right: auto;
+      }
+      .checked {
+  color: blue;
+}
+img {
+  height: 150px;
+  max-height: 150px;
+  
+  /* /* margin-left: 80px; */
+  margin-top: 20px; 
+   display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 50%;  */
+}
+/* img:hover {
+  opacity: 1.0;
+} */
+    </style>
+</head>
+<body>
+    <h1>Online Perfumes For Her Shopping Store</h1>
+    <div id="products"></div>
+    <span class="fa fa-star checked"></span>
+</body>
+</html>
+
+<script>
+  
+let data = [
+    {
+      name: "BURBERRY Brit Her Eau De Parfum",
+      
+      price: "4389",
+      rating: "4.7",
+
+      img: "https://images-na.ssl-images-amazon.com/images/I/413GmFxuZgL.SS150.jpg",
+      icon: "https://www.flaticon.com/free-icon/star_1828884",
+    },
+    {
+      name:  "Narciso Rodriguez By Narciso Rodriguez For Her, Eau De Parfum Spray, 1.6-Ounce Bottle",
+      icon: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
+      price: "10769",
+      
+      img: "https://m.media-amazon.com/images/I/5168Kw41j4L.jpg",
+    },
+    {
+      name: "Narciso Rodriguez Fleur Musc for Her Eau De Parfum Spray, 3.4 Ouncem",
+      icon: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
+      price: "14869",
+      
+      img: "https://m.media-amazon.com/images/I/41WdjQBp4EL.jpg",
+    },
+    {
+      name: "Narciso Poudree by Narciso Rodriguez for Her 5.0 oz Eau de Parfum Spray",
+      icon: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
+      price: "25469",
+      
+      img: "https://m.media-amazon.com/images/I/51vtFn+isYL.jpg",
+    },
+    {
+      name: "Narciso Rodriguez Rouge for Her 3.0 oz Eau de Parfum Spray",
+      icon: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
+      price: "11459",
+      
+      img: "https://m.media-amazon.com/images/I/51UDZL-iwmL.jpg",
+    },
+    {
+      name: "Narciso Rodriguez Narciso Pouddree By Narciso Rodriguez for her Eau D...",
+      icon: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
+      price: "10859",
+      
+      img: "https://m.media-amazon.com/images/I/51LzTqBEpqL.jpg",
+    },
+    {
+      name: "This is Her Zadig & Voltaire for women Eau de Parfum 3.3 ounce",
+      icon: "https://m.media-amazon.com/images/I/51EQAIUqCyL.jpg",
+      price: "11219",
+      
+      img: "https://m.media-amazon.com/images/I/51EQAIUqCyL.jpg",
+    },
+    {
+      name: "Realtree Eau de Parfums Spray for Her, 3.4 Fluid Ounce",
+      icon: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
+      price: "3069",
+      
+      img: "https://m.media-amazon.com/images/I/81EyNbRHlRL.jpg",
+    },
+    {
+      name: "Kenneth Cole White for Her Body Mist, 8.Fl oz",
+      icon: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
+      price: "2659",
+      
+      img: "https://m.media-amazon.com/images/I/61OGB1yWWDL.jpg",
+    },
+    {
+      name: "Davidoff Run Wild for Her 3.4 oz Eau de Parfum Spray",
+      icon: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
+      price: "4189",
+      
+      img: "https://m.media-amazon.com/images/I/516mQkm-AQL.jpg",
+    },
+    {
+      name: "PARIS FOR HER, Eau de Parfum Spray for Women, Perfect Gift, Elegant, Night time & Casual Use, for all Skin Types, 3.4 Fl Oz",
+      icon: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
+      price: "3129",
+      
+      img: "https://m.media-amazon.com/images/I/41VMWn77ZIL.jpg",
+    },
+    {
+      name: "Kenneth Cole Black for Her,3.4 Fl Oz",
+      icon: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
+      price: "10149",
+      
+      img: "https://m.media-amazon.com/images/I/61y7OehZtwL.jpg",
+    },
+    
+  ];
+
+  let parent = document.getElementById('products')
+
+  function showProducts(){
+
+data.forEach(function (product){
+    console.log(product.name);
+
+    let  div = document.createElement('div')
+   let icon = document.createElement('icon')
+icon.src = product.icon
+
+let img =document.createElement("img")
+
+img.src= product.img
+
+let product_rating = document.createElement('p')
+product_rating.textContent = product.rating
+
+
+let product_price = document.createElement("p")
+
+product_price.textContent = product.price
+
+let product_name = document.createElement('p')
+
+product_name.textContent = product.name
+
+
+
+let addtocart_btn = document.createElement("button");
+
+addtocart_btn.innerText = "Add to Cart";
+
+addtocart_btn.onclick = function(){
+
+addtoCart(product);
+
+};
+
+div.append(img,product_rating, product_name, product_price, addtocart_btn);
+
+parent.append(div)
+
+  });
+}
+
+showProducts();
+</script>
