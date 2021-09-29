@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping Store in India</title>
+    <style>
+        #global_box {
+            font-family: Lato, sans-serif;
+        }
+
+        #header1 {
+            position: fixed;
+            display: flex;
+            padding:1% 1% 0% 10%;
+            background-color: white;
+        }
+        #lang{
+            margin: 0px 10px 0px 890px;
+        }
+        #cart{
+            padding: 0px 80px 0px 0px;
+        }
+       
+
+        #logo{
+            width: 36px;
+           
+        }
+        .headerIcon{
+            width: 25px;
+            background-color: white;
+        }
+        #explore{   
+            padding: 11px;
+            width: 92px;
+            border: none;
+        }
+        #explore>option{
+            border: none;
+            background-color: white;
+        }
+        button{
+            background-color: white;
+            border: none;
+            
+            margin: 0px 10px 0px 10px;
+        }
+        .heading{
+            margin-left: 11%;
+            color: red;
+           
+        }
+       
+      
+
+      
+        #header2 {
+
+            padding: 80px 0px;
+            
+            margin: auto;
+            background-image: url("https://images.unsplash.com/photo-1490358930084-2d26f21dc211?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1032&q=80");
+            text-align: center;
+            overflow: auto;
+           
+        }
+
+
+        #header2>input {
+            border-radius: 30px;
+            width: 270px;
+        }
+
+        #header3 {
+            max-width: 1200px;
+            margin: auto;
+            margin-top: 10px;
+            justify-content: ;
+            margin-left: 9%
+        }
+
+        .heading {
+            font-size: 17px;
+        }
+
+        #header4 {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+
+        }
+        
+        #header4>div {
+            margin: 1%;
+            background-color: whitesmoke;
+        }
+       
+    </style>
+</head>
+
+<body>
+   
+    <div id="global_box">
+        <div id="header1">
+            <div>
+                <img id="logo"  src="https://cdn.desertcart.com/static/media/logo.5821c90d.png" alt="logo.img" >
+            </div>
+            <div>
+               <select name="" id="explore">
+                 <option value="">Explore</option>
+                 <option value="perfumery">Perfumery</option>
+                 <option value="baby">Baby Products</option>
+               </select>
+            </div>
+            <div>
+                <img src="https://cdn-icons-png.flaticon.com/512/876/876759.png" class="headerIcon" id="lang">
+            </div>
+            <div id="signIn">
+                <button onclick="signIn()">Sign in Or Creat Account</button>
+            </div>
+            <div>
+                <img src="https://cdn-icons-png.flaticon.com/512/833/833314.png" class="headerIcon" onclick="goToCart()"  id="cart">
+            </div>
+
+        </div>
+        <div id="header2"></div>
+        <div id="header3"></div>
+        <div> <p class="heading"> <strong> The Perfumery</strong> </p></div>  </div>
+        <div id="header4"></div>
+        
+         
+       
+
+    </div>
+
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+  
+
+
+    function show_header2_el() {
+
+        let parent = document.getElementById("header2")
+
+        //let div = document.createElement('div')
+
+        let find100M = document.createElement('p')
+        find100M.textContent = "Find 100M+ products"
+
+        let over100M = document.createElement('p')
+        over100M.textContent = "Over 100 Million items"
+
+        let search = document.createElement("input")
+
+
+
+        parent.append(find100M, search, over100M)
+        // parent.append(div)
+
+    }
+    show_header2_el()
+
+    let header3_images = [
+        'https://dc-marketing.s3.amazonaws.com/media/244800638Artboard_1.png',
+        'https://dc-marketing.s3.amazonaws.com/media/370593577Artboard_1.1.png',
+
+    ]
+
+    let interval;
+    let container = document.getElementById('header3')
+
+    function header3_startSlideshow() {
+
+        let count = 0
+
+        let img = document.createElement('img')
+        img.src = header3_images[count]
+        container.append(img)
+        count = count + 1
+
+        interval = setInterval(function () {
+
+            container.innerHTML = null
+
+            if (count === header3_images.length) {
+                count = 0
+            }
+
+            let img = document.createElement('img')
+            img.src = header3_images[count]
+
+            container.append(img)
+            count = count + 1
+
+
+        }, 3000)
+
+
+    }
+
+    header3_startSlideshow()
+
+
+    let products1 = [
+        {
+            img: "https://cdn.desertcart.com/cms-media/shop_women_perfume_online_777169b8dd.jpg?95355.45000000001",
+            name: "Her",
+            details: "Designer fragrances. Not designer prices"
+        },
+        {
+            img: 'https://cdn.desertcart.com/cms-media/shop_women_perfume_online_777169b8dd.jpg?95355.45000000001',
+            name: "Her",
+            details: "Designer fragrances. Not designer prices"
+        },
+        {
+            img: 'https://cdn.desertcart.com/cms-media/shop_women_perfume_online_777169b8dd.jpg?95355.45000000001',
+            name: "Her",
+            details: "Designer fragrances. Not designer prices"
+        }
+    ]
+
+    function show_Products() {
+        let parent = document.getElementById("header4")
+
+        products1.forEach(function (product) {
+            console.log(product.name)
+
+            let div = document.createElement('div')
+            let img = document.createElement('img')
+
+            img.src = product.img
+
+            
+
+            let product_name = document.createElement('p')
+            product_name.textContent = product.name
+
+            let product_details = document.createElement('p')
+            product_details.textContent = product.details
+
+            div.append(img, product_name, product_details)
+            parent.append(div)
+        })
+    }
+
+    show_Products()
+
+</script>
