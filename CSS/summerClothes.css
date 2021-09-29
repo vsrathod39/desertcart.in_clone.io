@@ -2,15 +2,30 @@
     padding: 0;
     margin: 0;
 }
+div{
+    border: 1px solid red;
+}
 body{
     font-size: 12px;
     font-family: Lato,sans-serif;
     font-weight: 400;
 }
 #globalProducts{
+    width: 80%;
+    margin: auto;
+    padding: 15pxs;
     display: grid;
-    grid-template-columns: 27% 27% 27%;
-    justify-content: space-around;
+    grid-template-columns: 31% 31% 31%;
+    /* justify-content: space-around; */
+    gap: 22px;
+}
+.productWrapper{
+    border: 1px solid grey;
+    text-align: center;
+}
+.wrapperInner{
+    display: flex;
+    justify-content: space-between;
 }
 #globalProducts img{
     width: 100%;

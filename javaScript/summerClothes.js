@@ -40,7 +40,7 @@ function showProducts(product){
 
     product.forEach(function (element) {
         let productDiv = document.createElement("div");
-        console.log(element.name);
+        productDiv.setAttribute("class", "productWrapper")
 
         let productImg =  document.createElement("img");
         productImg.src = element.image;
@@ -51,16 +51,24 @@ function showProducts(product){
         let productBrand = document.createElement("p");
         productBrand.textContent = element.brand;
 
+        let wrapperDiv = document.createElement("div");
+        wrapperDiv.setAttribute("class", "wrapperInner");
+
+        let wrapperInnerDiv = document.createElement("div");
         let productRating = document.createElement("p");
         productRating.textContent = element.rating;
 
         let productPrice = document.createElement("p");
         productPrice.textContent = element.price;
+        wrapperInnerDiv.append(productRating, productPrice);
 
+        let wrapperInnerDiv2 = document.createElement("div");
         let productOrigin = document.createElement("p");
         productOrigin.textContent = element.origin;
+        wrapperInnerDiv2.append(productOrigin);
 
-        productDiv.append(productImg, productName, productBrand, productRating, productPrice, productOrigin);
+        wrapperDiv.append(wrapperInnerDiv, wrapperInnerDiv2);
+        productDiv.append(productImg, productName, productBrand, wrapperDiv);
         globalProducts.append(productDiv);
     });
 }
