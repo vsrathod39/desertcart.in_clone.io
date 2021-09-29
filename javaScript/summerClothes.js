@@ -39,8 +39,8 @@ function showProducts(product){
     globalProducts.innerHTML = null;
 
     product.forEach(function (element) {
-        let productDiv = document.createElement("div");
-        productDiv.setAttribute("class", "productWrapper")
+        let productBox = document.createElement("div");
+        productBox.setAttribute("class", "productBox")
 
         let productImg =  document.createElement("img");
         productImg.src = element.image;
@@ -51,8 +51,8 @@ function showProducts(product){
         let productBrand = document.createElement("p");
         productBrand.textContent = element.brand;
 
-        let wrapperDiv = document.createElement("div");
-        wrapperDiv.setAttribute("class", "wrapperInner");
+        let productWrapper = document.createElement("div");
+        productWrapper.setAttribute("class", "productWrapper");
 
         let wrapperInnerDiv = document.createElement("div");
         let productRating = document.createElement("p");
@@ -64,12 +64,12 @@ function showProducts(product){
 
         let wrapperInnerDiv2 = document.createElement("div");
         let productOrigin = document.createElement("p");
-        productOrigin.textContent = element.origin;
+        productOrigin.textContent = "from " + element.origin + " to INDIA";
         wrapperInnerDiv2.append(productOrigin);
 
-        wrapperDiv.append(wrapperInnerDiv, wrapperInnerDiv2);
-        productDiv.append(productImg, productName, productBrand, wrapperDiv);
-        globalProducts.append(productDiv);
+        productWrapper.append(productImg, productName, productBrand, wrapperInnerDiv, wrapperInnerDiv2);
+        productBox.append(productWrapper);
+        globalProducts.append(productBox);
     });
 }
 

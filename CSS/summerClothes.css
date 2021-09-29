@@ -2,32 +2,36 @@
     padding: 0;
     margin: 0;
 }
-div{
+/* div{
     border: 1px solid red;
-}
+} */
 body{
     font-size: 12px;
     font-family: Lato,sans-serif;
     font-weight: 400;
 }
 #globalProducts{
+    border: 1px solid red;
     width: 80%;
     margin: auto;
-    padding: 15pxs;
     display: grid;
     grid-template-columns: 31% 31% 31%;
-    /* justify-content: space-around; */
     gap: 22px;
 }
-.productWrapper{
+.productBox{
     border: 1px solid grey;
+    border-radius: 8px;
+    padding: 8px;
     text-align: center;
 }
-.wrapperInner{
-    display: flex;
-    justify-content: space-between;
-}
-#globalProducts img{
+.productWrapper img{
     width: 100%;
-    height: 165px;
+    /* height: 145px; */
+}
+.productWrapper{
+    border: 1px solid yellow;
+    width: 80%;
+    margin: auto;
+    /* display: flex; */
+    /* justify-content: space-between; */
 }
