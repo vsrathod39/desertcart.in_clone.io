@@ -48,12 +48,17 @@
             
             margin: 0px 10px 0px 10px;
         }
-        .heading{
+        .heading {
             margin-left: 11%;
-            color: red;
+            font-size: 25px;
            
         }
-       
+        img:hover{
+            background-color: whitesmoke;
+            border-radius: 10px;
+            border: 2px solid gray;
+        }
+      
       
 
       
@@ -79,13 +84,10 @@
             margin: auto;
             margin-top: 10px;
             justify-content: ;
-            margin-left: 9%
+            margin-left: 11%
         }
 
-        .heading {
-            font-size: 17px;
-        }
-
+       
         #header4 {
             max-width: 1200px;
             margin: auto;
@@ -96,6 +98,9 @@
         #header4>div {
             margin: 1%;
             background-color: whitesmoke;
+        }
+        .perfums{
+            font-family:  Lato, sans-serif;
         }
        
     </style>
@@ -111,8 +116,9 @@
             <div>
                <select name="" id="explore">
                  <option value="">Explore</option>
-                 <option value="perfumery">Perfumery</option>
-                 <option value="baby">Baby Products</option>
+                 <option value="her">Her</option>
+                 <option value="him">Him</option>
+                 <option value="unisex">Unisex</option>
                </select>
             </div>
             <div>
@@ -129,8 +135,41 @@
         <div id="header2"></div>
         <div id="header3"></div>
         <div> <p class="heading"> <strong> The Perfumery</strong> </p></div>  </div>
-        <div id="header4"></div>
-        
+        <div id="header4">
+
+            <div onclick="filterHer()" id="her" class="perfums">
+
+                <img src="https://cdn.desertcart.com/cms-media/shop_women_perfume_online_777169b8dd.jpg?95355.45000000001" alt="">
+                <p>Her</p>
+                <p>Designer fragrances. Not designer prices</p>
+            </div>
+            <div onclick="filterHim()" id="him"  class="perfums">
+                
+                <img src="https://cdn.desertcart.com/cms-media/buy_men_perfume_online_eab126b205.jpg?95358.41499999969" alt="">
+                <p>Him</p>
+                <p>Too atractive to be resisted</p>
+
+            </div>
+            <div onclick="filterUnisex()" id="unisex"  class="perfums">
+                
+                <img src="https://cdn.desertcart.com/cms-media/shop_unisex_perfume_online_ecf2a6deb4.jpg?95350.10999999986" alt="">
+                <p>Unisex</p>
+                <p>You can share this frangrance with your better half</p>
+
+            </div>
+            <div id="sorting">
+                <div onclick="sortByPrice()" class="sort">
+                <select name="" id="">
+                    <option value="upto1000">INR 1,000+</option>
+                    <option value="upto1000">INR 1,000-INR 2,000</option>
+                    <option value="upto1000">INR 2,000-INR 3,000</option>
+                    <option value="upto1000"> Less than INR 10,000</option>
+                </select>
+                </div>
+            </div>
+
+        </div>
+
          
        
 
@@ -210,48 +249,6 @@
     header3_startSlideshow()
 
 
-    let products1 = [
-        {
-            img: "https://cdn.desertcart.com/cms-media/shop_women_perfume_online_777169b8dd.jpg?95355.45000000001",
-            name: "Her",
-            details: "Designer fragrances. Not designer prices"
-        },
-        {
-            img: 'https://cdn.desertcart.com/cms-media/shop_women_perfume_online_777169b8dd.jpg?95355.45000000001',
-            name: "Her",
-            details: "Designer fragrances. Not designer prices"
-        },
-        {
-            img: 'https://cdn.desertcart.com/cms-media/shop_women_perfume_online_777169b8dd.jpg?95355.45000000001',
-            name: "Her",
-            details: "Designer fragrances. Not designer prices"
-        }
-    ]
-
-    function show_Products() {
-        let parent = document.getElementById("header4")
-
-        products1.forEach(function (product) {
-            console.log(product.name)
-
-            let div = document.createElement('div')
-            let img = document.createElement('img')
-
-            img.src = product.img
-
-            
-
-            let product_name = document.createElement('p')
-            product_name.textContent = product.name
-
-            let product_details = document.createElement('p')
-            product_details.textContent = product.details
-
-            div.append(img, product_name, product_details)
-            parent.append(div)
-        })
-    }
-
-    show_Products()
+   
 
 </script>
