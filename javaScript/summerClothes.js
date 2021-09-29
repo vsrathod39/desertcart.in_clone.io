@@ -46,79 +46,7 @@ let productData = [
         rating: "4.6",
         price: "5689",
         origin: "UK",
-    },
-    // {
-    //     image: "https://m.media-amazon.com/images/I/71xxyK6dqQS.jpg",
-    //     name: "Summer Casual Tshirt Dresses for Women Swing Sun Dress Beach Swimsuit Cover Ups with Pockets",
-    //     brand: "moskill",
-    //     rating: "4.2",
-    //     price: "4809",
-    //     origin: "USA"
-    // },
-    // {
-    //     image: "https://images-na.ssl-images-amazon.com/images/I/61fTwyrYMqL.SS150.jpg",
-    //     name: "Womens Summer Midi Dress Striped Short Sleeve Dresses Side Split Casual Waist Gowns",
-    //     brand: "vonda",
-    //     rating: "3.4",
-    //     price: "1349",
-    //     origin: "UAE"
-    // },
-    // {
-    //     image: "https://m.media-amazon.com/images/I/615oUasaNKL.jpg",
-    //     name: "Blooming Jelly Women's Halter Neck Deep V Asymmetrical Floral Dress Lace Summer Maxi Dress",
-    //     brand: "Blooming Jelly",
-    //     rating: "4",
-    //     price: "6189",
-    //     origin: "UK"
-    // },
-    // {
-    //     image: "https://m.media-amazon.com/images/I/51ZXzbnw9lL.jpg",
-    //     name: "Women's Pleated Dress (White)",
-    //     brand: "Norah",
-    //     rating: "2.8",
-    //     price: "2159",
-    //     origin: "India"
-    // },
-    // {
-    //     image: "https://images-na.ssl-images-amazon.com/images/I/71suU%2BE1K2S.SS150.jpg",
-    //     name: "Women's Polyester Western Dress",
-    //     brand: "Meloso",
-    //     rating: "3.8",
-    //     price: "1289",
-    //     origin: "India"
-    // },
-    // {
-    //     image: "https://m.media-amazon.com/images/I/71yNQWMEG4S.jpg",
-    //     name: "KILIG Women's Sleeveless/Long Sleeve Dresses Casual Button Down Summer Dress with Pockets",
-    //     brand: "kilig",
-    //     rating: "4.1",
-    //     price: "19779",
-    //     origin: "UK"
-    // },
-    // {
-    //     image: "https://m.media-amazon.com/images/I/71E2X80sLML.jpg",
-    //     name: "Roman Originals Women Contrast Print Hanky Hem Dress - Ladies Summer Holiday Beach Casual Everyday Comfort Garden Party BBQ Sleeveless Asymmetric Pull On Jersey Dress",
-    //     brand: "Roman Originals",
-    //     rating: "4.7",
-    //     price: "9749",
-    //     origin: "UK"
-    // },
-    // {
-    //     image: "https://m.media-amazon.com/images/I/71C3Ox89u3L.jpg",
-    //     name: "Women's Summer Wrap V Neck Polka Dot Print Ruffle Short Sleeve Mini Floral Dress with Belt",
-    //     brand: "Naggoo",
-    //     rating: "4.1",
-    //     price: "4539",
-    //     origin: "USA"
-    // },
-    // {
-    //     image: "https://m.media-amazon.com/images/I/71hwiN0YWLL.jpg",
-    //     name:"MEROKEETY Women's Summer Striped Short Sleeve T Shirt Dress Casual Tie Waist Midi Dress",
-    //     brand: "Merokeety",
-    //     rating: "4.4",
-    //     price: "8859",
-    //     origin: "USA",
-    // }
+    }
 ];
 
 let productData2 = [
@@ -198,9 +126,13 @@ let productData2 = [
 
 let menContainer = document.getElementById("menContainer");
 let womenContainer = document.getElementById("womenContainer");
+
 // function used to showProducts Data from an array named productData to html clothes page
 function showProducts(product, containerId){
     containerId.innerHTML = null;
+    if(product.length == 0){
+        containerId.textContent = "No match found..."
+    }
 
     product.forEach(function (element) {
         let productBox = document.createElement("div");
@@ -254,3 +186,76 @@ function showProducts(product, containerId){
 showProducts(productData, menContainer);
 showProducts(productData2, womenContainer);
 
+let sortPrice = document.getElementById("price");
+sortPrice.addEventListener("change", sortByPrice);
+let sortCountry = document.getElementById("country");
+
+function sortByPrice(){
+    console.log(this.value);
+    let menArr = [];
+    let womenArr = [];
+
+    switch(this.value){
+        case "any":
+            showProducts(productData, menContainer);
+            showProducts(productData2, womenContainer);
+            break;
+        case "upto2000":
+            
+            productData.forEach(function(element){
+                if(element.price >= 0 && element.price <= 2000)
+                 menArr.push(element);
+            });
+            
+            productData2.forEach(function(element){
+                if(element.price >= 0 && element.price <= 2000)
+                womenArr.push(element);
+            });
+            showProducts(menArr, menContainer);
+            showProducts(womenArr, womenContainer);
+            break;
+        case "upto5000":
+            
+            productData.forEach(function(element){
+                if(element.price > 2000 && element.price <= 5000)
+                 menArr.push(element);
+            });
+            
+            productData2.forEach(function(element){
+                if(element.price > 2000 && element.price <= 5000)
+                womenArr.push(element);
+            });
+            showProducts(menArr, menContainer);
+            showProducts(womenArr, womenContainer);
+            break;
+        case "upto10000":
+            
+            productData.forEach(function(element){
+                if(element.price > 5000 && element.price <= 10000)
+                 menArr.push(element);
+            });
+            
+            productData2.forEach(function(element){
+                if(element.price > 5000 && element.price <= 10000)
+                womenArr.push(element);
+            });
+            showProducts(menArr, menContainer);
+            showProducts(womenArr, womenContainer);
+            break;
+        case "moreThan10000":
+            
+            productData.forEach(function(element){
+                if(element.price > 10000)
+                 menArr.push(element);
+            });
+            
+            productData2.forEach(function(element){
+                if(element.price > 10000)
+                womenArr.push(element);
+            });
+            showProducts(menArr, menContainer);
+            showProducts(womenArr, womenContainer);
+            break;
+    }
+
+}
