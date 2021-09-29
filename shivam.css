@@ -1,0 +1,92 @@
+.footer{
+    width: 100%;
+    height: auto;
+    background-color: whitesmoke;
+}
+.footer1{
+    text-align: center;
+    display:inline-block;
+    width: 23%;
+    margin: 5px;
+    font-size: 0.75rem;
+    font-family: Lato,sans-serif;
+     font-weight: 400
+}
+.box{
+    border: 0.5px solid gray;
+}
+img{
+    width: 35px;
+}
+#icons{
+    width: 80px;
+
+}
+.box2{
+    display: grid;
+    grid-template-columns: 55% 40%;
+}
+.subbox{
+    display: inline-block;
+    margin-left: 50px;
+    text-align: left;
+    vertical-align: top;
+    gap: 80px;
+}
+#social{
+    text-align: center;
+    vertical-align: middle;
+    gap: 10px;
+}
+
+.help{
+    display: inline-block;
+    margin: 5px;
+}
+@media(max-width:600px){
+    .footer{
+        width: 50%;
+        height: auto;
+        background-color: whitesmoke;
+        border: 0.5px solid gray;
+    }
+    .footer1{
+        text-align: center;
+        display: grid;
+        grid-template-columns: 15% 15% 15% 15%;
+        grid-template-rows: max-content;
+        margin: 5px;
+    }
+    .box{
+        border: 0.5px solid gray;
+    }
+    .help{
+        display: flex;
+        flex-direction: column;
+        margin: 2px;
+    }
+    img{
+        width: 20px;
+    }
+}
+@media(max-width: 1000px){
+    .box2{
+        display: grid;
+        grid-template-rows: 70% 20%;
+        grid-template-columns: 100%;
+        gap: 5%;
+    }
+    .footerfold>div{
+        display: grid;
+        grid-template-columns: 10% 10% 10% 10% 10% 10% ;
+        gap: 40px;
+    }
+    .icon{
+        display: flex;
+        margin: 20px
+    }
+    img{
+        margin: 10px;
+    }
+    
+}
