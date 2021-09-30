@@ -56,6 +56,11 @@ body{
 .sectionHead{
     width: 80%;
     margin: 45px auto 25px auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    -webkit-box-orient: vertical;
 }
 
 /* global product list */
@@ -109,4 +114,43 @@ body{
     font-weight: bold;
     font-size: 14px;
     margin-top: 12px;
+}
+
+@media  (max-width: 940px){
+    .globalProducts{
+        width: 90%;
+        grid-template-columns: 48% 48%;
+    }
+    #filter{
+        width: 90%;
+    }
+    .filterBox{
+        width: 28%;
+        border: 1px solid grey;
+        height: 28px;
+        padding: 6px 8px 6px 8px;
+        border-radius: 2px;
+    }
+    .sectionHead{
+        width: 90%;
+    }
+}
+@media  (min-width: 940px) and (max-width: 1280px){
+    .globalProducts{
+        width: 85%;
+        grid-template-columns: 31% 31% 31%;
+    }
+    #filter{
+        width: 85%;
+    }
+    .filterBox{
+        width: 30%;
+        border: 1px solid grey;
+        height: 28px;
+        padding: 2px 8px 6px 8px;
+        border-radius: 5px;
+    }
+    .sectionHead{
+        width: 85%;
+    }
 }
