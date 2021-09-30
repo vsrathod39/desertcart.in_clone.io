@@ -1,0 +1,43 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+div{
+    border: 1px solid red;
+}
+body{
+    color: rgba(0, 0, 0, 0.87);
+    margin: 0;
+    font-size: 0.75rem;
+    font-family: Lato,sans-serif;
+    font-weight: 400;
+    line-height: 1.43;
+    background-color: #fff;
+}
+#golabalProduct{
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 43% 8% 46%;
+    justify-content: space-between;
+}
+#proSubImage{
+    display: flex;
+    flex-direction: column;
+    gap: 6%;
+    align-items: center;
+}
+#proImage img{
+    width: 100%;
+}
+#imgIcon{
+    width: 80%;
+    border: 2px solid #38ACEC;
+}
+#proName{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
