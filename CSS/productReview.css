@@ -18,7 +18,7 @@ body{
     width: 80%;
     margin: auto;
     display: grid;
-    grid-template-columns: 43% 8% 46%;
+    grid-template-columns: 40% 8% 50%;
     justify-content: space-between;
 }
 #proSubImage{
@@ -42,8 +42,45 @@ body{
     -webkit-box-orient: vertical;
 }
 .productChart{
-    /* display: flex; */
+    margin: 20px 0;
+    padding: 15px;
+}
+.sizeColorWrapper{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px;
 }
 .sizeColorBox{
+    flex-basis: 14%;
+    border: 1px solid grey;
+    height: 60px;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 60px;
+}
+.sizeColorWrapper > :first-child  {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.sizeColorWrapper > :last-child  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.addToCartBtn{
+    display: flex;
+    justify-content: center;
+    margin: 45px;
+}
+.addToCartBtn button{
+    width: 70%;
+    padding:12px 0px;
+    font-size: 16px;
+    color: white;
+    background-color: #5eb2d9;
+    border-radius: 5px;
+    border: none;
 }
