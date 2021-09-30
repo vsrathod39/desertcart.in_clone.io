@@ -35,18 +35,26 @@ function proSubIcon(){
 }
 
 function cartDetails(){
+    let productName = document.getElementById("productName");
     let h1 = document.createElement("h1");
     h1.textContent = currentPro[0].name;
     h1.setAttribute("id", "proName")
 
-    proAddToCart.append(h1);
+    productName.append(h1);
 }
 function productReview(){
     appendImg();
     proSubIcon();
     cartDetails();
 
-    let outerBox = document.createElement("div");
+    // let chartBox = document.createElement("div");
+    // chartBox.setAttribute("id", "chartBox")
+
+    // let sectionHeading = document.createElement("p");
+    // sectionHeading.textContent = "Size";
+
+    // chartBox.append(sectionHeading);
+    // proAddToCart.append(chartBox);
 }
 
 productReview();
