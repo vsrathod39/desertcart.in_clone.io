@@ -12,95 +12,96 @@
         }
 
         #header1 {
-            position: fixed;
-            display: flex;
-            padding:1% 1% 0% 10%;
+            max-width: 1200px;
+            margin: auto;
             background-color: white;
-        }
-        #lang{
-            margin: 0px 10px 0px 890px;
-        }
-        #cart{
-            padding: 0px 80px 0px 0px;
-        }
-       
-
-        #logo{
-            width: 36px;
-           
+            display: flex;
+     
         }
         .headerIcon{
-            width: 25px;
-            background-color: white;
+            width: 20px;
+            padding: 15px;
         }
-        #explore{   
-            padding: 11px;
-            width: 92px;
-            border: none;
+        #logo{
+            width: 40px;
+            padding:2px 15px;
         }
-        #explore>option{
-            border: none;
-            background-color: white;
+        #header1>div:nth-child(2){
+            flex-basis: 67%;
+            margin-top: 14px;
         }
-        button{
-            background-color: white;
-            border: none;
-            
-            margin: 0px 10px 0px 10px;
-        }
+       #explore{
+           border: none;
+       }
+       #header1 >div> button{
+           margin-top: 14px;
+           border: none;
+           background-color: white;
+       }
+
         .heading {
-            margin-left: 11%;
-            font-size: 25px;
-           
+            font-size: 25px; 
         }
         img:hover{
             background-color: whitesmoke;
             border-radius: 10px;
-            border: 2px solid gray;
+            border: 1px solid gray;
         }
-      
-      
-
-      
+        
         #header2 {
-
-            padding: 80px 0px;
-            
-            margin: auto;
+           padding: 100px 0px;
             background-image: url("https://images.unsplash.com/photo-1490358930084-2d26f21dc211?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1032&q=80");
+            background-size:cover;
             text-align: center;
-            overflow: auto;
-           
+            font-size: 25px;       
         }
 
 
         #header2>input {
             border-radius: 30px;
-            width: 270px;
+            padding: 13px;
+            width: 300px;
         }
 
         #header3 {
             max-width: 1200px;
             margin: auto;
-            margin-top: 10px;
-            justify-content: ;
-            margin-left: 11%
+            margin-top: 10px;        
+        }
+        #header3>img{
+            min-width: 400px;
+            margin: auto;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+        #header3>div{
+            text-align: center;
+        }
+        #global_box>div:nth-child(4){
+            max-width: 1200px;   
+            margin: auto;
+           text-align: center;
         }
 
        
         #header4 {
             max-width: 1200px;
             margin: auto;
-            display: flex;
-
+           
+            
+            text-align: center
         }
         
         #header4>div {
+            display: inline-block;
             margin: 1%;
             background-color: whitesmoke;
+            
         }
         .perfums{
             font-family:  Lato, sans-serif;
+           
         }
        
     </style>
@@ -125,7 +126,10 @@
                 <img src="https://cdn-icons-png.flaticon.com/512/876/876759.png" class="headerIcon" id="lang">
             </div>
             <div id="signIn">
-                <button onclick="signIn()">Sign in Or Creat Account</button>
+                <button onclick="signIn()">Sign in</button>
+            </div>
+            <div id="creatAc">
+                <button onclick="signIn()"> Or Creat Account</button>
             </div>
             <div>
                 <img src="https://cdn-icons-png.flaticon.com/512/833/833314.png" class="headerIcon" onclick="goToCart()"  id="cart">
@@ -134,39 +138,26 @@
         </div>
         <div id="header2"></div>
         <div id="header3"></div>
-        <div> <p class="heading"> <strong> The Perfumery</strong> </p></div>  </div>
+        <div > 
+            <p class="heading"> <strong> Do it in style</strong> </p>
+         </div>
         <div id="header4">
 
             <div onclick="filterHer()" id="her" class="perfums">
 
-                <img src="https://cdn.desertcart.com/cms-media/shop_women_perfume_online_777169b8dd.jpg?95355.45000000001" alt="">
+                <img src="https://media.istockphoto.com/photos/the-perfect-dress-for-me-picture-id660490044?b=1&k=20&m=660490044&s=170667a&w=0&h=JadgZcpyNQJymDjgztzC5CCg2UsCGoS9XYEv04TSHNw=" alt="">
                 <p>Her</p>
                 <p>Designer fragrances. Not designer prices</p>
             </div>
             <div onclick="filterHim()" id="him"  class="perfums">
                 
-                <img src="https://cdn.desertcart.com/cms-media/buy_men_perfume_online_eab126b205.jpg?95358.41499999969" alt="">
+                <img src="https://media.istockphoto.com/photos/latin-american-guy-trying-out-a-sweater-on-top-at-a-mens-clothing-picture-id1197952617?b=1&k=20&m=1197952617&s=170667a&w=0&h=JtXdKkP9AfbeT0otI1GhN-m3AR_wU8rW0zFoPV9Yu7A=" alt="">
                 <p>Him</p>
                 <p>Too atractive to be resisted</p>
 
             </div>
-            <div onclick="filterUnisex()" id="unisex"  class="perfums">
-                
-                <img src="https://cdn.desertcart.com/cms-media/shop_unisex_perfume_online_ecf2a6deb4.jpg?95350.10999999986" alt="">
-                <p>Unisex</p>
-                <p>You can share this frangrance with your better half</p>
-
-            </div>
-            <div id="sorting">
-                <div onclick="sortByPrice()" class="sort">
-                <select name="" id="">
-                    <option value="upto1000">INR 1,000+</option>
-                    <option value="upto1000">INR 1,000-INR 2,000</option>
-                    <option value="upto1000">INR 2,000-INR 3,000</option>
-                    <option value="upto1000"> Less than INR 10,000</option>
-                </select>
-                </div>
-            </div>
+          
+           
 
         </div>
 
@@ -210,7 +201,7 @@
 
     let header3_images = [
         'https://dc-marketing.s3.amazonaws.com/media/244800638Artboard_1.png',
-        'https://dc-marketing.s3.amazonaws.com/media/370593577Artboard_1.1.png',
+        'https://media.istockphoto.com/photos/fashion-clothes-on-a-rack-in-a-light-background-indoors-place-for-picture-id1257563298?b=1&k=20&m=1257563298&s=170667a&w=0&h=Hhf0-AsQp7Z7k9q8XKHfQUY86uPJvE8vmmGHXihWS_M=',
 
     ]
 
