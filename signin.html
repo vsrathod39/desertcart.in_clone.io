@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <link rel="stylesheet" href="signin.css">
+</head>
+<body><div class="signi">
+            <div>
+        <form onsubmit="signin(event)" id="myForm" action="">
+            <h1>Sign In</h1>
+            <div>
+            <input type="text" id="email" placeholder="Email" required/>
+            <input type="password" id="password" placeholder="Password" required/>
+            </div>
+            <div class="submitbtn">
+                <div>
+                    <h5>Dont Remember your Password <br><a href="signinfirst.html">Connect With Out Password</a></h5>
+                </div>
+                <div>
+                <input type="submit" class="btn" value="Login">
+                </div>
+            </div>
+          </form>
+          </div>
+          </div>
+    </body>
+    <script>
+           function signin(e){
+    
+               e.preventDefault();
+        let myform = document.getElementById("myForm");
+        let email = myForm.email.value;
+        let password = myForm.password.value;
+    
+            let all_users =JSON.parse(localStorage.getItem("desertcartdb"));
+    
+            all_users.forEach(function (desertcartdb) {
+                if(email === desertcartdb.email && password === desertcartdb.password){
+                    location.href = "shivam.html"
+                }
+                else{
+                    alert("Username or Password not Found")
+                }
+                
+            });
+    
+           }
+    </script>
+    </html>
