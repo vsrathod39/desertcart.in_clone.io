@@ -46,10 +46,194 @@ let productData = [
         rating: "4.6",
         price: "5689",
         origin: "UK",
+    },
+    {
+        image: "https://m.media-amazon.com/images/I/51HsjwcwrRL.jpg",
+        name: 'maamgic Mens Athletic Gym Shorts 5.5"' +" Elastic Waist Casual Pajama Pocket Jogger Men Workout Short Pants",
+        brand: "Maamgic",
+        rating: "4.6",
+        price: "5219",
+        origin: "USA"
+    },
+    {
+        image: "https://m.media-amazon.com/images/I/81SaNXM08WS.jpg",
+        name: "Men's Luxury Casual Button Down Short Sleeve Hawaiian Shirt Suits",
+        brand: "Daupanzees",
+        rating: "4.5",
+        price: "9479",
+        origin: "USA"
+    },
+    {
+        image: "https://m.media-amazon.com/images/I/71oOfcIVEfL.jpg",
+        name: 'Amazon Essentials Men'+"'s" + ' Slim-Fit 9"' + "Short",
+        brand: "Amazon Essentials",
+        rating: "4.4",
+        price: "3379",
+        origin: "USA"
+    },
+    {
+        image: "https://m.media-amazon.com/images/I/81XbZCP9uPL.jpg",
+        name: "Amazon Essentials Men's Slim-fit Tank Top",
+        brand: "Amazon Essentials",
+        rating: "4.5",
+        price: "2369",
+        origin: "USA"
+    },
+    {
+        image: "https://m.media-amazon.com/images/I/61Be-ri8CkS.jpg",
+        name: "Mens Personality Sport Set Summer Outfit 2 Piece Set Short Sleeve T Shirts and Shorts Stylish Casual Sweatsuit Set",
+        brand: "Sirou",
+        rating: "3.1",
+        price: "7049",
+        origin: "USA"
+    },
+    {
+        image: "https://m.media-amazon.com/images/I/61yX-skN5dL.jpg",
+        name: "LucMatton Men's African Pattern Printed T-Shirt and Shorts Set Sports Mesh Tracksuit Dashiki Outfits",
+        brand: "Lucmatton",
+        rating: "4.3",
+        price: "8859",
+        origin: "USA"
+    },
+    {
+        image: "https://m.media-amazon.com/images/I/81x6dAtZGoL.jpg",
+        name: "CHARM Extra Slouchy Summer Beanie for Men - Women Baggy Hipster Knit Cotton Slouch Hat",
+        brand: "Charm",
+        rating: "4.3",
+        price: "4429",
+        origin: "USA"
+    },
+    {
+        image: "https://images-na.ssl-images-amazon.com/images/I/91m2bYzGCxL.SS150.jpg",
+        name: "Saucony Men's Multi-Pack Mesh Ventilating Comfort Fit Performance No-Show Socks",
+        brand: "Saucony",
+        rating: "4.6",
+        price: "2399",
+        origin: "USA"
+    },
+    {
+        image: "https://m.media-amazon.com/images/I/61WjFrh4lLL.jpg",
+        name: "Hanes Men's Long Sleeve Cool Dri T-Shirt UPF 50+ (Pack of 2)",
+        brand: "Hanes",
+        rating: "4.5",
+        price: "3039",
+        origin: "USA"
+    },
+    {
+        image: "https://images-na.ssl-images-amazon.com/images/I/519QmwYDLpL.SS150.jpg",
+        name: "FASKUNOIE Men's Cotton Casual Shorts 3/4 Jogger Capri Pants Breathable Below Knee Short Pants with Three Pockets",
+        brand: "Faskunoie",
+        rating: "4.4",
+        price: "4609",
+        origin: "USA"
+    },
+    {
+        image: "https://m.media-amazon.com/images/I/81nnx0PsJbL.jpg",
+        name: "Men's Coolzone Boxer Briefs",
+        brand: "Fruit Of The Loom",
+        rating: "4.7",
+        price: "3559",
+        origin: "USA"
+    },
+    {
+        image: "https://m.media-amazon.com/images/I/81Zh2hdzG3L.jpg",
+        name: "Calvin Klein Men's Cotton Stretch Multipack Crew Neck T-Shirts",
+        brand: "Calvin Klein",
+        rating: "4.6",
+        price: "4139",
+        origin: "USA"
+    },
+    {
+        image: "https://images-na.ssl-images-amazon.com/images/I/71pItb%2BS7qL.SS150.jpg",
+        name: "5 Pack: Men's Mesh Athletic Performance Gym Shorts with Pockets (S-3X)",
+        brand: "Real Essentials",
+        rating: "4.2",
+        price: "5309",
+        origin: "USA"
+    },
+    {
+        image: "https://images-na.ssl-images-amazon.com/images/I/71cW-BL5AnL.SS150.jpg",
+        name: "Amazon Essentials Men's Waffle Shawl Robe",
+        brand: "Amazon Essentials",
+        rating: "4.6",
+        price: "4159",
+        origin: "USA"
+    },
+    {
+        image: "https://m.media-amazon.com/images/I/61B67nP1msL.jpg",
+        name: "Fitness Running Compression Suits Shirt Pants Short Pack Of 3 For Men",
+        brand: "Other",
+        rating: "3.5",
+        price: "2009",
+        origin: "UAE"
     }
 ];
 
 let productData2 = [
+    {
+        image: "https://m.media-amazon.com/images/I/71g+JfQTkqL.jpg",
+        name: "Womens Fall Clothes Stitching Geo Stripe Print Coat Oversized Loose Pocket Top Lapel Long-Sleeve Button Tunic",
+        brand: "Afelkas",
+        rating: "",
+        price: "4679",
+        origin: "USA"
+    },
+    {
+        image: "https://m.media-amazon.com/images/I/71YeeqEsD-S.jpg",
+        name: "Amazon Essentials Women's Tank Swing Dress",
+        brand: "Amazon Essentials",
+        rating: "4.4",
+        price: "4389",
+        origin: "USA"
+    },
+    {
+        image: "https://m.media-amazon.com/images/I/71QiwI8Mh9S.jpg",
+        name: "Dokuritu Women's Beach Crochet Lace Maxi Dress Summer Spaghetti Strap Maxi Dress",
+        brand: "Dokuritu",
+        rating: "4",
+        price: "6249",
+        origin: "USA"
+    },
+    {
+        image: "https://m.media-amazon.com/images/I/51fvkDWuH4L.jpg",
+        name: "Women's 50s 60s Vintage Sleeveless V-Neck Cocktail Swing Dress",
+        brand: "Grace Karin",
+        rating: "4.3",
+        price: "6299",
+        origin: "USA"
+    },
+    {
+        image: "https://m.media-amazon.com/images/I/71wRLHGkumS.jpg",
+        name: "Womens Dresses Elegant Ruffles Cap Sleeves Summer A-Line Midi Dress",
+        brand: "Ecowish",
+        rating: "4",
+        price: "6769",
+        origin: "USA"
+    },
+    {
+        image: "https://m.media-amazon.com/images/I/81XDGPZwdYL.jpg",
+        name: "SheIn Women's Deep V-Neck Short Sleeve Tie Front Floral Print Ruffle Hem Dress",
+        brand: "Shein",
+        rating: "3.8",
+        price: "3729",
+        origin: "USA"
+    },
+    {
+        image: "https://m.media-amazon.com/images/I/61chrqCkskL.jpg",
+        name: "Womens White Dresses Short Sleeve V Neck Ruffle Cute Sun Dress Chiffon Flowy Shift Mini Dress",
+        brand: "Blooming Jelly",
+        rating: "4",
+        price: "8669",
+        origin: "USA"
+    },
+    {
+        image: "https://m.media-amazon.com/images/I/71BMBNwDWyL.jpg",
+        name: "Women Denim Shirt Dresses Short Sleeve Distressed Jean Dress Button Down Casual Tunic Top",
+        brand: "Zilcremo",
+        rating: "3.8",
+        price: "7449",
+        origin: "USA"
+    },
     {
         image: "https://m.media-amazon.com/images/I/71xxyK6dqQS.jpg",
         name: "Summer Casual Tshirt Dresses for Women Swing Sun Dress Beach Swimsuit Cover Ups with Pockets",
