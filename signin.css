@@ -1,0 +1,71 @@
+body{
+    background-color: rgb(174, 208, 238);
+}
+#myForm{
+    width: 500px;
+    height: 500px;
+    margin-top: 20px;
+    margin-left: 30%;
+    padding: 20px;
+    background-color:rgb(247, 243, 235);
+    border-radius: 3%;
+}
+input{
+    display: flex;
+    flex-direction: row;
+    width: 410px;
+    height: 50px;
+    margin: 5px;
+   background-color: gainsboro;
+   margin-left: 30px;
+}
+.btn{
+    width: 250px;
+    height: 60px;
+    background-color:rgb(98, 185, 240);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+}
+#myForm >div{
+    display: grid;
+    grid-template-rows: 50% 50%;
+}
+.submitbtn {
+    display: grid;
+    grid-template-columns: 35% 50%;
+    margin-left: 30px;
+}
+@media(max-width:800px){
+    #myForm{
+    width: 400px;
+    height: 400px;
+    margin-top: 20px;
+    margin-left: 15%;
+    padding: 20px;
+    background-color:rgb(247, 243, 235);
+    border-radius: 3%;
+}
+input{
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    height: 50px;
+    margin: 5px;
+   background-color: gainsboro;
+   margin-left: 30px;
+}
+.btn{
+    width: 170px;
+    height: 60px;
+    background-color:rgb(98, 185, 240);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+}
+
+}
