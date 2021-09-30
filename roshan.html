@@ -97,11 +97,10 @@
             display: inline-block;
             margin: 1%;
             background-color: whitesmoke;
-            
+            font-family:  Lato, sans-serif;  
         }
-        .perfums{
-            font-family:  Lato, sans-serif;
-           
+        #header4>div>img{
+            width: 300px;
         }
        
     </style>
@@ -112,14 +111,13 @@
     <div id="global_box">
         <div id="header1">
             <div>
-                <img id="logo"  src="https://cdn.desertcart.com/static/media/logo.5821c90d.png" alt="logo.img" >
+                <img id="logo" onclick="homeLogo()" src="https://cdn.desertcart.com/static/media/logo.5821c90d.png" alt="logo.img" >
             </div>
             <div>
                <select name="" id="explore">
                  <option value="">Explore</option>
                  <option value="her">Her</option>
                  <option value="him">Him</option>
-                 <option value="unisex">Unisex</option>
                </select>
             </div>
             <div>
@@ -237,9 +235,11 @@
 
     }
 
-    header3_startSlideshow()
+    header3_startSlideshow();
 
-
+   function homeLogo(){
+        window.location.href = "roshan.html"
+    }
    
 
 </script>
