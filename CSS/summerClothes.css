@@ -64,7 +64,7 @@ body{
     width: 80%;
     margin: auto;
     display: grid;
-    grid-template-columns: 31% 31% 31%;
+    grid-template-columns: 23% 23% 23% 23%;
     gap: 22px;
 }
 .productBox{
