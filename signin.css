@@ -1,26 +1,30 @@
 body{
-    background-color: rgb(174, 208, 238);
+    background-color: white;
 }
 #myForm{
-    width: 500px;
+    width: 420px;
     height: 500px;
     margin-top: 20px;
     margin-left: 30%;
     padding: 20px;
     background-color:rgb(247, 243, 235);
     border-radius: 3%;
+    text-align: center;
 }
 input{
     display: flex;
     flex-direction: row;
-    width: 410px;
+    width: 350px;
     height: 50px;
     margin: 5px;
    background-color: gainsboro;
    margin-left: 30px;
+   font-size: 0.75rem;
+    font-family: Lato,sans-serif;
+     color: silver;
 }
 .btn{
-    width: 250px;
+    width: 220px;
     height: 60px;
     background-color:rgb(98, 185, 240);
     color: white;
@@ -28,6 +32,9 @@ input{
     margin: 8px 0;
     border: none;
     cursor: pointer;
+}
+img{
+    width: 35px;
 }
 #myForm >div{
     display: grid;
@@ -40,10 +47,10 @@ input{
 }
 @media(max-width:800px){
     #myForm{
-    width: 400px;
+    width: 350px;
     height: 400px;
     margin-top: 20px;
-    margin-left: 15%;
+    margin-left: 25%;
     padding: 20px;
     background-color:rgb(247, 243, 235);
     border-radius: 3%;
