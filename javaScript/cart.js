@@ -193,7 +193,7 @@ function myForm(){
     myForm.append(fName, lName, address, city, state, pinCode, phone, email, s);
     formParrent.append(headTitle, myForm);
 
-    cnfButton.removeEventListener("click", myForm);
+    // cnfButton.removeEventListener("click", myForm);
 
     return false;
 }
@@ -277,4 +277,25 @@ function paymentForm(){
     payForm.append(lCard, card, lExpDate, expDate, lCvv, cvv, lchName, chName, s);
     formParrent.append(payForm);
     alert("payment");
+
+    return false;
+}
+
+function paymentConfermation(){
+    let globalContainer = document.getElementById("globalContainer");
+    globalContainer.textContent = null;
+    globalContainer.textContent = "Payment processing..."
+
+    let p = document.createComment("p");
+    p.textContent = "Payment processing...";
+
+    // globalContainer.append(p);
+
+    let itr = setInterval(() => {
+        clearInterval(itr);
+        alert("Payment Sucessfull")
+        globalContainer.textContent = null;
+        globalContainer.textContent = "Payment Sucess.";
+    }, 5000);
+
 }
