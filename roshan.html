@@ -245,7 +245,7 @@
                 <button onclick="signIn()">Sign in </button>
             </div>
             <div id="creatAc">
-                <button onclick="signIn()"> Or Creat Account</button>
+                <button onclick="creatAccount()"> Or Creat Account</button>
             </div>
             <div>
                 <img src="https://cdn-icons-png.flaticon.com/512/833/833314.png" class="headerIcon" onclick="goToCart()"
@@ -497,5 +497,15 @@
 
     show_product()
 
+    function signIn(){
+        window.location.href = "signin.html"
+    }
+
+    function creatAccount(){
+        window.location.href = "creataccount.html"
+    }
+    function goToCart(){
+        window.location.href = "cart.html"
+    }
 
 </script>
