@@ -1,3 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* font-family: Lato,sans-serif; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
 .footer{
     width: 100%;
     height: auto;
@@ -7,20 +14,17 @@
     text-align: center;
     display:inline-block;
     width: 23%;
-    margin: 5px;
-    font-size: 0.75rem;
-    font-family: Lato,sans-serif;
-     color: silver;
+    margin: 0px 5px;
+    color: silver;
 }
 .box{
-    border: 0.5px solid gray;
-    font-size: 0.75rem;
-    font-family: Lato,sans-serif;
+    border-top: 0.5px solid gray;
+    border-bottom: 0.5px solid gray;
      color: silver;
+     padding: 10px;
 }
 img{
     width: 35px;
-    margin: 10px;
 }
 #icons{
     width: 100px;
@@ -30,15 +34,14 @@ img{
 .box2{
     display: grid;
     grid-template-columns: 60% 30%;
-    font-size: 0.75rem;
+    font-size: 12px;
     font-family: Lato,sans-serif;
      color: rgb(182, 178, 178);
-     background-image: url("https://media.istockphoto.com/photos/the-gray-and-silver-are-light-black-with-white-the-gradient-is-the-picture-id1190757819?b=1&k=20&m=1190757819&s=170667a&w=0&h=F7KCEroNBnDgqpHeJ3CP-5AsMjmpi2zF4L8Oxhc4RLE=");
-     background-position: center;
+     /* background-image: url("https://cdn.desertcart.com/static/media/footer-bg-mobile.11832ed8.png"); */
+     background-image: url("https://cdn.desertcart.com/static/media/footer-bg.6db5b996.png");
      background-repeat: no-repeat;
      background-size: cover;
-     position: relative;
-     backface-visibility: initial;
+     height: 310px;
 }
 .subbox{
     display: inline-block;
@@ -46,6 +49,7 @@ img{
     text-align: left;
     vertical-align: top;
     gap: 80px;
+
 }
 .subbox>div{
     padding: 4px;
@@ -56,7 +60,7 @@ img{
     gap: 10px;
     margin-top: 40px;
 }
-h3 a {
+h3 a{
     color:silver;
     text-align: center;
     text-decoration: none;
@@ -65,7 +69,8 @@ h3 a {
 
 .help{
     display: inline-block;
-    margin: 5px;
+    margin: 0px 5px;
+    /* border: 1px solid red; */
 }
 @media(max-width:600px){
     .footer{
@@ -114,7 +119,5 @@ h3 a {
     }
     .help{
         margin: 2px;
-    }
-   
-    
+    }    
 }

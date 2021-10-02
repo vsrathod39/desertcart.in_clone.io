@@ -5,7 +5,7 @@
     margin: 0;
 }
 div{
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 body{
     color: rgba(0, 0, 0, 0.87);
@@ -21,9 +21,9 @@ body{
 /* outer Container */
 #golabalProduct{
     width: 80%;
-    margin: auto;
     display: flex;
     justify-content: space-between;
+    margin: 110px auto 45px auto;
 }
 
 /* left container */
@@ -155,7 +155,7 @@ body{
 #disclaimer{
     font-size: 10px;
     width: 80%;
-    margin: 32px auto;
+    margin: 32px auto 90px auto;
     text-align: justify;
 
 }

@@ -67,6 +67,9 @@ function showPriceRating(){
     let btnCart = document.createElement("button");
     btnCart.textContent = "Add to Cart " + "₹ " + currentPro[0].price[0] + "," + currentPro[0].price.substring(1,  currentPro[0].price.length);
     btn.append(btnCart);
+    btnCart.onclick = function(){
+        changePage();
+    }
 }
 
 function showProductname(){
@@ -149,3 +152,8 @@ function productReview(){
 }
 
 productReview()
+
+// change page
+function changePage(){
+    window.location.href = "cart.html";
+}

@@ -321,6 +321,9 @@ function showProducts(product, containerId){
     product.forEach(function (element) {
         let productBox = document.createElement("div");
         productBox.setAttribute("class", "productBox")
+        productBox.onclick = function(){
+            changePage();
+        }
 
         let productImg =  document.createElement("img");
         productImg.src = element.image;
@@ -442,4 +445,9 @@ function sortByPrice(){
             break;
     }
 
+}
+
+// change page
+function changePage(){
+    window.location.href = "productReview.html";
 }
