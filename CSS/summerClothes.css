@@ -73,7 +73,6 @@ body{
     border-radius: 8px;
     padding: 8px;
     cursor: pointer;
-    border: 1px solid red;
 }
 .productBox:hover{
     box-shadow: 1px 2px 3px 0 grey;

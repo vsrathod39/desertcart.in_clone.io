@@ -4,13 +4,10 @@
     padding: 0;
     margin: 0;
 }
-div{
-    /* border: 1px solid red; */
-}
 body{
     color: rgba(0, 0, 0, 0.87);
     margin: 0;
-    font-size: 0.75rem;
+    font-size: 12px;
     /* font-family: Lato,sans-serif; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 400;
@@ -78,6 +75,7 @@ body{
     border: 1px solid rgb(90, 87, 87);
     padding: 15px;
     margin: 18px 0px;
+    border-radius: 5px;
 }
 .buttonBox{
     display: flex;
@@ -166,7 +164,6 @@ body{
 .origin{
     margin-top: 3px;
     text-align: right;
-    border: 1px solid blue;
 }
 .boldFont{
     margin-top: 30px;
