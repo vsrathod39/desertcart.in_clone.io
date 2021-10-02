@@ -4,14 +4,10 @@
     padding: 0;
     margin: 0;
 }
-div{
-    /* border: 1px solid red; */
-}
 body{
     color: rgba(0, 0, 0, 0.87);
     margin: 0;
     font-size: 12px;
-    /* font-family: Lato,sans-serif; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 400;
     line-height: 1.43;
@@ -28,13 +24,14 @@ body{
 /* left_part */
 #productDetails{
     width: 48%;
-    border: 1px solid blue;
 }
 #product{
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    border: 1px solid grey;
+    border: 1px solid rgb(235, 235, 235);
+    margin-bottom: 10px;
+    border-radius: 8px;
 }
 #proImg{
     width: 25%;
@@ -94,12 +91,12 @@ body{
 #cartDetails{
     width: 46%;
     padding: 2%;
-    border: 1px solid yellowgreen;
+    border: 1px solid rgb(235, 235, 235);
+    border-radius: 8px;
 }
 #ship{
     width: 50%;
     margin: auto;
-    border: 1px solid blue;
 }
 #shipMethod{
     display: flex;
@@ -111,9 +108,12 @@ body{
     margin: 12%;
 }
 .standard{
-    width: 46%;
-    height: 170px;
+    width: 42%;
+    height: 180px;
     font-size: 10px;
+    padding: 5px;
+    border: 1px solid rgb(231, 231, 231);
+    border-radius: 5px;
 }
 .standard > p{
     margin: 5px 0px;
@@ -122,8 +122,8 @@ body{
     display: flex;
     gap: 5px;
     justify-content: center;
-    width: 80%;
-    padding: 5px 0px;
+    width: 82%;
+    padding: 5px;
     margin: 18px auto;
     background-color: rgb(231, 230, 230);
     align-items: center;
@@ -174,7 +174,6 @@ body{
 .origin{
     margin-top: 3px;
     text-align: right;
-    border: 1px solid blue;
 }
 .boldSub{
     font-weight: bold;

@@ -1,23 +1,24 @@
 // Vikas Kumar - fw_12_132
 
-let cartPro = [
-    {
-        image: "https://m.media-amazon.com/images/I/71g+JfQTkqL.jpg",
-        name: "Womens Fall Clothes Stitching Geo Stripe Print Coat Oversized Loose Pocket Top Lapel Long-Sleeve Button Tunic",
-        brand: "Afelkas",
-        rating: "4",
-        price: "4679",
-        origin: "USA"
-    },
-    {
-        image: "https://m.media-amazon.com/images/I/71g+JfQTkqL.jpg",
-        name: "Womens Fall Clothes Stitching Geo Stripe Print Coat Oversized Loose Pocket Top Lapel Long-Sleeve Button Tunic",
-        brand: "Afelkas",
-        rating: "4",
-        price: "4679",
-        origin: "USA"
-    }
-];
+let cartPro = JSON.parse(localStorage.getItem("disertCartItem"));
+// [
+//     {
+//         image: "https://m.media-amazon.com/images/I/71g+JfQTkqL.jpg",
+//         name: "Womens Fall Clothes Stitching Geo Stripe Print Coat Oversized Loose Pocket Top Lapel Long-Sleeve Button Tunic",
+//         brand: "Afelkas",
+//         rating: "4",
+//         price: "4679",
+//         origin: "USA"
+//     },
+//     {
+//         image: "https://m.media-amazon.com/images/I/71g+JfQTkqL.jpg",
+//         name: "Womens Fall Clothes Stitching Geo Stripe Print Coat Oversized Loose Pocket Top Lapel Long-Sleeve Button Tunic",
+//         brand: "Afelkas",
+//         rating: "4",
+//         price: "4679",
+//         origin: "USA"
+//     }
+// ];
 
 function showProduct(){
     let product = document.getElementById("productDetails");
@@ -189,6 +190,9 @@ function myForm(){
     s.setAttribute("id", "cnfButton");
     s.setAttribute("type", "submit");
     s.setAttribute("value", "Add Delivery Location");
+    s.onsubmit = function(){
+        setDeliveryLocation();
+    }
 
     myForm.append(fName, lName, address, city, state, pinCode, phone, email, s);
     formParrent.append(headTitle, myForm);
@@ -200,8 +204,13 @@ function myForm(){
 
 function setDeliveryLocation(){
     let addressForm = document.getElementsByClassName("inputBox");
-    alert(addressForm.firstName.value);
+    alert(typeof(addressForm.phone.value));
 
+    if(addressForm.firstName.value == "" || addressForm.lasttName.value == "" || addressForm.address.value == "" || addressForm.city.value =="" || addressForm.state.value == "" || addressForm.pinCode.value == "" || addressForm.email.value == ""){
+        alert("any one from the field is empty, please fill all the fields!");
+    }
+    else{
+        alert("Delivery address added successful, please make payment!")
     let formParrent = document.getElementById("cartDetails");
     formParrent.innerHTML = null;
 
@@ -219,6 +228,8 @@ function setDeliveryLocation(){
     div.append(img, p);
 
     formParrent.append(headTitle, div);
+    }
+    // return false;
 }
 
 function paymentForm(){

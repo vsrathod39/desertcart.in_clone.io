@@ -1,15 +1,6 @@
 // Vikas Kumar - fw_12_132
 
-let currentPro = [
-    {
-        image: "https://m.media-amazon.com/images/I/71g+JfQTkqL.jpg",
-        name: "Womens Fall Clothes Stitching Geo Stripe Print Coat Oversized Loose Pocket Top Lapel Long-Sleeve Button Tunic",
-        brand: "Afelkas",
-        rating: "4",
-        price: "4679",
-        origin: "USA"
-    }
-];
+let currentPro = JSON.parse(localStorage.getItem("disertCurrentItem"));
 
 
 // let productLogo = document.getElementById("productLogo");
@@ -154,8 +145,27 @@ function productReview(){
 
 productReview()
 
-// change page
+// add Item to cart
+if(localStorage.getItem("disertCartItem") === null){
+    localStorage.setItem("disertCartItem", JSON.stringify([]));
+}
+
 function changePageToCart(b, c){
-    alert("hi")
+    let cartItemArr = JSON.parse(localStorage.getItem("disertCartItem"));
+    let itemArrThis = JSON.parse(localStorage.getItem("disertCurrentItem"));
+    let flag = true;
+    for(let i = 0; i < cartItemArr.length; i++){
+        if(itemArrThis[0].image == cartItemArr[i].image){
+            flag = false;
+            alert("Item already added, please visit cart!");
+            break;
+        }
+    }
+    if(flag){
+        cartItemArr.push(itemArrThis[0]);
+        localStorage.setItem("disertCartItem", JSON.stringify(cartItemArr));
+        alert("Item added to cart, please visit cart!")
+    }
+
     b.textContent = "✓ Added " + c;
 }
