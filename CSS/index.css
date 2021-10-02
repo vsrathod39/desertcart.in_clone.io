@@ -23,7 +23,9 @@
 
 #logo {
     width: 40px;
-    margin-left: 55px;
+    margin-left: 65px;
+    margin-right: 10px;
+    cursor: pointer;
 }
 
 #header1>div:nth-child(2) {
@@ -33,6 +35,8 @@
 
 #explore {
     border: none;
+    cursor: pointer;
+    font-size: 14px;
 }
 
 #header1>div>button {
@@ -45,7 +49,7 @@
 }
 
 
-#header2 {
+#header2_1 {
     width: 100%;
     background-image: url(../images/disertHomeCoverEdited.jpg);
     background-size: cover;
@@ -55,15 +59,15 @@
     padding: 0.1px;
 }
 
-#header2>div {
+#header2_1>div {
     width: 46%;
     margin: 8% auto;
 }
-#header2>div p{
+#header2_1>div p{
     font-size: 19px;
 }
 
-#header2>div>input {
+#header2_1>div>input {
     border-radius: 25px;
     padding: 10px;
     width: 95%;
