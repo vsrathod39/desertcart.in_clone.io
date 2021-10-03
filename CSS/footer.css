@@ -41,7 +41,7 @@
      background-image: url("https://cdn.desertcart.com/static/media/footer-bg.6db5b996.png");
      background-repeat: no-repeat;
      background-size: cover;
-     height: 310px;
+     height: inherit;
 }
 .subbox{
     display: inline-block;
@@ -58,7 +58,7 @@
     text-align: center;
     vertical-align: middle;
     gap: 10px;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 h3 a{
     color:silver;
@@ -98,17 +98,16 @@ h3 a{
         width: 20px;
     }
 }
-@media(max-width: 1000px){
+@media(max-width: 900px){
     .box2{
         display: grid;
-        grid-template-rows: 70% 20%;
         grid-template-columns: 100%;
         gap: 5%;
     }
     .footerfold>div{
         display: grid;
         grid-template-columns: 10% 10% 10% 10% 10% 10% ;
-        gap: 40px;
+        gap: 30px;
     }
     .icon{
         display: flex;
