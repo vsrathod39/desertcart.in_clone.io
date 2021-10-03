@@ -1,231 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfumes</title>
-    <style>
-         *{
-        padding: 0;
-        margin: 0;
-    }
-    /* div{
-        border: 1px solid red;
-    } */
-    body{
-        color: rgba(0, 0, 0, 0.87);
-        margin: 0;
-        font-size: 0.75rem;
-        font-family: Lato,sans-serif;
-        font-weight: 400;
-        line-height: 1.43;
-        background-color: #fff;
-    }
-    
-    #filter{
-        display: flex;
-        flex-direction: row;
-        /* border: 1px solid red; */
-        width: 80%;
-        margin: 15px auto;
-        justify-content: space-between;
-    }
-    .filterBox{
-        width: 30%;
-        border: 1px solid grey;
-        height: 38px;
-        padding: 8px 12px 8px 12px;
-        border-radius: 8px;
-    
-    }
-    .filterBox label{
-        font-size: 10px;
-        margin-left: 4px;
-        color: rgb(146, 143, 143);
-    }
-    .filterBox select{
-        width: 100%;
-        font-size: 14px;
-        border: none;
-    }
-    .filterBox select:hover{
-        cursor: pointer;
-    }
-    
-    /* thin horizontal line */
-    .hrLine{
-        border-bottom: 1px solid rgb(238, 236, 236);
-        width: 80%;
-        margin: 8px auto;
-    }
-    
-    /* section heading */
-    .sectionHead{
-        width: 80%;
-        margin: 45px auto 25px auto;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 1; /* number of lines to show */
-        -webkit-box-orient: vertical;
-    }
-    
-    /* global product list */
-    .globalProducts{
-        border: 1px solid red;
-        width: 80%;
-        margin: auto;
-        display: grid;
-        grid-template-columns: 23% 23% 23% 23%;
-        gap: 22px;
-    }
-    .productBox{
-        border: 1px solid rgb(240, 239, 239);
-        border-radius: 8px;
-        padding: 8px;
-        cursor: pointer;
-    }
-    .productBox:hover{
-        box-shadow: 1px 2px 3px 0 grey;
-    }
-    .productBox img{
-        width: 50%;
-        margin: 0 25%;
-        height: 145px;
-        border: 1px solid red;
-    }
-    .textBox{
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 2; /* number of lines to show */
-        -webkit-box-orient: vertical;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        font-weight: 600;
-        margin: 25px 0 2px 0;
-    }
-    .productWrapper{
-        border: 1px solid yellow;
-        display: flex;
-        justify-content: space-between;
-        margin-top: 12px;
-    }
-    .textGreyColor{
-        color: rgb(90, 87, 87);
-    }
-    .origin{
-        text-align: right;
-        border: 1px solid blue;
-    }
-    #textPrice{
-        font-weight: bold;
-        font-size: 14px;
-        margin-top: 12px;
-    }
-    
-    @media  (max-width: 940px){
-        .globalProducts{
-            width: 90%;
-            grid-template-columns: 48% 48%;
-        }
-        #filter{
-            width: 90%;
-        }
-        .filterBox{
-            width: 28%;
-            border: 1px solid grey;
-            height: 28px;
-            padding: 6px 8px 6px 8px;
-            border-radius: 2px;
-        }
-        .sectionHead{
-            width: 90%;
-        }
-    }
-    @media  (min-width: 940px) and (max-width: 1280px){
-        .globalProducts{
-            width: 85%;
-            grid-template-columns: 31% 31% 31%;
-        }
-        #filter{
-            width: 85%;
-        }
-        .filterBox{
-            width: 30%;
-            border: 1px solid grey;
-            height: 28px;
-            padding: 2px 8px 6px 8px;
-            border-radius: 5px;
-        }
-        .sectionHead{
-            width: 85%;
-        }
-    }
-    </style>
-</head>
-<body>
-     <!-- filter section -->
-     <div id="filter">
-        <div id="byPrice" class="filterBox">
-            <label for="price">PRICE</label><br>
-            <select name="price" id="price">
-                <option value="any">Any Price</option>
-                <option value="upto2000">INR 0-2000</option>
-                <option value="upto5000">INR 2001-5000</option>
-                <option value="upto10000">INR 5001-10,000</option>
-                <option value="moreThan10000">INR 10,000+</option>
-            </select>
-        </div>
-        <div id="byCountry" class="filterBox">
-            <label for="country">IMPORTED FROM</label><br>
-            <select name="country" id="country">
-                <option value="any">Any Country</option>
-                <option value="uk">Imported from UK</option>
-                <option value="usa">Imported from USA</option>
-                <option value="india">Imported from India</option>
-                <option value="dc">DC Verified</option>
-            </select>
-        </div>
-        <div id="byDelivery" class="filterBox">
-            <label for="delivery">DELIVERY TIME</label><br>
-            <select name="delivery" id="delivery">
-                <option value="any">Any Price</option>
-                <option value="sameDay">INR 0-2000</option>
-                <option value="2day">INR 2001-5000</option>
-                <option value="3to5Days">INR 5001-10,000</option>
-                <option value=">5to8Days">INR 10,000+</option>
-            </select>
-        </div>
-    </div>
 
-    <!-- horizontal line -->
-    <div class="hrLine"></div>
-    <!-- All product section -->
-    <div class="sectionHead">
-        <h1>Online Perfumes For Him Shopping Store</h1>
-    </div>
-    <div class="globalProducts" id="menContainer">
-        
-    </div>
-
-    <!-- horizontal line -->
-    <div class="hrLine"></div>
-    <!-- All product section -->
-    <div class="sectionHead">
-        <h1>Online Perfumes For Her Shopping Store</h1>
-    </div>
-    <div class="globalProducts" id="womenContainer">
-        
-    </div>
-     <!-- horizontal line -->
-     <div class="hrLine"></div>
-
-    <!-- Java_Script_Files -->
-    <!-- <script src="javaScript/summerClothes.js"></script> -->
-</body>
-<script>
-    let productData = [
+let productData = [
     {
         image: "https://m.media-amazon.com/images/I/6117UNDHHTL.jpg",
         name: "Pheromone Cologne for Women to Attract Men - Seduce Him - Pheromones Perfume to Get The Man You Want Now",
@@ -547,7 +321,11 @@ function showProducts(product, containerId){
 
     product.forEach(function (element) {
         let productBox = document.createElement("div");
+        productBox.setAttribute("id", element.image);
         productBox.setAttribute("class", "productBox")
+        productBox.onclick = function(){
+            changePage(this);
+        }
 
         let productImg =  document.createElement("img");
         productImg.src = element.image;
@@ -670,5 +448,34 @@ function sortByPrice(){
     }
 
 }
-</script>
-</html>
+
+// adding Item to cart dataBase and switch page
+if(localStorage.getItem("disertCurrentItem") === null){
+    localStorage.setItem("disertCurrentItem", JSON.stringify([]));
+}
+function changePage(e){
+    let flag = true;
+    let itemArr = JSON.parse(localStorage.getItem("disertCurrentItem"));
+    productData.forEach(function(pr){
+        if(pr.image == e.id){
+            flag = false;
+            if(itemArr.length != 0){
+                itemArr.pop();
+            }
+            itemArr.push(pr);
+        }
+    })
+    if(flag){
+        productData2.forEach(function (pr){
+            if(pr.image == e.id){
+                flag = false;
+                if(itemArr.length != 0){
+                    itemArr.pop();
+                }
+                itemArr.push(pr);
+            }
+        })
+    }
+    localStorage.setItem("disertCurrentItem", JSON.stringify(itemArr));
+    window.location.href = "productReview.html"
+}
