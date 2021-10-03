@@ -205,6 +205,16 @@ function show_product() {
             };
         }
 
+        if(product.name1 == "Her" || product.name2 == "Him" || product.name2 == "Unisex"){
+            div1.onclick = function(){
+                changePageToPerfume();
+            };
+
+            div2.onclick = function(){
+                changePageToPerfume();
+            };
+        }
+
         wrapperDiv.append(div1, div2, div3)
 
         parent.append(topDiv, wrapperDiv)
@@ -234,4 +244,7 @@ function homeLogo() {
 }
 function changePageToSummerClothes(){
     window.location.href = "summerClothes.html";
+}
+function changePageToPerfume(){
+    window.location.href = "perfumeMenAndWomen.html";
 }

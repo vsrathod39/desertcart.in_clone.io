@@ -1,27 +1,16 @@
 // Vikas Kumar - fw_12_132
 
 let cartPro = JSON.parse(localStorage.getItem("disertCartItem"));
-// [
-//     {
-//         image: "https://m.media-amazon.com/images/I/71g+JfQTkqL.jpg",
-//         name: "Womens Fall Clothes Stitching Geo Stripe Print Coat Oversized Loose Pocket Top Lapel Long-Sleeve Button Tunic",
-//         brand: "Afelkas",
-//         rating: "4",
-//         price: "4679",
-//         origin: "USA"
-//     },
-//     {
-//         image: "https://m.media-amazon.com/images/I/71g+JfQTkqL.jpg",
-//         name: "Womens Fall Clothes Stitching Geo Stripe Print Coat Oversized Loose Pocket Top Lapel Long-Sleeve Button Tunic",
-//         brand: "Afelkas",
-//         rating: "4",
-//         price: "4679",
-//         origin: "USA"
-//     }
-// ];
 
 function showProduct(){
     let product = document.getElementById("productDetails");
+
+    if(cartPro.length == 0){
+        let h3Null = document.createElement("h3");
+        h3Null.textContent = "No item in the cart, please select an item to get an exciting gift!!!"
+
+        product.append(h3Null);
+    }
 
     cartPro.forEach(function(pro){
         let prDiv = document.createElement("div");
@@ -121,7 +110,17 @@ showProduct();
 // delevery form
 
 let cnfButton = document.getElementById("cnfButton");
-cnfButton.addEventListener("click", myForm);
+if(cartPro.length != 0){
+    cnfButton.addEventListener("click", myForm);
+}
+else{
+    if(cartPro.length == 0)
+        cnfButton.addEventListener("click", blankSMS);
+}
+
+function blankSMS(){
+    alert("No item in the cart");
+}
 
 function myForm(){
     let subFont = document.getElementById("subFont");
@@ -135,7 +134,7 @@ function myForm(){
 
     let myForm = document.createElement("form");
     myForm.setAttribute("id", "addressForm");
-    myForm.setAttribute("onsubmit", "setDeliveryLocation(); return false")
+    myForm.setAttribute("onsubmit", "return setDeliveryLocation()")
 
     let fName = document.createElement("input");
     fName.setAttribute("class", "inputBox");
@@ -190,46 +189,40 @@ function myForm(){
     s.setAttribute("id", "cnfButton");
     s.setAttribute("type", "submit");
     s.setAttribute("value", "Add Delivery Location");
-    s.onsubmit = function(){
-        setDeliveryLocation();
-    }
 
     myForm.append(fName, lName, address, city, state, pinCode, phone, email, s);
     formParrent.append(headTitle, myForm);
-
-    // cnfButton.removeEventListener("click", myForm);
 
     return false;
 }
 
 function setDeliveryLocation(){
-    let addressForm = document.getElementsByClassName("inputBox");
-    alert(typeof(addressForm.phone.value));
+    let addressForm = document.forms["addressForm"];
 
-    if(addressForm.firstName.value == "" || addressForm.lasttName.value == "" || addressForm.address.value == "" || addressForm.city.value =="" || addressForm.state.value == "" || addressForm.pinCode.value == "" || addressForm.email.value == ""){
-        alert("any one from the field is empty, please fill all the fields!");
+    if(addressForm.firstName.value.trim().length == 0 || addressForm.lastName.value.trim().length == 0 || addressForm.address.value.trim().length == 0 || addressForm.city.value.trim().length == 0 || addressForm.state.value.trim().length == 0 || addressForm.pinCode.value.trim().length == 0 || addressForm.phone.value.trim().length == 0 || addressForm.email.value.trim().length == 0){
+        alert("any one or all from the field is empty, please fill all the fields!");
     }
     else{
         alert("Delivery address added successful, please make payment!")
-    let formParrent = document.getElementById("cartDetails");
-    formParrent.innerHTML = null;
+        let formParrent = document.getElementById("cartDetails");
+        formParrent.innerHTML = null;
 
-    let headTitle = document.createElement("p");
-    headTitle.setAttribute("id", "subFont");
-    headTitle.textContent = "Select your Payment Method";
+        let headTitle = document.createElement("p");
+        headTitle.setAttribute("id", "subFont");
+        headTitle.textContent = "Select your Payment Method";
 
-    let div = document.createElement("div");
-    div.setAttribute("id", "bebitCard")
-    div.addEventListener("click", paymentForm)
-    let img = document.createElement("img");
-    img.src = "https://img.icons8.com/ios-filled/40/000000/bank-card-front-side.png";
-    let p = document.createElement("p");
-    p.textContent = "Credit/Debit Card";
-    div.append(img, p);
+        let div = document.createElement("div");
+        div.setAttribute("id", "bebitCard")
+        div.addEventListener("click", paymentForm)
+        let img = document.createElement("img");
+        img.src = "https://img.icons8.com/ios-filled/40/000000/bank-card-front-side.png";
+        let p = document.createElement("p");
+        p.textContent = "Credit/Debit Card";
+        div.append(img, p);
 
-    formParrent.append(headTitle, div);
+        formParrent.append(headTitle, div);
     }
-    // return false;
+    return false;
 }
 
 function paymentForm(){
@@ -287,26 +280,43 @@ function paymentForm(){
 
     payForm.append(lCard, card, lExpDate, expDate, lCvv, cvv, lchName, chName, s);
     formParrent.append(payForm);
-    alert("payment");
 
     return false;
 }
 
 function paymentConfermation(){
-    let globalContainer = document.getElementById("globalContainer");
-    globalContainer.textContent = null;
-    globalContainer.textContent = "Payment processing..."
+    let addressForm = document.forms["payForm"];
 
-    let p = document.createComment("p");
-    p.textContent = "Payment processing...";
-
-    // globalContainer.append(p);
-
-    let itr = setInterval(() => {
-        clearInterval(itr);
-        alert("Payment Sucessfull")
+    if(addressForm.card.value.trim().length == 0 || addressForm.expDate.value.trim().length == 0 || addressForm.cvv.value.trim().length == 0 || addressForm.chName.value.trim().length == 0 ){
+        alert("any one or all from the field is empty, please fill all the fields!");
+    }
+    else{
+        let globalContainer = document.getElementById("globalContainer");
         globalContainer.textContent = null;
-        globalContainer.textContent = "Payment Sucess.";
-    }, 5000);
 
+        let h1 = document.createElement("h1");
+        h1.textContent = "Payment processing...";
+        globalContainer.append(h1);
+
+        // globalContainer.append(p);
+
+        let itr = setInterval(() => {
+            clearInterval(itr);
+            alert("Payment Sucessfull")
+            globalContainer.textContent = null;
+            h1.textContent = "Payment Sucess.";
+            h1.setAttribute("id", "paymentText");
+            let p = document.createElement("p");
+            p.textContent = "redirecting to cart in 5sec..."
+            globalContainer.append(h1, p);
+            cartPro = [];
+            localStorage.setItem("disertCartItem", JSON.stringify([]));
+        }, 5000);
+
+        let goToCartPage = setInterval(() => {
+            clearInterval(goToCartPage);
+            window.location.href = "cart.html";
+        }, 10000);
+    }
+    return false;
 }
