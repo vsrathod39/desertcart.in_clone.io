@@ -8,7 +8,7 @@ function showProduct(){
     if(cartPro.length == 0){
         let h3Null = document.createElement("h3");
         h3Null.textContent = "No item in the cart, please select an item to get an exciting gift!!!"
-
+        product.innerHTML = null;
         product.append(h3Null);
     }
 
@@ -54,6 +54,14 @@ function showProduct(){
 
         divPrice.append(price, wrapperInnerDiv2);
 
+        // Remove button
+        let removeBtn = document.createElement("button");
+        removeBtn.textContent = "Remove";
+        removeBtn.setAttribute("id", pro.image);
+        removeBtn.onclick = function (e){
+            removeCartItem(e);
+        }
+
         // ------------------------------
         let divCount = document.createElement("div");
         divCount.setAttribute("id", "divCount");
@@ -97,7 +105,7 @@ function showProduct(){
         size.textContent = "";
 
         divImg.append(img);
-        divName.append(name, brand, divPrice);
+        divName.append(name, brand, divPrice, removeBtn);
         divSize.append(divCount, divFit, divColor, divCondition);
         prDiv.append(divImg, divName, divSize);
         product.append(prDiv);
@@ -106,6 +114,21 @@ function showProduct(){
 }
 
 showProduct();
+
+// remove cart item one by one
+function removeCartItem(e){
+    let product = document.getElementById("productDetails");
+    let tempArr = [];
+    for(let i = 0; i < cartPro.length; i++){
+        if(cartPro[i].image != e.target.id){
+            tempArr.push(cartPro[i]);
+        }
+    }
+    cartPro = tempArr;
+    localStorage.setItem("disertCartItem", JSON.stringify(cartPro));
+    product.innerHTML = null;
+    showProduct();
+}
 
 // delevery form
 
