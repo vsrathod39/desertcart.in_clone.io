@@ -13,6 +13,7 @@
     top: 0;
     background-color: white;
     height: 55px;
+    padding-left: 5%;
 }
 
 .headerIcon {
@@ -23,7 +24,6 @@
 
 #logo {
     width: 40px;
-    margin-left: 65px;
     margin-right: 10px;
     cursor: pointer;
 }
