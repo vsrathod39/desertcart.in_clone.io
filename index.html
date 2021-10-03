@@ -1,105 +1,67 @@
-<!-- Vikas Kumar - fw12_132 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Summer Clothes For Men & Women Product Shoping Store In India | ...</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <title>Online Shopping Store in India</title>
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/footer.css">
     <!-- <link rel="stylesheet" href="css/cart.css"> -->
     <!-- <link rel="stylesheet" href="CSS/creataccount.css"> -->
     <!-- <link rel="stylesheet" href="CSS/productReview.css"> -->
     <!-- <link rel="stylesheet" href="css/signin.css"> -->
-    <link rel="stylesheet" href="css/summerClothes.css">
+    <!-- <link rel="stylesheet" href="css/summerClothes.css"> -->
 </head>
+
 <body>
-    <!-- nav -->
-    <div id="header1">
-        <div>
-            <img id="logo" onclick="homeLogo()" src="https://cdn.desertcart.com/static/media/logo.5821c90d.png"
-                alt="logo.img">
+    <!-- Nav -->
+    <div id="global_box">
+        <div id="header1">
+            <div>
+                <img id="logo" onclick="homeLogo()" src="https://cdn.desertcart.com/static/media/logo.5821c90d.png"
+                    alt="logo.img">
+            </div>
+            <div>
+                <select name="" id="explore">
+                    <option value="">Explore</option>
+                    <option value="any">Any</option>
+                    <option value="her">Her</option>
+                    <option value="him">Him</option>
+                </select>
+            </div>
+            <div>
+                <img src="https://cdn-icons-png.flaticon.com/24/876/876759.png" class="headerIcon" id="lang">
+            </div>
+            <div id="signIn">
+                <button onclick="signIn()">Sign in </button>
+            </div>
+            <div id="creatAc">
+                <button onclick="creatAccount()"> Or Creat an Account</button>
+            </div>
+            <div>
+                <img src="https://img.icons8.com/ios/48/000000/shopping-cart.png" class="headerIcon" onclick="goToCart()" id="cart">
+            </div>
         </div>
-        <div>
-            <select name="" id="explore">
-                <option value="">Explore</option>
-                <option value="any">Any</option>
-                <option value="her">Her</option>
-                <option value="him">Him</option>
-            </select>
+        <!-- Body -->
+        <div id="header2_1">
+            <div>
+                <p>Find 100M+ products</p>
+                <input type="text" placeholder="Search for any product..." name="" id="">
+            </div>
         </div>
-        <div>
-            <img src="https://cdn-icons-png.flaticon.com/24/876/876759.png" class="headerIcon" id="lang">
-        </div>
-        <div id="signIn">
-            <button onclick="signIn()">Sign in </button>
-        </div>
-        <div id="creatAc">
-            <button onclick="creatAccount()"> Or Creat an Account</button>
-        </div>
-        <div>
-            <img src="https://img.icons8.com/ios/48/000000/shopping-cart.png" class="headerIcon" onclick="goToCart()" id="cart">
-        </div>
-    </div>
-    <!-- filter section -->
-    <div id="filter">
-        <div id="byPrice" class="filterBox">
-            <label for="price">PRICE</label><br>
-            <select name="price" id="price">
-                <option value="any">Any Price</option>
-                <option value="upto2000">INR 0-2000</option>
-                <option value="upto5000">INR 2001-5000</option>
-                <option value="upto10000">INR 5001-10,000</option>
-                <option value="moreThan10000">INR 10,000+</option>
-            </select>
-        </div>
-        <div id="byCountry" class="filterBox">
-            <label for="country">IMPORTED FROM</label><br>
-            <select name="country" id="country">
-                <option value="any">Any Country</option>
-                <option value="uk">Imported from UK</option>
-                <option value="usa">Imported from USA</option>
-                <option value="india">Imported from India</option>
-                <option value="dc">DC Verified</option>
-            </select>
-        </div>
-        <div id="byDelivery" class="filterBox">
-            <label for="delivery">DELIVERY TIME</label><br>
-            <select name="delivery" id="delivery">
-                <option value="any">Any Price</option>
-                <option value="sameDay">INR 0-2000</option>
-                <option value="2day">INR 2001-5000</option>
-                <option value="3to5Days">INR 5001-10,000</option>
-                <option value=">5to8Days">INR 10,000+</option>
-            </select>
-        </div>
-    </div>
+        <div id="slideshow"></div>
 
-    <!-- horizontal line -->
-    <div class="hrLine"></div>
-    <!-- All product section -->
-    <div class="sectionHead">
-        <h1>Online Summer Clothes For Men Shopping Store</h1>
-    </div>
-    <div class="globalProducts" id="menContainer">
-        
-    </div>
+        <div id="productCont" class="">
 
-    <!-- horizontal line -->
-    <div class="hrLine"></div>
-    <!-- All product section -->
-    <div class="sectionHead">
-        <h1>Online Summer Dresses For Women Shopping Store</h1>
-    </div>
-    <div class="globalProducts" id="womenContainer">
-        
-    </div>
-     <!-- horizontal line -->
-     <div class="hrLine"></div>
+        </div>
 
-     <!-- Footer -->
-     <div class="footer">
+    </div>
+    </div>
+    <!-- productBoxes -->
+    <!-- footer -->
+    <div class="footer">
         <div class="box">
             <div class="footer1">
                 <div class="help" >
@@ -195,8 +157,6 @@
     </div>
 </body>
 </html>
-
-<!-- Java_Script_Files -->
 <script src="javaScript/index.js"></script>
 <script src="javaScript/cart.js"></script>
 <script src="javaScript/creataccount.js"></script>

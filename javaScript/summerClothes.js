@@ -320,7 +320,11 @@ function showProducts(product, containerId){
 
     product.forEach(function (element) {
         let productBox = document.createElement("div");
+        productBox.setAttribute("id", element.image);
         productBox.setAttribute("class", "productBox")
+        productBox.onclick = function(){
+            changePage(this);
+        }
 
         let productImg =  document.createElement("img");
         productImg.src = element.image;
@@ -442,4 +446,35 @@ function sortByPrice(){
             break;
     }
 
+}
+
+// adding Item to cart dataBase and switch page
+if(localStorage.getItem("disertCurrentItem") === null){
+    localStorage.setItem("disertCurrentItem", JSON.stringify([]));
+}
+function changePage(e){
+    let flag = true;
+    let itemArr = JSON.parse(localStorage.getItem("disertCurrentItem"));
+    productData.forEach(function(pr){
+        if(pr.image == e.id){
+            flag = false;
+            if(itemArr.length != 0){
+                itemArr.pop();
+            }
+            itemArr.push(pr);
+        }
+    })
+    if(flag){
+        productData2.forEach(function (pr){
+            if(pr.image == e.id){
+                flag = false;
+                if(itemArr.length != 0){
+                    itemArr.pop();
+                }
+                itemArr.push(pr);
+            }
+        })
+    }
+    localStorage.setItem("disertCurrentItem", JSON.stringify(itemArr));
+    window.location.href = "productReview.html"
 }

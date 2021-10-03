@@ -1,14 +1,12 @@
+/* Vikas Kumar - fw12_132 */
 *{
     padding: 0;
     margin: 0;
 }
-/* div{
-    border: 1px solid red;
-} */
 body{
     color: rgba(0, 0, 0, 0.87);
     margin: 0;
-    font-size: 0.75rem;
+    font-size: 12px;
     font-family: Lato,sans-serif;
     font-weight: 400;
     line-height: 1.43;
@@ -18,15 +16,14 @@ body{
 #filter{
     display: flex;
     flex-direction: row;
-    /* border: 1px solid red; */
     width: 80%;
-    margin: 15px auto;
+    margin: 70px auto 15px auto;
     justify-content: space-between;
 }
 .filterBox{
     width: 30%;
-    border: 1px solid grey;
-    height: 38px;
+    border: 1px solid rgb(202, 202, 202);
+    height: 45px;
     padding: 8px 12px 8px 12px;
     border-radius: 8px;
 
@@ -48,7 +45,7 @@ body{
 /* thin horizontal line */
 .hrLine{
     border-bottom: 1px solid rgb(238, 236, 236);
-    width: 80%;
+    width: 85%;
     margin: 8px auto;
 }
 
@@ -65,7 +62,6 @@ body{
 
 /* global product list */
 .globalProducts{
-    border: 1px solid red;
     width: 80%;
     margin: auto;
     display: grid;
@@ -85,7 +81,6 @@ body{
     width: 50%;
     margin: 0 25%;
     height: 145px;
-    border: 1px solid red;
 }
 .textBox{
     overflow: hidden;
@@ -98,7 +93,6 @@ body{
     margin: 25px 0 2px 0;
 }
 .productWrapper{
-    border: 1px solid yellow;
     display: flex;
     justify-content: space-between;
     margin-top: 12px;
@@ -108,7 +102,6 @@ body{
 }
 .origin{
     text-align: right;
-    border: 1px solid blue;
 }
 #textPrice{
     font-weight: bold;
@@ -145,8 +138,8 @@ body{
     }
     .filterBox{
         width: 30%;
-        border: 1px solid grey;
-        height: 28px;
+        border: 1px solid rgb(202, 202, 202);
+        height: 42px;
         padding: 2px 8px 6px 8px;
         border-radius: 5px;
     }

@@ -1,13 +1,83 @@
+<!-- Vikas Kumar - fw_12_132 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="shivam.css">
+    <title>Cart</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <!-- <link rel="stylesheet" href="CSS/creataccount.css"> -->
+    <!-- <link rel="stylesheet" href="CSS/productReview.css"> -->
+    <!-- <link rel="stylesheet" href="css/signin.css"> -->
+    <!-- <link rel="stylesheet" href="css/summerClothes.css"> -->
 </head>
 <body>
+    <!-- Nav -->
+    <div id="header1">
+        <div>
+            <img id="logo" onclick="homeLogo()" src="https://cdn.desertcart.com/static/media/logo.5821c90d.png"
+                alt="logo.img">
+        </div>
+        <div>
+            <select name="" id="explore">
+                <option value="">Explore</option>
+                <option value="any">Any</option>
+                <option value="her">Her</option>
+                <option value="him">Him</option>
+            </select>
+        </div>
+        <div>
+            <img src="https://cdn-icons-png.flaticon.com/24/876/876759.png" class="headerIcon" id="lang">
+        </div>
+        <div id="signIn">
+            <button onclick="signIn()">Sign in </button>
+        </div>
+        <div id="creatAc">
+            <button onclick="creatAccount()"> Or Creat an Account</button>
+        </div>
+        <div>
+            <img src="https://img.icons8.com/ios/48/000000/shopping-cart.png" class="headerIcon" onclick="goToCart()" id="cart">
+        </div>
+    </div>
+    <!-- body -->
+    <div id="globalContainer">
+        <div id="productDetails">
+            <div>
+                <p>Estimated Delivery Oct 13 to Oct 21</p>
+            </div>
+            <!-- <div id="product"> -->
+
+            <!-- </div> -->
+        </div>
+        <div id="cartDetails">
+            <p id="subFont">Select your Shipping Method</p>
+            <div id="ship">
+                <div id="shipMethod">
+                    <div class="standard">
+                        <img src="https://w7.pngwing.com/pngs/565/191/png-transparent-dromedary-bactrian-camel-startup-company-innovation-camel-racing-mockups-logo-miscellaneous-mammal-innovation-thumbnail.png">
+                        <p class="boldSub">Standard</p>
+                        <p>₹ 650</p>
+                    </div>
+                    <div class="standard">
+                        <img src="https://img.icons8.com/external-flatart-icons-lineal-color-flatarticons/124/000000/external-delivery-shopping-and-commerce-flatart-icons-lineal-color-flatarticons-1.png"/>
+                        <p class="boldSub">Standard with DC+</p>
+                        <p>Free</p>
+                    </div>
+                </div>
+            </div>
+            <div id="smallIcon">
+                <img src="https://img.icons8.com/ios-filled/20/000000/checked.png"/>
+                <p>- Your items will be sent together in fewest possible packages</p>
+            </div>
+            <div>
+                <button id="cnfButton">Confirm</button>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
     <div class="footer">
         <div class="box">
             <div class="footer1">
@@ -19,7 +89,7 @@
             </div>
             <div class="footer1">
                 <div class="help">
-                    <img src="https://cdn-icons-png.flaticon.com/128/88/88277.png"/>
+                    <img src="https://img.icons8.com/external-those-icons-lineal-those-icons/128/000000/external-call-mobile-telephone-those-icons-lineal-those-icons.png"/>
                 </div>
                 <div class="help" >
                 <h3 class="textfotter"><a href="">Phone Support</a></h3> 
@@ -28,7 +98,7 @@
             </div>
             <div class="footer1">
                 <div class="help">
-                    <img src="https://cdn-icons-png.flaticon.com/128/181/181506.png"/>
+                    <img src="https://cdn-icons-png.flaticon.com/128/1381/1381635.png"/>
                 </div>
                 <div class="help" >
                 <h3 class="textfotter"><a href="">Chat Support</a></h3>
@@ -37,7 +107,7 @@
             </div>
             <div class="footer1">
                 <div class="help">
-                    <img src="https://cdn-icons-png.flaticon.com/128/88/88264.png"/>
+                    <img src="https://cdn-icons-png.flaticon.com/128/739/739286.png"/>
                 </div>
                 <div class="help" >
                 <h3 class="textfotter"><a href="">FAQ</a></h3>
@@ -45,7 +115,7 @@
                 </div>
             </div>
         </div>
-        <div class="box2">
+        <div class="box2" >
             <div class="footerfold">
             <div class = "subbox">
                 <div><p> Track Order</p></div>
@@ -94,7 +164,7 @@
                     <a href="https://play.google.com/store/apps/details?id=com.desertcartnative"><img  id="icons" alt="desertcart ios app download" src="https://cdn.desertcart.com/static/media/desertcart-android-app.bc11e461.png"></a>
                 </div>
                 <div>
-                    <img  src="https://img-premium.flaticon.com/png/128/739/premium/739237.png?token=exp=1632894201~hmac=0a2fb199fdef295ccba463cd9f7e5468"/>
+                    <a href="https://www.facebook.com/desertcart"><img alt="desertcart facebook" src="https://cdn-icons-png.flaticon.com/128/1384/1384037.png"></a>
                     <img  src="https://cdn-icons-png.flaticon.com/128/1384/1384031.png"/>
                     <img src="https://cdn-icons-png.flaticon.com/128/733/733635.png"/>
                 </div>
@@ -104,3 +174,9 @@
     </div>
 </body>
 </html>
+
+<script src="javaScript/index.js"></script>
+<script src="javaScript/cart.js"></script>
+<script src="javaScript/creataccount.js"></script>
+<script src="javaScript/productReview.js"></script>
+<script src="javaScript/summerClothes.js"></script>
