@@ -91,12 +91,10 @@
 #global_box>div:nth-child(4) {
     width: 83%;
     margin: 28px auto;
-    /* border: 1px solid red; */
 }
 #productCont>div {
     display: flex;
     justify-content: space-between;
-    /* border: 1px solid red; */
 }
 #productCont>div h3{
     font-size: 18px;
@@ -110,11 +108,21 @@
     margin: 0px 0px 25px 12px;
     font-size: 12px;
     color: rgb(70, 68, 68);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    -webkit-box-orient: vertical;
 }
 #productCont>div>div>h4{
     margin: 10px 12px;
     font-size: 16px;
     font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    -webkit-box-orient: vertical;
 }
 
 #productCont>div>div {
@@ -124,5 +132,4 @@
     cursor: pointer;
     border-radius: 8px;
     padding: 0.1px;
-    /* border: 1px solid red; */
 }
