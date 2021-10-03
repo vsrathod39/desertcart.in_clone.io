@@ -23,7 +23,10 @@ body{
 
 /* left_part */
 #productDetails{
-    width: 48%;
+    width: 50%;
+    border: 1px solid rgb(235, 235, 235);
+    border-radius: 8px;
+    padding: 10px;
 }
 #product{
     display: flex;
@@ -89,7 +92,7 @@ body{
 
 /* right_part */
 #cartDetails{
-    width: 46%;
+    width: 42%;
     padding: 2%;
     border: 1px solid rgb(235, 235, 235);
     border-radius: 8px;
@@ -183,4 +186,8 @@ body{
     font-size: 15px;
     margin: 18px 0px;
     text-align: center;
+}
+#paymentText{
+    color: green;
+    font-size: 28px;
 }
