@@ -23,7 +23,7 @@
      color: silver;
      padding: 10px;
 }
-img{
+.footer img{
     width: 35px;
 }
 #icons{
@@ -94,7 +94,7 @@ h3 a{
         flex-direction: row;
         margin: 2px;
     }
-    img{
+    .footer img{
         width: 20px;
     }
 }
@@ -114,7 +114,7 @@ h3 a{
         display: flex;
         margin: 20px
     }
-    img{
+    .footer img{
         margin: 10px;
     }
     .help{
