@@ -15,34 +15,29 @@
     background-color: white;
     height: 60px;
     padding-left: 5%;
-    border: 1px solid red;
 }
 
 .headerIcon {
     width: 25px;
     margin: auto 28px;
     cursor: pointer;
-    border: 1px solid red;
 }
 
 #logo {
     width: 42px;
     margin-right: 10px;
     cursor: pointer;
-    border: 1px solid blue;
 }
 
 #header1>div:nth-child(2) {
     flex-basis: 10%;
     margin-left: 10px;
     margin-right: 20px;
-    border: 1px solid yellow;
 }
 #explore {
     border: none;
     cursor: pointer;
     font-size: 14px;
-    border: 1px solid red;
 }
 #navSearchBox{
     width: 50%;

@@ -10,7 +10,8 @@
 }
 /* Top horizontal box */
 #footerTopBox{
-    border: 1px solid grey;
+    border-top: 1.5px solid rgb(216, 216, 216);
+    border-bottom: 1.5px solid rgb(216, 216, 216);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -21,7 +22,6 @@
 }
 .childTopFooter{
     height: 50px;
-    border: 1px solid red;
     width: 200px;
     display: flex;
     align-items: center;
