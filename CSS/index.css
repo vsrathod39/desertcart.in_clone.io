@@ -13,7 +13,7 @@
     overflow: hidden;
     top: 0;
     background-color: white;
-    height: 55px;
+    height: 60px;
     padding-left: 5%;
     border: 1px solid red;
 }
@@ -33,18 +33,28 @@
 }
 
 #header1>div:nth-child(2) {
-    flex-basis: 63%;
+    flex-basis: 10%;
     margin-left: 10px;
+    margin-right: 20px;
     border: 1px solid yellow;
 }
-
 #explore {
     border: none;
     cursor: pointer;
     font-size: 14px;
     border: 1px solid red;
 }
-
+#navSearchBox{
+    width: 50%;
+}
+#navSearchBox input{
+    width: 100%;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    padding: 2% 8%;
+    box-shadow: 0px 0px 0px 1px rgb(206, 206, 206);
+}
 #header1>div>button {
     border: none;
     padding: 0 0 5px 3px;
@@ -52,7 +62,6 @@
     font-size: 11px;
     color: rgb(80, 79, 79);
     cursor: pointer;
-    /* border: 1px solid black; */
 }
 
 
@@ -138,7 +147,7 @@
     -webkit-box-orient: vertical;
 }
 #productCont>div>div>h4{
-    margin: 28px 12px 12px 12px;
+    margin: 12px;
     font-size: 16px;
     font-weight: 500;
     overflow: hidden;
@@ -155,6 +164,10 @@
     cursor: pointer;
     border-radius: 8px;
     padding: 0.1px;
+    cursor: pointer;
+}
+#productCont>div>div:hover{
+    background: rgb(245, 245, 245);
 }
 .parrentWrapper{
     display: flex;
@@ -168,6 +181,12 @@
     }
     #header2_1{
         height: 180px;
+    }
+    #signIn, #creatAc, #blobalIcon{
+        display: none;
+    }
+    #navSearchBox{
+        width: 65%;
     }
     #slideshow>img {
         height: 280px;
@@ -197,6 +216,12 @@
     #searchBox {
         width: 90%;
         margin: 8% auto 3% auto;
+    }
+    #signIn, #creatAc, #blobalIcon{
+        display: none;
+    }
+    #navSearchBox{
+        width: 65%;
     }
     #slideshow>img {
         width: 100%;
