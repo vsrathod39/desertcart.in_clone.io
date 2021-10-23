@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 #header1 {
@@ -14,38 +15,44 @@
     background-color: white;
     height: 55px;
     padding-left: 5%;
+    border: 1px solid red;
 }
 
 .headerIcon {
-    width: 20px;
+    width: 25px;
     margin: auto 28px;
     cursor: pointer;
+    border: 1px solid red;
 }
 
 #logo {
-    width: 40px;
+    width: 42px;
     margin-right: 10px;
     cursor: pointer;
+    border: 1px solid blue;
 }
 
 #header1>div:nth-child(2) {
     flex-basis: 63%;
     margin-left: 10px;
+    border: 1px solid yellow;
 }
 
 #explore {
     border: none;
     cursor: pointer;
     font-size: 14px;
+    border: 1px solid red;
 }
 
 #header1>div>button {
     border: none;
     padding: 0 0 5px 3px;
     background-color: white;
-    font-size: 12px;
-    color: rgb(59, 58, 58);
+    font-size: 11px;
+    color: rgb(80, 79, 79);
     cursor: pointer;
+    /* border: 1px solid black; */
 }
 
 
@@ -55,42 +62,55 @@
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: 55px;
-    height: 325px;
+    height: 345px;
     padding: 0.1px;
 }
-
-#header2_1>div {
-    width: 46%;
-    margin: 8% auto;
+#searchBox{
+    width: 45%;
+    margin: 8% auto 6% auto;
 }
-#header2_1>div p{
+#searchBox p{
     font-size: 19px;
+    color: rgb(63, 62, 62);
 }
 
-#header2_1>div>input {
+#searchBox>input {
     border-radius: 25px;
-    padding: 10px;
-    width: 95%;
+    padding: 2% 8%;
+    width: 100%;
     font-size: 14px;
     border: none;
-    margin-top: 22px;
+    margin-top: 24px;
+    outline: none;
+    box-shadow: 0px 0px 0px 1px rgb(206, 206, 206);
+    font-size: 14px;
 }
-
+#header2_1_tag{
+    text-align: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+#header2_1_tag p{
+    font-size: 17px;
+}
 #slideshow {
-    width: 83%;
+    width: 82%;
     margin: auto;
-    margin-top: 14px;
+    margin-top: 22px;
 }
 
 #slideshow>img {
     width: 100%;
-    height: 235px;
+    height: 225px;
     cursor: pointer;
 }
 
 #global_box>div:nth-child(4) {
     width: 83%;
-    margin: 28px auto;
+    margin: 42px auto;
 }
 #productCont>div {
     display: flex;
@@ -98,10 +118,13 @@
 }
 #productCont>div h3{
     font-size: 18px;
+    margin-bottom: 8px;
+    overflow-y: unset;
 }
 #productCont>div>div>img {
     width: 100%;
-    border-radius: 8px;
+    border-radius: 8px 8px 0px 0px;
+    height: 220px;
 }
 
 #productCont>div>div>p{
@@ -111,17 +134,17 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 1; /* number of lines to show */
+    -webkit-line-clamp: 2; /* number of lines to show */
     -webkit-box-orient: vertical;
 }
 #productCont>div>div>h4{
-    margin: 10px 12px;
+    margin: 28px 12px 12px 12px;
     font-size: 16px;
     font-weight: 500;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 1; /* number of lines to show */
+    -webkit-line-clamp: 2; /* number of lines to show */
     -webkit-box-orient: vertical;
 }
 
@@ -132,4 +155,65 @@
     cursor: pointer;
     border-radius: 8px;
     padding: 0.1px;
+}
+.parrentWrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 575px){
+    #searchBox {
+        width: 90%;
+        margin: 8% auto 3% auto;
+    }
+    #header2_1{
+        height: 180px;
+    }
+    #slideshow>img {
+        height: 280px;
+    }
+    #productCont>div>div>img {
+        height: 120px;
+    }
+    #productCont>div{
+        overflow-x: scroll;
+        display: grid;
+        grid-template-columns: 220px 220px 220px;
+    }
+    #productCont>div::-webkit-scrollbar {
+        display: none;
+    }
+    #productCont>div h3{
+        overflow-y: unset;
+    }
+    #productCont>div > div {
+        width: 200px;
+    }
+}
+@media (min-width:575px) and (max-width: 950px) {
+    #header2_1{
+        height: 230px;
+    }
+    #searchBox {
+        width: 90%;
+        margin: 8% auto 3% auto;
+    }
+    #slideshow>img {
+        width: 100%;
+        height: 250px;
+    }
+    #productCont>div>div>img {
+        height: 130px;
+    }
+    #productCont>div{
+        overflow-x: scroll;
+        display: grid;
+        grid-template-columns: 220px 220px 220px;
+    }
+    #productCont>div::-webkit-scrollbar {
+        display: none;
+      }
+    #productCont>div > div {
+        width: 215px;
+    }
 }

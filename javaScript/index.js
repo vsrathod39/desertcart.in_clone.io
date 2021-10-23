@@ -1,8 +1,21 @@
 let header3_images = [
     'https://dc-marketing.s3.amazonaws.com/media/244800638Artboard_1.png',
-    'https://dc-marketing.s3.amazonaws.com/media/370593577Artboard_1.1.png',
+    // 'https://dc-marketing.s3.amazonaws.com/media/370593577Artboard_1.1.png',
 
-]
+];
+let arrTag = ["Over 100 Million items", "Secure & Convenient Shopping", "3 Day Shipping Available"];
+let tagImg = ['<img src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/30/000000/external-shopping-bags-miscellaneous-kiranshastry-gradient-kiranshastry.png"/>', '<img src="https://img.icons8.com/office/30/000000/private2--v1.png"/>', '<img src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/30/000000/external-flight-interface-kiranshastry-gradient-kiranshastry-1.png"/>']
+function header2_1TagLine(){
+    let tagCount = 0;
+    let header2_1_tag = document.getElementById("header2_1_tag");
+    setInterval( () => {
+        if(tagCount == 3)
+            tagCount = 0;
+        header2_1_tag.innerHTML = ` ${tagImg[tagCount]} <p>${arrTag[tagCount]}</p>`
+        tagCount++;
+    }, 3000)
+}
+header2_1TagLine();
 
 let interval;
 let container = document.getElementById('slideshow')
@@ -155,25 +168,29 @@ function show_product() {
 
     product_catagaries.forEach(function (product) {
 
-        let topDiv = document.createElement('div')
-        let head = document.createElement('h3')
-        head.textContent = product.heading
-        topDiv.append(head)
+        let topDiv = document.createElement('div');
+        topDiv.setAttribute("class", "topDiv");
+        let head = document.createElement('h3');
+        head.textContent = product.heading;
+        topDiv.append(head);
+        
+        let wrapperDiv = document.createElement('div');
+        wrapperDiv.setAttribute("class", "wrapperDiv");
 
-        let wrapperDiv = document.createElement('div')
+        let div1 = document.createElement('div');
+        div1.setAttribute("class", "childBox");
 
-        let div1 = document.createElement('div')
-
-        let img1 = document.createElement('img')
-        img1.src = product.img1
-        let name1 = document.createElement('h4')
-        name1.textContent = product.name1
-        let details1 = document.createElement('p')
-        details1.textContent = product.details1
-        div1.append(img1, name1, details1)
+        let img1 = document.createElement('img');
+        img1.src = product.img1;
+        let name1 = document.createElement('h4');
+        name1.textContent = product.name1;
+        let details1 = document.createElement('p');
+        details1.textContent = product.details1;
+        div1.append(img1, name1, details1);
 
 
-        let div2 = document.createElement('div')
+        let div2 = document.createElement('div');
+        div2.setAttribute("class", "childBox");
 
         let img2 = document.createElement('img')
         img2.src = product.img2
@@ -185,6 +202,7 @@ function show_product() {
 
 
         let div3 = document.createElement('div')
+        div3.setAttribute("class", "childBox");
 
         let img3 = document.createElement('img')
         img3.src = product.img3
@@ -215,14 +233,8 @@ function show_product() {
             };
         }
 
-        wrapperDiv.append(div1, div2, div3)
-
-        parent.append(topDiv, wrapperDiv)
-
-
-
-
-
+        wrapperDiv.append(div1, div2, div3);
+        parent.append(topDiv, wrapperDiv);
     })
 }
 
