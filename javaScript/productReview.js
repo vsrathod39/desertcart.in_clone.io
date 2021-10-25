@@ -1,9 +1,10 @@
 // Vikas Kumar - fw_12_132
-
+import {option, rightContainerJs} from "/components/options.js";
 let currentPro = JSON.parse(localStorage.getItem("disertCurrentItem"));
 
 function showProductImage(){
     let productImage = document.getElementById("productImage");
+    productImage.textContent = null;
 
     let img = document.createElement("img");
     img.src = currentPro[0].image;
@@ -14,6 +15,7 @@ function showProductImage(){
 
 function showProductLogo(){
     let productLogoImage = document.getElementById("productLogoImage");
+    productLogoImage.textContent = null;
     let img = document.createElement("img");
     img.src = currentPro[0].image;
     productLogoImage.append(img);
@@ -21,7 +23,9 @@ function showProductLogo(){
 
 function showPriceRating(){
     let priceId = document.getElementById("price");
+    priceId.textContent = null;
     let ratingId = document.getElementById("rating");
+    ratingId.textContent = null;
 
     let brand = document.createElement("p");
     brand.setAttribute("clsss", "textGreyColor")
@@ -51,8 +55,12 @@ function showPriceRating(){
     priceId.append(brand, price);
     ratingId.append(rating, wrapperInnerDiv2);
 
+    document.getElementById("showQuantity").value = currentPro[0].quantity;
+
     let btn = document.getElementById("cartButton");
+    btn.textContent = null;
     let btnCart = document.createElement("button");
+    btnCart.setAttribute("id", "currentPrice");
     btnCart.textContent = "Add to Cart " + "₹ " + currentPro[0].price[0] + "," + currentPro[0].price.substring(1,  currentPro[0].price.length);
     let cpr = "₹ " + currentPro[0].price[0] + "," + currentPro[0].price.substring(1,  currentPro[0].price.length);
     btn.append(btnCart);
@@ -63,7 +71,7 @@ function showPriceRating(){
 
 function showProductname(){
     let productName = document.getElementById("productName");
-
+    productName.textContent = null;
     let headding = document.createElement("h1");
     headding.textContent = currentPro[0].name;
 
@@ -74,6 +82,7 @@ let descriptionData = ["Pull On closure.", "Are Rinse by hand in warm water max 
 
 function showDescription(){
     let descriptionBox = document.getElementById("descriptionBox");
+    descriptionBox.textContent = null;
     let ul = document.createElement("ul");
 
     descriptionData.forEach(function(data){
@@ -110,6 +119,7 @@ let reviewData = [
 
 function showReview(){
     let reviewBox = document.getElementById("reviewBox");
+    reviewBox.textContent = null;
     reviewData.forEach(function(rev){
         let div = document.createElement("div");
 
@@ -139,8 +149,6 @@ function productReview(){
     showDescription();;
     showReview();
 }
-
-productReview()
 
 // add Item to cart
 if(localStorage.getItem("disertCartItem") === null){
@@ -182,26 +190,49 @@ function changePageToCart(b, c){
     b.textContent = "✓ Added " + c;
 }
 
-// let subQunt = document.getElementById("subtractQuantity");
-document.getElementById("subtractQuantity").addEventListener("click", subtractQuantity);
-// subQunt.addEventListener("click", subtractQuantity);
 function subtractQuantity(){
-    let curQuant = document.getElementById("showQuantity");
-    let temp = Number(curQuant.value);
-    if(temp < 2){
-        return false;
-    }
-    curQuant.value = temp - 1;
+        let curQuant = document.getElementById("showQuantity");
+        let temp = Number(curQuant.value);
+        if(temp < 2){
+            return false;
+        }
+        curQuant.value = temp - 1;
+        currentPro[0].quantity = temp - 1;  
+        currentPro[0].price =  String((temp - 1) * (currentPro[0].itemPrice));
+        console.log(typeof(currentPro[0].price), currentPro[0].price);
+        localStorage.setItem("disertCurrentItem", JSON.stringify(currentPro));
+        document.getElementById("currentPrice").textContent = "Add to Cart " + "₹ " + currentPro[0].price[0] + "," + currentPro[0].price.substring(1,  currentPro[0].price.length);
+}
+function addQuantity(){
+        let curQuant = document.getElementById("showQuantity");
+        let temp = Number(curQuant.value);
+        if(temp > 9){
+            return false;
+        }
+        curQuant.value = temp + 1;
+        currentPro[0].quantity = temp + 1;
+        currentPro[0].price =  String((temp + 1) * (currentPro[0].itemPrice));
+        console.log(typeof(currentPro[0].price), currentPro[0].price);
+        localStorage.setItem("disertCurrentItem", JSON.stringify(currentPro));
+        document.getElementById("currentPrice").textContent = "Add to Cart " + "₹ " + currentPro[0].price[0] + "," + currentPro[0].price.substring(1,  currentPro[0].price.length);
 }
 
-// let addQuant = document.getElementById("addQuantity");
-document.getElementById("addQuantity").addEventListener("click", addQuantity);
-// addQuant.addEventListener("click", addQuantity);
-function addQuantity(){
-    let curQuant = document.getElementById("showQuantity");
-    let temp = Number(curQuant.value);
-    if(temp > 9){
-        return false;
-    }
-    curQuant.value = temp + 1;
+function runCode(flag){
+    new Promise(function(resolve, reject){
+        if(flag){
+            document.getElementById("rightContainer").innerHTML = rightContainerJs();
+            return resolve("960+");
+        }
+        if(flag !== true){
+            document.getElementById("optionsJS").innerHTML =  option();
+            return resolve("960-");
+        }
+    })
+    .then((res) => {
+        console.log(res);
+        productReview();
+        document.getElementById("subtractQuantity").addEventListener("click", subtractQuantity);
+        document.getElementById("addQuantity").addEventListener("click", addQuantity);
+    });
 }
+export {runCode} ;

@@ -3,6 +3,7 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 body{
     color: rgba(0, 0, 0, 0.87);
@@ -25,6 +26,11 @@ body{
 /* left container */
 #leftContainer{
     width: 48%;
+    height: 500px;
+    overflow-y: scroll;
+}
+#leftContainer::-webkit-scrollbar {
+    display: none;
 }
 #leftTop{
     display: flex;
@@ -71,7 +77,7 @@ body{
     -webkit-box-orient: vertical;
 }
 #optionButton{
-    border: 1px solid rgb(90, 87, 87);
+    border: 1px solid rgb(223, 223, 223);
     padding: 15px;
     margin: 18px 0px;
     border-radius: 5px;
@@ -79,6 +85,11 @@ body{
 .buttonBox{
     display: flex;
     justify-content: space-between;
+    gap: 15px;
+    /* border: 1px solid red; */
+}
+.buttonBox::-webkit-scrollbar {
+    /* display: none; */
 }
 .buttonTitle{
     font-size: 15px;
@@ -87,7 +98,8 @@ body{
 }
 .buttons{
     border: 1px solid rgb(90, 87, 87);
-    width: 14%;
+    /* width: 14%; */
+    width: 75px;
     height: 60px;
     display: flex;
     justify-content: center;
@@ -95,6 +107,10 @@ body{
     text-align: center;
     border-radius: 5px;
     cursor: pointer;
+    /* border: 1px solid red; */
+}
+.buttons:hover{
+    background-color: rgb(245, 245, 245);
 }
 .buttonBox > div:first-child{
     border-radius: 50%;
@@ -115,11 +131,13 @@ body{
     align-items: center;
     font-size: 18px;
     cursor: pointer;
+    border: 1px solid rgb(223, 223, 223);
+    border-radius: 5px;
 }
-#cartButton{
+.cartButtonCss{
     width: 68%;
 }
-#cartButton button{
+.cartButtonCss button{
     width: 100%;
     padding: 12px 0;
     background-color: #5eb2d9;
@@ -141,7 +159,7 @@ body{
     justify-content: center;
     align-items: center;
     text-align: center;
-    border: 1px solid rgb(90, 87, 87);
+    border: 1px solid rgb(223, 223, 223);
     border-radius: 5px;
 }
 #descriptionBox{
@@ -170,4 +188,50 @@ body{
 }
 #boldSub{
     font-weight: bold;
+}
+#selectOptions{
+    border: 1px solid rgb(228, 228, 228);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0px;
+    left:10%;
+    width: 80%;
+    margin: auto;
+    border-radius: 5px;
+    background-color: whitesmoke;
+}
+#options960px{
+    width: 28%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#options960px button{
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(190, 190, 190);
+    border-radius: 5px;
+}
+#optionsJS{
+    position: fixed;
+    bottom: 50px;
+    left: 10%;
+    background-color: whitesmoke;
+    width: 80%;
+    display: none;
+}
+@media (max-width: 960px) {
+    #golabalProduct{
+        display: flex;
+        flex-direction: column;
+    }
+    #leftContainer{
+        width: 100%;
+    }
+    #rightContainer{
+        /* width: 100%; */
+        display: none;
+    }
 }
