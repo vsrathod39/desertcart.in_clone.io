@@ -2,9 +2,6 @@
 
 let currentPro = JSON.parse(localStorage.getItem("disertCurrentItem"));
 
-
-// let productLogo = document.getElementById("productLogo");
-
 function showProductImage(){
     let productImage = document.getElementById("productImage");
 
@@ -153,12 +150,27 @@ if(localStorage.getItem("disertCartItem") === null){
 function changePageToCart(b, c){
     let cartItemArr = JSON.parse(localStorage.getItem("disertCartItem"));
     let itemArrThis = JSON.parse(localStorage.getItem("disertCurrentItem"));
+    let curQuant = document.getElementById("showQuantity");
+    if(Number(curQuant.value) > 0){
+        itemArrThis[0].quantity = Number(curQuant.value);
+    }else{
+        alert(curQuant.value + " Please select quantity!")
+        return false;
+    }
     let flag = true;
     for(let i = 0; i < cartItemArr.length; i++){
-        if(itemArrThis[0].image == cartItemArr[i].image){
+        if(itemArrThis[0].image == cartItemArr[i].image && itemArrThis[0].quantity == cartItemArr[i].quantity){
             flag = false;
             alert("Item already added, please visit cart!");
             break;
+        }
+        else{
+            if(itemArrThis[0].image == cartItemArr[i].image && itemArrThis[0].quantity !== cartItemArr[i].quantity){
+                cartItemArr[i].quantity = Number(curQuant.value);
+                flag = false;
+                alert("Quantity updated, please visit cart!");
+                break;
+            }
         }
     }
     if(flag){
@@ -168,4 +180,28 @@ function changePageToCart(b, c){
     }
 
     b.textContent = "✓ Added " + c;
+}
+
+// let subQunt = document.getElementById("subtractQuantity");
+document.getElementById("subtractQuantity").addEventListener("click", subtractQuantity);
+// subQunt.addEventListener("click", subtractQuantity);
+function subtractQuantity(){
+    let curQuant = document.getElementById("showQuantity");
+    let temp = Number(curQuant.value);
+    if(temp < 2){
+        return false;
+    }
+    curQuant.value = temp - 1;
+}
+
+// let addQuant = document.getElementById("addQuantity");
+document.getElementById("addQuantity").addEventListener("click", addQuantity);
+// addQuant.addEventListener("click", addQuantity);
+function addQuantity(){
+    let curQuant = document.getElementById("showQuantity");
+    let temp = Number(curQuant.value);
+    if(temp > 9){
+        return false;
+    }
+    curQuant.value = temp + 1;
 }

@@ -87,9 +87,18 @@ body{
     width: 93%;
     background-color: rgb(235, 235, 235);
 }
-
-
-
+#showQuantity{
+    width: 35px;
+    text-align: center;
+    border: none;
+    outline: none;
+}
+#subtractQuantity{
+    cursor: pointer;
+}
+#addQuantity{
+    cursor: pointer;
+}
 /* right_part */
 #cartDetails{
     width: 42%;

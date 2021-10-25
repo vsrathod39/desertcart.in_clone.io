@@ -66,10 +66,15 @@ function showProduct(){
         let divCount = document.createElement("div");
         divCount.setAttribute("id", "divCount");
         let p1 = document.createElement("p");
+        p1.setAttribute("id", "subtractQuantity");
         p1.textContent = "-";
-        let p2 = document.createElement("p");
+        let p2 = document.createElement("input");
+        p2.setAttribute("id", "showQuantity");
+        p2.type = "number";
+        p2.value = pro.quantity;
         p2.textContent = "1";
         let p3 = document.createElement("p");
+        p3.setAttribute("id", "addQuantity")
         p3.textContent = "+";
         divCount.append(p1, p2, p3)
 
@@ -342,4 +347,26 @@ function paymentConfermation(){
         }, 10000);
     }
     return false;
+}
+
+let subQunt = document.getElementById("subtractQuantity");
+subQunt.addEventListener("click", subtractQuantity)
+function subtractQuantity(){
+    let curQuant = document.getElementById("showQuantity");
+    let temp = Number(curQuant.value);
+    if(temp < 2){
+        return false;
+    }
+    curQuant.value = temp - 1;
+}
+
+let addQuant = document.getElementById("addQuantity");
+addQuant.addEventListener("click", addQuantity)
+function addQuantity(){
+    let curQuant = document.getElementById("showQuantity");
+    let temp = Number(curQuant.value);
+    if(temp > 9){
+        return false;
+    }
+    curQuant.value = temp + 1;
 }
