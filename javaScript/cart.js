@@ -136,7 +136,7 @@ function removeCartItem(e){
     cartPro = tempArr;
     localStorage.setItem("disertCartItem", JSON.stringify(cartPro));
     product.innerHTML = null;
-    showProduct();
+    location.reload();
 }
 
 // delevery form
