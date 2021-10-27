@@ -100,6 +100,22 @@
 #header2_1_tag p{
     font-size: 17px;
 }
+#navCart{
+    display: flex;
+    height: 30px;
+    margin: 8px;
+}
+#navCart img{
+    margin: 0;
+    padding: 0;
+}
+#navCart p{
+    font-size: small;
+    height: 25px;
+    padding: 3px;
+    border-radius: 50%;
+    background-color: #5eb2d9;
+}
 #slideshow {
     width: 82%;
     margin: auto;

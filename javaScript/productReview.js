@@ -175,8 +175,10 @@ function changePageToCart(b, c){
         else{
             if(itemArrThis[0].image == cartItemArr[i].image && itemArrThis[0].quantity !== cartItemArr[i].quantity){
                 cartItemArr[i].quantity = Number(curQuant.value);
+                localStorage.setItem("disertCartItem", JSON.stringify(cartItemArr));
                 flag = false;
                 alert("Quantity updated, please visit cart!");
+                location.reload()
                 break;
             }
         }
@@ -185,6 +187,7 @@ function changePageToCart(b, c){
         cartItemArr.push(itemArrThis[0]);
         localStorage.setItem("disertCartItem", JSON.stringify(cartItemArr));
         alert("Item added to cart, please visit cart!")
+        location.reload()
     }
 
     b.textContent = "✓ Added " + c;

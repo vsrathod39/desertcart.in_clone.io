@@ -4,6 +4,7 @@ let cartPro = JSON.parse(localStorage.getItem("disertCartItem"));
 
 function showProduct(){
     let product = document.getElementById("productDetails");
+    product.textContent = null;
 
     if(cartPro.length == 0){
         let h3Null = document.createElement("h3");
@@ -58,24 +59,26 @@ function showProduct(){
         let removeBtn = document.createElement("button");
         removeBtn.textContent = "Remove";
         removeBtn.setAttribute("id", pro.image);
-        removeBtn.onclick = function (e){
-            removeCartItem(e);
+        removeBtn.onclick = function (){
+            removeCartItem(this.id);
         }
 
         // ------------------------------
         let divCount = document.createElement("div");
         divCount.setAttribute("id", "divCount");
-        let p1 = document.createElement("p");
-        p1.setAttribute("id", "subtractQuantity");
+        let p1 = document.createElement("button");
         p1.textContent = "-";
         let p2 = document.createElement("input");
-        p2.setAttribute("id", "showQuantity");
-        p2.type = "number";
+        p2.setAttribute("class", "showQuantity");
+        // let tempId = Date.now();
+        // p2.setAttribute("id", tempId);
+        p2.type = "text";
         p2.value = pro.quantity;
-        p2.textContent = "1";
-        let p3 = document.createElement("p");
-        p3.setAttribute("id", "addQuantity")
+        let p3 = document.createElement("button");
         p3.textContent = "+";
+        // p3.onclick = () =>{
+        //     addQuantity(tempId);  
+        // }
         divCount.append(p1, p2, p3)
 
         let divFit = document.createElement("div");
@@ -122,10 +125,11 @@ showProduct();
 
 // remove cart item one by one
 function removeCartItem(e){
+    console.log(e);
     let product = document.getElementById("productDetails");
     let tempArr = [];
     for(let i = 0; i < cartPro.length; i++){
-        if(cartPro[i].image != e.target.id){
+        if(cartPro[i].image != e){
             tempArr.push(cartPro[i]);
         }
     }
@@ -139,7 +143,9 @@ function removeCartItem(e){
 
 let cnfButton = document.getElementById("cnfButton");
 if(cartPro.length != 0){
-    cnfButton.addEventListener("click", myForm);
+    cnfButton.addEventListener('click', () => {
+        myForm(document.getElementById("cartDetails"));
+    });
 }
 else{
     if(cartPro.length == 0)
@@ -150,19 +156,22 @@ function blankSMS(){
     alert("No item in the cart");
 }
 
-function myForm(){
+function myForm(formParrent){
     let subFont = document.getElementById("subFont");
 
     let headTitle = document.createElement("p");
     headTitle.setAttribute("id", "subFont");
     headTitle.textContent = "Select your Delivery Address";
 
-    let formParrent = document.getElementById("cartDetails");
+    // let formParrent = document.getElementById("globalContainer");
     formParrent.innerHTML = null;
 
     let myForm = document.createElement("form");
     myForm.setAttribute("id", "addressForm");
-    myForm.setAttribute("onsubmit", "return setDeliveryLocation()")
+    // myForm.setAttribute("onsubmit", "setDeliveryLocation(event)")
+    myForm.addEventListener('submit', function(e) {
+        setDeliveryLocation(e, formParrent);
+      });
 
     let fName = document.createElement("input");
     fName.setAttribute("class", "inputBox");
@@ -224,15 +233,17 @@ function myForm(){
     return false;
 }
 
-function setDeliveryLocation(){
-    let addressForm = document.forms["addressForm"];
+function setDeliveryLocation(e, formParrent){
+    e.preventDefault();
+    let addressForm = document.getElementById("addressForm");
+    // forms["addressForm"];
 
     if(addressForm.firstName.value.trim().length == 0 || addressForm.lastName.value.trim().length == 0 || addressForm.address.value.trim().length == 0 || addressForm.city.value.trim().length == 0 || addressForm.state.value.trim().length == 0 || addressForm.pinCode.value.trim().length == 0 || addressForm.phone.value.trim().length == 0 || addressForm.email.value.trim().length == 0){
         alert("any one or all from the field is empty, please fill all the fields!");
     }
     else{
         alert("Delivery address added successful, please make payment!")
-        let formParrent = document.getElementById("cartDetails");
+        // let formParrent = document.getElementById("globalContainer");
         formParrent.innerHTML = null;
 
         let headTitle = document.createElement("p");
@@ -241,7 +252,9 @@ function setDeliveryLocation(){
 
         let div = document.createElement("div");
         div.setAttribute("id", "bebitCard")
-        div.addEventListener("click", paymentForm)
+        div.addEventListener('click', () => {
+            paymentForm(formParrent);
+        })
         let img = document.createElement("img");
         img.src = "https://img.icons8.com/ios-filled/40/000000/bank-card-front-side.png";
         let p = document.createElement("p");
@@ -250,15 +263,17 @@ function setDeliveryLocation(){
 
         formParrent.append(headTitle, div);
     }
-    return false;
+    // return false;
 }
 
-function paymentForm(){
-    let formParrent = document.getElementById("cartDetails");
+function paymentForm(formParrent){
+    // let formParrent = document.getElementById("globalContainer");
 
     let payForm = document.createElement("form");
     payForm.setAttribute("id", "payForm");
-    payForm.setAttribute("onsubmit", "paymentConfermation(); return false")
+    payForm.addEventListener('submit', function(e){
+        paymentConfermation(e, formParrent);
+    })
 
     let lCard = document.createElement("label");
     lCard.setAttribute("for", "card");
@@ -312,8 +327,10 @@ function paymentForm(){
     return false;
 }
 
-function paymentConfermation(){
-    let addressForm = document.forms["payForm"];
+function paymentConfermation(e, formParrent){
+    e.preventDefault();
+    let addressForm = document.getElementById("payForm");
+    // forms["payForm"];
 
     if(addressForm.card.value.trim().length == 0 || addressForm.expDate.value.trim().length == 0 || addressForm.cvv.value.trim().length == 0 || addressForm.chName.value.trim().length == 0 ){
         alert("any one or all from the field is empty, please fill all the fields!");
@@ -335,7 +352,7 @@ function paymentConfermation(){
             h1.textContent = "Payment Sucess.";
             h1.setAttribute("id", "paymentText");
             let p = document.createElement("p");
-            p.textContent = "redirecting to cart in 5sec..."
+            p.textContent = "redirecting to Home in 5sec..."
             globalContainer.append(h1, p);
             cartPro = [];
             localStorage.setItem("disertCartItem", JSON.stringify([]));
@@ -343,30 +360,31 @@ function paymentConfermation(){
 
         let goToCartPage = setInterval(() => {
             clearInterval(goToCartPage);
-            window.location.href = "cart.html";
+            window.location.href = "./index.html";
         }, 10000);
     }
-    return false;
+    // return false;
 }
 
-let subQunt = document.getElementById("subtractQuantity");
-subQunt.addEventListener("click", subtractQuantity)
-function subtractQuantity(){
-    let curQuant = document.getElementById("showQuantity");
-    let temp = Number(curQuant.value);
-    if(temp < 2){
-        return false;
-    }
-    curQuant.value = temp - 1;
-}
+// let subQunt = document.getElementById("subtractQuantity");
+// subQunt.addEventListener("click", subtractQuantity)
+// function subtractQuantity(){
+//     let curQuant = document.getElementById("showQuantity");
+//     let temp = Number(curQuant.value);
+//     if(temp < 2){
+//         return false;
+//     }
+//     curQuant.value = temp - 1;
+// }
 
-let addQuant = document.getElementById("addQuantity");
-addQuant.addEventListener("click", addQuantity)
-function addQuantity(){
-    let curQuant = document.getElementById("showQuantity");
-    let temp = Number(curQuant.value);
-    if(temp > 9){
-        return false;
-    }
-    curQuant.value = temp + 1;
-}
+// function addQuantity(e){
+//     let curQuant = document.getElementById(e).value;
+//     curQuant = Number(curQuant);
+//     if(curQuant > 9){
+//         return false;
+//     }
+//     curQuant.value = String(curQuant + 1);
+//     console.log(e, typeof(curQuant));
+// }
+
+export {showProduct, paymentForm, myForm} ;

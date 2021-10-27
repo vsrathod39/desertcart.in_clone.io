@@ -9,10 +9,6 @@
     <link rel="stylesheet" href="CSS/index.css">
     <link rel="stylesheet" href="CSS/footer.css">
     <link rel="stylesheet" href="CSS/cart.css">
-    <!-- <link rel="stylesheet" href="CSS/creataccount.css"> -->
-    <!-- <link rel="stylesheet" href="CSS/productReview.css"> -->
-    <!-- <link rel="stylesheet" href="css/signin.css"> -->
-    <!-- <link rel="stylesheet" href="css/summerClothes.css"> -->
 </head>
 <body>
     <!-- Nav -->
@@ -41,7 +37,7 @@
         <div id="creatAc">
             <button onclick="creatAccount()"> Or Creat an Account</button>
         </div>
-        <div>
+        <div id="navCart">
             <img src="https://img.icons8.com/ios/48/000000/shopping-cart.png" class="headerIcon" onclick="goToCart()" id="cart">
         </div>
     </div>
@@ -49,11 +45,8 @@
     <div id="globalContainer">
         <div id="productDetails">
             <div>
-                <!-- <p>Estimated Delivery Oct 13 to Oct 21</p> -->
-            </div>
-            <!-- <div id="product"> -->
 
-            <!-- </div> -->
+            </div>
         </div>
         <div id="cartDetails">
             <p id="subFont">Select your Shipping Method</p>
@@ -79,6 +72,9 @@
                 <button id="cnfButton">Confirm</button>
             </div>
         </div>
+    </div>
+    <div id="payForm">
+
     </div>
     <!-- Footer -->
      <!-- footer -->
@@ -184,9 +180,46 @@
     </div>
 </body>
 </html>
+<script type="module">
+    import {paymentBtn, shipping} from "./components/cartPayment.js";
+    import {showProduct, paymentForm, myForm} from "./javaScript/cart.js";
+    let screenWidth = screen.width;
+    setInterval(() =>{
+        if(window.innerWidth !== screenWidth){
+            screenWidth = window.innerWidth;
+            new Promise((resolve, reject) =>{
+                if(screenWidth < 960){
+                    document.getElementById("cartDetails").innerHTML = null;
+                    document.getElementById("payForm").innerHTML = paymentBtn();
+                    document.getElementById("cnfButton").addEventListener("click", showForm);
+                    return resolve("ok");
+                }
+                if(screenWidth >= 961){
+                    location.reload()
+                }
+            })
+            .then((res) => {
+                console.log(res);
+            });
+        }
+    }, 1000);
 
+
+    let count = 0;
+    function showForm(){
+        document.getElementById("globalContainer").innerHTML = null;
+        if(count == 0){
+            document.getElementById("globalContainer").innerHTML = shipping();
+            count++;
+        }
+        if(count == 1){
+            myForm(document.getElementById("globalContainer"));
+            document.getElementById("payForm").style.display = "none";
+            count++;
+        }
+    }
+</script>
 <script src="javaScript/index.js"></script>
-<script src="javaScript/cart.js"></script>
 <script src="javaScript/creataccount.js"></script>
 <script src="javaScript/productReview.js"></script>
 <script src="javaScript/summerClothes.js"></script>

@@ -88,9 +88,6 @@ body{
     gap: 15px;
     /* border: 1px solid red; */
 }
-.buttonBox::-webkit-scrollbar {
-    /* display: none; */
-}
 .buttonTitle{
     font-size: 15px;
     font-weight: 600;

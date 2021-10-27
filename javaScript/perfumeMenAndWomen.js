@@ -583,6 +583,8 @@ function changePage(e){
             }
         })
     }
+    itemArr[0].quantity = 1;
+    itemArr[0].itemPrice = itemArr[0].price;
     localStorage.setItem("disertCurrentItem", JSON.stringify(itemArr));
     window.location.href = "productReview.html"
 }
