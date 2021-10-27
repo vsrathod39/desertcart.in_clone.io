@@ -168,7 +168,6 @@ function myForm(formParrent){
 
     let myForm = document.createElement("form");
     myForm.setAttribute("id", "addressForm");
-    // myForm.setAttribute("onsubmit", "setDeliveryLocation(event)")
     myForm.addEventListener('submit', function(e) {
         setDeliveryLocation(e, formParrent);
       });
@@ -236,14 +235,12 @@ function myForm(formParrent){
 function setDeliveryLocation(e, formParrent){
     e.preventDefault();
     let addressForm = document.getElementById("addressForm");
-    // forms["addressForm"];
 
     if(addressForm.firstName.value.trim().length == 0 || addressForm.lastName.value.trim().length == 0 || addressForm.address.value.trim().length == 0 || addressForm.city.value.trim().length == 0 || addressForm.state.value.trim().length == 0 || addressForm.pinCode.value.trim().length == 0 || addressForm.phone.value.trim().length == 0 || addressForm.email.value.trim().length == 0){
         alert("any one or all from the field is empty, please fill all the fields!");
     }
     else{
         alert("Delivery address added successful, please make payment!")
-        // let formParrent = document.getElementById("globalContainer");
         formParrent.innerHTML = null;
 
         let headTitle = document.createElement("p");
@@ -263,11 +260,9 @@ function setDeliveryLocation(e, formParrent){
 
         formParrent.append(headTitle, div);
     }
-    // return false;
 }
 
 function paymentForm(formParrent){
-    // let formParrent = document.getElementById("globalContainer");
 
     let payForm = document.createElement("form");
     payForm.setAttribute("id", "payForm");
@@ -343,8 +338,6 @@ function paymentConfermation(e, formParrent){
         h1.textContent = "Payment processing...";
         globalContainer.append(h1);
 
-        // globalContainer.append(p);
-
         let itr = setInterval(() => {
             clearInterval(itr);
             alert("Payment Sucessfull")
@@ -363,7 +356,6 @@ function paymentConfermation(e, formParrent){
             window.location.href = "./index.html";
         }, 10000);
     }
-    // return false;
 }
 
 // let subQunt = document.getElementById("subtractQuantity");

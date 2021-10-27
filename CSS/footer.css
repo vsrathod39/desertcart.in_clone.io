@@ -67,7 +67,6 @@
     display: flex;
     color: rgb(85, 85, 85);
     font-size: 11px;
-    /* justify-content: space-around; */
 }
 #wrapper{
     display: grid;

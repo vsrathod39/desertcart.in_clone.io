@@ -10,7 +10,6 @@ document.getElementById("navCart").append(currentQuatity);
 
 let header3_images = [
     'https://dc-marketing.s3.amazonaws.com/media/244800638Artboard_1.png',
-    // 'https://dc-marketing.s3.amazonaws.com/media/370593577Artboard_1.1.png',
 
 ];
 let arrTag = ["Over 100 Million items", "Secure & Convenient Shopping", "3 Day Shipping Available"];

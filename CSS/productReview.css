@@ -86,7 +86,6 @@ body{
     display: flex;
     justify-content: space-between;
     gap: 15px;
-    /* border: 1px solid red; */
 }
 .buttonTitle{
     font-size: 15px;
@@ -95,7 +94,6 @@ body{
 }
 .buttons{
     border: 1px solid rgb(90, 87, 87);
-    /* width: 14%; */
     width: 75px;
     height: 60px;
     display: flex;
@@ -104,7 +102,6 @@ body{
     text-align: center;
     border-radius: 5px;
     cursor: pointer;
-    /* border: 1px solid red; */
 }
 .buttons:hover{
     background-color: rgb(245, 245, 245);
@@ -228,7 +225,6 @@ body{
         width: 100%;
     }
     #rightContainer{
-        /* width: 100%; */
         display: none;
     }
 }
