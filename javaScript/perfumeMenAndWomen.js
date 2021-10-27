@@ -22,7 +22,7 @@ let productData = [
         brand: "narciso rodriguez",
         rating: "4.3",
         price: "10729",
-        origin: "USA"
+        origin: "DC"
     },
     {
         image: "https://m.media-amazon.com/images/I/81rCpHUgmOL.jpg",
@@ -30,7 +30,7 @@ let productData = [
         brand: "Narciso Rodriguez",
         rating: "4.5",
         price: "12589",
-        origin: "USA"
+        origin: "DC"
     },
     {
         image: "https://m.media-amazon.com/images/I/51hOYqg9ukL.jpg",
@@ -70,7 +70,7 @@ let productData = [
         brand: "alfamrker",
         rating: "3.7",
         price: "4559",
-        origin: "USA"
+        origin: "India"
     },
     {
         image: "https://m.media-amazon.com/images/I/61GD8fcpjTL.jpg",
@@ -201,7 +201,7 @@ let productData2 = [
         brand: "Narciso Rodriguez",
         rating: "3.9",
         price: "23349",
-        origin: "USA"
+        origin: "India"
     },
     {
         image: "https://m.media-amazon.com/images/I/51EQAIUqCyL.jpg",
@@ -249,7 +249,7 @@ let productData2 = [
         brand: "narciso rodriguez",
         rating: "4.5",
         price: "11349",
-        origin: "UAE"
+        origin: "DC"
     },
     {
         image: "https://m.media-amazon.com/images/I/51jzmjSFSlL.jpg",
@@ -289,7 +289,7 @@ let productData2 = [
         brand: "",
         rating: "4.7",
         price: "10159",
-        origin: "USA"
+        origin: "DC"
     },
     {
         image: "https://images-na.ssl-images-amazon.com/images/I/816B51Ea8bL.SS150.jpg",
@@ -305,7 +305,7 @@ let productData2 = [
         brand: "Narciso Rodriguez",
         rating: "4.6",
         price: "10499",
-        origin: "USA",
+        origin: "DC",
     }
 ]
 
@@ -378,9 +378,11 @@ showProducts(productData2, womenContainer);
 let sortPrice = document.getElementById("price");
 sortPrice.addEventListener("change", sortByPrice);
 let sortCountry = document.getElementById("country");
+sortCountry.addEventListener("change", sortByCountry);
+let sortRating = document.getElementById("rating");
+sortRating.addEventListener("change", sortByRating)
 
 function sortByPrice(){
-    console.log(this.value);
     let menArr = [];
     let womenArr = [];
 
@@ -449,6 +451,111 @@ function sortByPrice(){
 
 }
 
+function sortByCountry(){
+    let menArr = [];
+    let womenArr = [];
+
+    switch(this.value){
+        case "any":
+            showProducts(productData, menContainer);
+            showProducts(productData2, womenContainer);
+            break;
+        case "uk":
+            
+            productData.forEach(function(element){
+                if(element.origin == "UK")
+                 menArr.push(element);
+            });
+            
+            productData2.forEach(function(element){
+                if(element.origin == "UK")
+                womenArr.push(element);
+            });
+            showProducts(menArr, menContainer);
+            showProducts(womenArr, womenContainer);
+            break;
+        case "usa":
+            
+            productData.forEach(function(element){
+                if(element.origin == "USA")
+                 menArr.push(element);
+            });
+            
+            productData2.forEach(function(element){
+                if(element.origin == "USA")
+                womenArr.push(element);
+            });
+            showProducts(menArr, menContainer);
+            showProducts(womenArr, womenContainer);
+            break;
+        case "india":
+            
+            productData.forEach(function(element){
+                if(element.origin == "India")
+                 menArr.push(element);
+            });
+            
+            productData2.forEach(function(element){
+                if(element.origin == "India")
+                womenArr.push(element);
+            });
+            showProducts(menArr, menContainer);
+            showProducts(womenArr, womenContainer);
+            break;
+        case "dc":
+            
+            productData.forEach(function(element){
+                if(element.origin == "DC")
+                 menArr.push(element);
+            });
+            
+            productData2.forEach(function(element){
+                if(element.origin == "DC")
+                womenArr.push(element);
+            });
+            showProducts(menArr, menContainer);
+            showProducts(womenArr, womenContainer);
+            break;
+    }   
+}
+
+function sortByRating(){
+    let menArr = [];
+    let womenArr = [];
+
+    switch(this.value){
+        case "any":
+            showProducts(productData, menContainer);
+            showProducts(productData2, womenContainer);
+            break;
+        case "High-Low":
+            menArr = productData.sort( (a, b) => {return b.rating - a.rating});
+            womenArr = productData2.sort( (a, b) => {return b.rating - a.rating})
+            showProducts(menArr, menContainer);
+            showProducts(womenArr, womenContainer);
+            break;
+        case "Low-High":
+            menArr = productData.sort( (a, b) => {return a.rating - b.rating});
+            womenArr = productData2.sort( (a, b) => {return a.rating - b.rating})
+            showProducts(menArr, menContainer);
+            showProducts(womenArr, womenContainer);
+            break;
+        case "4to5":
+            
+            productData.forEach(function(element){
+                if(element.rating >= 4)
+                 menArr.push(element);
+            });
+            
+            productData2.forEach(function(element){
+                if(element.rating >= 4)
+                womenArr.push(element);
+            });
+            showProducts(menArr, menContainer);
+            showProducts(womenArr, womenContainer);
+            break;
+    }  
+}
 // adding Item to cart dataBase and switch page
 if(localStorage.getItem("disertCurrentItem") === null){
     localStorage.setItem("disertCurrentItem", JSON.stringify([]));
@@ -476,6 +583,8 @@ function changePage(e){
             }
         })
     }
+    itemArr[0].quantity = 1;
+    itemArr[0].itemPrice = itemArr[0].price;
     localStorage.setItem("disertCurrentItem", JSON.stringify(itemArr));
     window.location.href = "productReview.html"
 }

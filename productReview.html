@@ -6,14 +6,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Online Shopping Store in India</title>
+=======
+    <title>Clothes</title>
+    <link rel="shortcut icon" href="https://cdn.desertcart.com/images/logo57.png" type="image/x-icon">
+>>>>>>> 60d093331a623b4b6946147a4fa03bf56ca4525a
     <link rel="stylesheet" href="CSS/index.css">
     <link rel="stylesheet" href="CSS/footer.css">
-    <!-- <link rel="stylesheet" href="css/cart.css"> -->
-    <!-- <link rel="stylesheet" href="CSS/creataccount.css"> -->
     <link rel="stylesheet" href="CSS/productReview.css">
-    <!-- <link rel="stylesheet" href="css/signin.css"> -->
-    <!-- <link rel="stylesheet" href="css/summerClothes.css"> -->
 </head>
 <body>
     <!-- Nav -->
@@ -30,7 +31,10 @@
                 <option value="him">Him</option>
             </select>
         </div>
-        <div>
+        <div id="navSearchBox">
+            <input type="text" placeholder="Search for any product..." name="" id="">
+        </div>
+        <div id="blobalIcon">
             <img src="https://cdn-icons-png.flaticon.com/24/876/876759.png" class="headerIcon" id="lang">
         </div>
         <div id="signIn">
@@ -39,7 +43,7 @@
         <div id="creatAc">
             <button onclick="creatAccount()"> Or Creat an Account</button>
         </div>
-        <div>
+        <div id="navCart">
             <img src="https://img.icons8.com/ios/48/000000/shopping-cart.png" class="headerIcon" onclick="goToCart()" id="cart">
         </div>
     </div>
@@ -90,207 +94,200 @@
 
         <!-- Right Container -->
         <div id="rightContainer">
-            <div id="productName">
-
-            </div>
-            <div id="optionButton">
-                <div class="buttonTitle">
-                    <p>Size</p>
-                </div>
-                <div class="buttonBox">
-                    <div class="buttons">
-                        <img src="https://img.icons8.com/external-becris-lineal-becris/24/000000/external-left-arrow-mintab-for-ios-becris-lineal-becris.png" alt="">
-                    </div>
-                    <div class="buttons">
-                        <p>Medium</p>
-                    </div>
-                    <div class="buttons">
-                        <p>Small</p>
-                    </div>
-                    <div class="buttons">
-                        <p>X-Large</p>
-                    </div>
-                    <div class="buttons">
-                        <p>XX-Large</p>
-                    </div>
-                    <div class="buttons">
-                        <img src="https://img.icons8.com/ios/30/000000/more-than.png" alt="">
-                    </div>
-                </div>
-
-                <div class="buttonTitle">
-                    <p>Color</p>
-                </div>
-                <div class="buttonBox">
-                    <div class="buttons">
-                        <img src="https://img.icons8.com/external-becris-lineal-becris/24/000000/external-left-arrow-mintab-for-ios-becris-lineal-becris.png" alt="">
-                    </div>
-                    <div class="buttons">
-                        <p>Oxford Gray</p>
-                    </div>
-                    <div class="buttons">
-                        <p>Surf the web</p>
-                    </div>
-                    <div class="buttons">
-                        <p>Ultra Marine</p>
-                    </div>
-                    <div class="buttons">
-                        <p>Light Blue</p>
-                    </div>
-                    <div class="buttons">
-                        <img src="https://img.icons8.com/ios/30/000000/more-than.png" alt="">
-                    </div>
-                </div>
-
-                <div class="buttonTitle">
-                    <p>Quantity</p>
-                </div>
-                <div id="addToCartBtn">
-                    <div id="quantityBox">
-                        <p>-</p>
-                        <p>1</p>
-                        <p>+</p>
-                    </div>
-                    <div id="cartButton">
-                        <!-- <button>Add to Cart</button> -->
-                    </div>
-                </div>
-                <p>Get it to INDIA by Oct 13 to Oct 21 with standard delivery.</p>
-            </div>
-            <div>
-                <div id="miscellaneous">
-                    <div class="miscellaneousBox">
-                        <div>
-                            <img src="https://img.icons8.com/external-tulpahn-detailed-outline-tulpahn/30/000000/external-delivery-box-online-shopping-tulpahn-detailed-outline-tulpahn.png"/>
-                        </div>
-                        <div>
-                            <p>Free Delivery to INDIA</p>
-                        </div>
-                    </div>
-                    <div class="miscellaneousBox">
-                        <div>
-                            <img src="https://img.icons8.com/material-outlined/24/000000/rotate.png"/>
-                        </div>
-                        <div>
-                            <p>Easy Returns & Exchanges</p>
-                        </div>
-                    </div>
-                    <div class="miscellaneousBox">
-                        <div>
-                            <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/30/000000/external-message-chat-flatart-icons-outline-flatarticons-6.png"/>
-                        </div>
-                        <div>
-                            <p>Ask About This Product</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    
         </div>
     </div>
     <div id="disclaimer">
         <p>Disclaimer: The price shown above includes all applicable taxes and fees. The information provided above is for reference purposes only. Products may go out of stock and delivery estimates may change at any time. Desertcart does not validate any claims made in the product descriptions above. For additional information, please contact the manufacturer or desertcart customer service. While desertcart makes reasonable efforts to only show products available in your country, some items may be cancelled if they are prohibited for import in India. For more details, please visit our Support Page.</p>
     </div>
+    <div id="optionsJS">
 
+    </div>
+    <div id="selectOptions">
+        <div id="options960px">
+            <button onclick="showProductDetails()">Select Options</button>
+        </div>
+        <div id="cartButton" class="cartButtonCss">
+
+        </div>
+    </div>
     <!-- Footer -->
-    <div class="footer">
-        <div class="box">
-            <div class="footer1">
-                <div class="help" >
-                <h3 class="textfotter"><a href="">Need Help ?</a></h3>
-                <p >We'd love to Help you out!
-                    support@desertcart.com</p>
+     <!-- footer -->
+     <div id="footer">
+        <!-- Top horizontal box -->
+        <div id="footerTopBox">
+            <div class="childTopFooter">
+                <div id="childTopFooterSUbBx"> 
+                    <h3><a href="">Need Help ?</a></h3>
+                    <p>We'd love to Help you out!</p>
+                    <p>support@desertcart.com</p>
                 </div>
             </div>
-            <div class="footer1">
-                <div class="help">
+            <div class="childTopFooter">
+                <div>
                     <img src="https://img.icons8.com/external-those-icons-lineal-those-icons/128/000000/external-call-mobile-telephone-those-icons-lineal-those-icons.png"/>
                 </div>
-                <div class="help" >
-                <h3 class="textfotter"><a href="">Phone Support</a></h3> 
-                <p >123467889</p>
+                <div>
+                <h3><a href="">Phone Support</a></h3> 
+                <p >+91XXXXXXXXXX</p>
                 </div>
             </div>
-            <div class="footer1">
-                <div class="help">
+            <div class="childTopFooter">
+                <div>
                     <img src="https://cdn-icons-png.flaticon.com/128/1381/1381635.png"/>
                 </div>
-                <div class="help" >
-                <h3 class="textfotter"><a href="">Chat Support</a></h3>
+                <div>
+                <h3><a href="">24/7 Live Chat</a></h3>
                 <p >Chat With Us Anytime</p>
                 </div>
             </div>
-            <div class="footer1">
-                <div class="help">
+            <div class="childTopFooter">
+                <div>
                     <img src="https://cdn-icons-png.flaticon.com/128/739/739286.png"/>
                 </div>
-                <div class="help" >
-                <h3 class="textfotter"><a href="">FAQ</a></h3>
+                <div>
+                <h3><a href="">FAQ</a></h3>
                 <p>Find Your Answer</p>
                 </div>
             </div>
         </div>
-        <div class="box2" >
-            <div class="footerfold">
-            <div class = "subbox">
-                <div><p> Track Order</p></div>
-                <div><p>Contact</p></div>
-                <div><p>Shipping & Handling</p></div>
-                <div><p>Returns & Exchanges</p></div>
-                <div><p> Brands</p></div>
-                <div><p>Categories </p></div>
-                <div><p>Payments</p></div>
-                <div><p> Refer Friend</p></div>
-                <div><p>Corporate Inquiries</p></div>
-                <div class="icon">
-                    <img src="https://cdn-icons-png.flaticon.com/128/171/171673.png"/>
-                    <img src="https://cdn-icons-png.flaticon.com/128/179/179457.png"/>
-                    <img src="https://cdn-icons-png.flaticon.com/128/888/888871.png"/>
+        <!-- secound horizontal box -->
+        <!-- left part -->
+        <div id="footerSecoundBox" >
+            <div class="part" id="part1">
+                <div id="wrapper">
+                    <div class="wrapperA">
+                        <div><p> Track Order</p></div>
+                        <div><p>Contact</p></div>
+                        <div><p>Shipping & Handling</p></div>
+                        <div><p>Returns & Exchanges</p></div>
+                        <div><p> Brands</p></div>
+                        <div><p>Categories </p></div>
+                        <div><p>Payments</p></div>
+                        <div><p> Refer Friend</p></div>
+                        <div><p>Corporate Inquiries</p></div>
+                    </div>
+                    <div class="wrapperB">
+                        <div><p>About us</p></div>
+                        <div><p>Terms</p></div>
+                        <div><p>Privacy</p></div>
+                        <div><p>Careers</p></div>
+                        <div><p> Devlopers</p></div>
+                        <div><p>Desertcart Blog </p></div>
+                        <div><p>Sell on Desertcart</p></div>
+                        <div><p> Desertcart Affiliates</p></div>
+                        <div><p>Ecommerce Fulfillment</p></div>
+                    </div>
+                    <div id="paymentIcon" class="wrapperC">
+                        <div><img src="https://img.icons8.com/cotton/64/000000/mastercard.png"></div>
+                        <div><img src="https://cdn-icons-png.flaticon.com/128/179/179457.png"/></div>
+                        <div><img src="https://cdn-icons-png.flaticon.com/128/888/888871.png"/></div>  
+                    </div>
+                </div>
+                <div id="part1_B">
+                    <div><p>UAE</p></div>
+                    <div><p>Bahrain</p></div>
+                    <div><p>Saudi Arabia</p></div>
+                    <div><p>Kuwit</p></div>
+                    <div><p>India </p></div>
                 </div>
             </div>
-            <div class = "subbox">
-                <div><p>About us</p></div>
-                <div><p>Terms</p></div>
-                <div><p>Privacy</p></div>
-                <div><p>Careers</p></div>
-                <div><p> Devlopers</p></div>
-                <div><p>Desertcart Blog </p></div>
-                <div><p>Sell on Desertcart</p></div>
-                <div><p> Desertcart Affiliates</p></div>
-                <div><p>Ecommerce Fulfillment</p></div>
-                <div><p>Conditions</p></div>
-            </div>
-            <div class = "subbox">
-                <div><p>UAE</p></div>
-                <div><p>Bahrain</p></div>
-                <div><p>Saudi Arabia</p></div>
-                <div><p>Oman</p></div>
-                <div><p>Kuwit</p></div>
-                <div><p>India </p></div>
-            </div>
-            </div>
-            <div class="footerfold2">
-                <div id="social">
+            <div class="part" id="part2">
                 <div>
-                <p>Desertcart provides a seamless and secure Shopping platform with 100<br> million+ products from around the globe delivered to your door</p>
-                </div>
-                <div>
-                    <a href="https://itunes.apple.com/us/app/desertcart/id1399518358"><img id="icons" alt="desertcart ios app download" src="https://cdn.desertcart.com/static/media/desertcart-ios-app.8aadfde5.png"></a>
-                    <a href="https://play.google.com/store/apps/details?id=com.desertcartnative"><img  id="icons" alt="desertcart ios app download" src="https://cdn.desertcart.com/static/media/desertcart-android-app.bc11e461.png"></a>
-                </div>
-                <div>
-                    <a href="https://www.facebook.com/desertcart"><img alt="desertcart facebook" src="https://cdn-icons-png.flaticon.com/128/1384/1384037.png"></a>
-                    <img  src="https://cdn-icons-png.flaticon.com/128/1384/1384031.png"/>
-                    <img src="https://cdn-icons-png.flaticon.com/128/733/733635.png"/>
-                </div>
+                    <div>
+                        <p>Desertcart provides a seamless and secure Shopping platform with 100<br> million+ products from around the globe delivered to your door</p>
+                    </div>
+                    <div id="appStoreIcon">
+                        <a href="https://itunes.apple.com/us/app/desertcart/id1399518358"><img alt="desertcart ios app download" src="https://cdn.desertcart.com/static/media/desertcart-ios-app.8aadfde5.png"></a>
+                        <a href="https://play.google.com/store/apps/details?id=com.desertcartnative"><img   alt="desertcart ios app download" src="https://cdn.desertcart.com/static/media/desertcart-android-app.bc11e461.png"></a>
+                    </div>
+                    <div id="iconsFav">
+                        <div><a href="https://www.facebook.com/desertcart"><img src="https://img.icons8.com/ios/30/000000/facebook-f.png"/></a></div>
+                        <div><a href="https://twitter.com/desertcartmena"><img src="https://img.icons8.com/ios/30/000000/twitter--v1.png"/></a></div>
+                        <div><a href="https://www.instagram.com/desertcart/"><img src="https://img.icons8.com/ios/30/000000/instagram-new.png"/></a></div>
+                    </div>
+                    <div id="copyRoght">
+                        <p>Copyright © 2021 Desertcart.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
 </html>
+<script type="module">
+    import {runCode} from "./javaScript/productReview.js";
+    import {option, rightContainerJs} from "./components/options.js";
+    let screenWidth = window.innerWidth;
+    if(screenWidth >= 961){
+        document.getElementById("cartButton").textContent = null;
+        document.getElementById("selectOptions").style.display = "none";
+        document.getElementById("optionsJS").innerHTML = null;
+        runCode(true)
+    }
+    else{
+        document.getElementById("rightContainer").innerHTML = null;
+        runCode(false);
+    }
+    setInterval(()=>{
+        if(window.innerWidth !== screenWidth){
+            screenWidth = window.innerWidth;
+            scrennFix()
+        }
+    }, 1000)
+    function scrennFix(){
+            if(window.innerWidth < 960){
+                document.getElementById("rightContainer").innerHTML = null;
+                document.getElementById("optionsJS").style.display = "none";
+                document.getElementById("selectOptions").style.display = "flex";
+                runCode(false);
+            }
+            if(window.innerWidth >= 961) {
+                document.getElementById("cartButton").textContent = null;
+                document.getElementById("selectOptions").style.display = "none";
+                document.getElementById("optionsJS").innerHTML = null;
+                runCode(true);
+            }
+    }
+</script>
 
-<script src="javaScript/index.js"></script>
+<script>
+    function showProductDetails(){
+        document.getElementById("optionsJS").style.display = "inline";
+        document.getElementById("addQuantity").addEventListener("click", addQuantity);
+        document.getElementById("subtractQuantity").addEventListener("click", subtractQuantity);
+    }
+    let currentPro = JSON.parse(localStorage.getItem("disertCurrentItem"));
+    function subtractQuantity(){
+        let curQuant = document.getElementById("showQuantity");
+        let temp = Number(curQuant.value);
+        if(temp < 2){
+            return false;
+        }
+        curQuant.value = temp - 1;
+        currentPro[0].quantity = temp - 1;  
+        currentPro[0].price =  String((temp - 1) * (currentPro[0].itemPrice));
+        console.log(typeof(currentPro[0].price), currentPro[0].price);
+        localStorage.setItem("disertCurrentItem", JSON.stringify(currentPro));
+        document.getElementById("currentPrice").textContent = "Add to Cart " + "₹ " + currentPro[0].price[0] + "," + currentPro[0].price.substring(1,  currentPro[0].price.length);
+    }
+
+    function addQuantity(){
+        let curQuant = document.getElementById("showQuantity");
+        let temp = Number(curQuant.value);
+        if(temp > 9){
+            return false;
+        }
+        curQuant.value = temp + 1;
+        currentPro[0].quantity = temp + 1;
+        currentPro[0].price =  String((temp + 1) * (currentPro[0].itemPrice));
+        console.log(typeof(currentPro[0].price), currentPro[0].price);
+        localStorage.setItem("disertCurrentItem", JSON.stringify(currentPro));
+        document.getElementById("currentPrice").textContent = "Add to Cart " + "₹ " + currentPro[0].price[0] + "," + currentPro[0].price.substring(1,  currentPro[0].price.length);
+    }
+</script>
+<script src="javaScript/productReview.js"></script>
 <script src="javaScript/cart.js"></script>
 <script src="javaScript/creataccount.js"></script>
-<script src="javaScript/productReview.js"></script>
 <script src="javaScript/summerClothes.js"></script>
+<script src="javaScript/index.js"></script>

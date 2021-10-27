@@ -3,6 +3,7 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 body{
     color: rgba(0, 0, 0, 0.87);
@@ -13,7 +14,6 @@ body{
     line-height: 1.43;
     background-color: #fff;
 }
-
 #globalContainer{
     display: flex;
     justify-content: space-between;
@@ -27,6 +27,11 @@ body{
     border: 1px solid rgb(235, 235, 235);
     border-radius: 8px;
     padding: 10px;
+    overflow: scroll;
+    max-height: 750px;
+}
+#productDetails::-webkit-scrollbar {
+    display: none;
 }
 #product{
     display: flex;
@@ -87,15 +92,25 @@ body{
     width: 93%;
     background-color: rgb(235, 235, 235);
 }
-
-
-
+.showQuantity{
+    width: 35px;
+    text-align: center;
+    border: none;
+    outline: none;
+}
+#subtractQuantity{
+    cursor: pointer;
+}
+#addQuantity{
+    cursor: pointer;
+}
 /* right_part */
 #cartDetails{
     width: 42%;
     padding: 2%;
     border: 1px solid rgb(235, 235, 235);
     border-radius: 8px;
+    max-height: 750px;
 }
 #ship{
     width: 50%;
@@ -143,7 +158,11 @@ body{
     color: white;
     font-size: 18px;
 }
-
+.payBtn{
+    position: fixed;
+    bottom: 5px;
+    left: 5%;
+}
 /* Input Box */
 .inputBox{
     width: 95%;
@@ -172,8 +191,6 @@ body{
     margin-top: 15px;
     margin-left: 10px;
 }
-
-/* --------------------------- */
 .origin{
     margin-top: 3px;
     text-align: right;
@@ -190,4 +207,38 @@ body{
 #paymentText{
     color: green;
     font-size: 28px;
+}
+@media (max-width: 960px) {
+    #globalContainer{
+       flex-direction: column;
+    }
+    #productDetails{
+        width: 90%;
+        margin: auto;
+        /* overflow: unset; */
+    }
+    #product{
+        display: grid;
+        grid-template-areas: "a b"
+                              "c c";
+    }
+    #proImg{
+        grid-area: a;
+        width: 100%;
+    }
+    #proName{
+        grid-area: b;
+        width: 100%;
+    }
+    #proSize{
+        grid-area: c;
+        width: 100%;
+        flex-direction: row;
+    }
+    #cartDetails{
+        display: none;
+    }
+    #cnfButton{
+        width: 90%;
+    }
 }

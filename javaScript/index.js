@@ -1,6 +1,20 @@
+if(localStorage.getItem("disertCartItem") === null){
+        localStorage.setItem("disertCartItem", JSON.stringify([]));
+}
+else{
+    let cartPro = JSON.parse(localStorage.getItem("disertCartItem"));
+    console.log(cartPro);
+    let totalQuantity = 0;
+    cartPro.forEach(({quantity}) => {
+    totalQuantity += Number(quantity);
+    })
+    let currentQuatity = document.createElement("p");
+    currentQuatity.textContent = totalQuantity;
+    document.getElementById("navCart").append(currentQuatity);
+}
+
 let header3_images = [
     'https://dc-marketing.s3.amazonaws.com/media/244800638Artboard_1.png',
-    // 'https://dc-marketing.s3.amazonaws.com/media/370593577Artboard_1.1.png',
 
 ];
 let arrTag = ["Over 100 Million items", "Secure & Convenient Shopping", "3 Day Shipping Available"];
