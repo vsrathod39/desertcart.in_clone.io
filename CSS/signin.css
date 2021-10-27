@@ -13,7 +13,7 @@
     border-radius: 3%;
     text-align: center;
 }
-#myForm input{
+input{
     display: flex;
     width: 80%;
     height: 50px;
