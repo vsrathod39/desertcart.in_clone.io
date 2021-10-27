@@ -1,8 +1,5 @@
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
-=======
->>>>>>> parent of 60d0933 (local_Storage_issues_fixed)
 if(localStorage.getItem() !== null){
     let cartPro = JSON.parse(localStorage.getItem("disertCartItem"));
     console.log(cartPro);
