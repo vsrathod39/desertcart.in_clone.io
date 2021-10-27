@@ -1,12 +1,10 @@
 // Vikas Kumar - fw_12_132
-
+import {option, rightContainerJs} from "/components/options.js";
 let currentPro = JSON.parse(localStorage.getItem("disertCurrentItem"));
-
-
-// let productLogo = document.getElementById("productLogo");
 
 function showProductImage(){
     let productImage = document.getElementById("productImage");
+    productImage.textContent = null;
 
     let img = document.createElement("img");
     img.src = currentPro[0].image;
@@ -17,6 +15,7 @@ function showProductImage(){
 
 function showProductLogo(){
     let productLogoImage = document.getElementById("productLogoImage");
+    productLogoImage.textContent = null;
     let img = document.createElement("img");
     img.src = currentPro[0].image;
     productLogoImage.append(img);
@@ -24,7 +23,9 @@ function showProductLogo(){
 
 function showPriceRating(){
     let priceId = document.getElementById("price");
+    priceId.textContent = null;
     let ratingId = document.getElementById("rating");
+    ratingId.textContent = null;
 
     let brand = document.createElement("p");
     brand.setAttribute("clsss", "textGreyColor")
@@ -54,8 +55,12 @@ function showPriceRating(){
     priceId.append(brand, price);
     ratingId.append(rating, wrapperInnerDiv2);
 
+    document.getElementById("showQuantity").value = currentPro[0].quantity;
+
     let btn = document.getElementById("cartButton");
+    btn.textContent = null;
     let btnCart = document.createElement("button");
+    btnCart.setAttribute("id", "currentPrice");
     btnCart.textContent = "Add to Cart " + "₹ " + currentPro[0].price[0] + "," + currentPro[0].price.substring(1,  currentPro[0].price.length);
     let cpr = "₹ " + currentPro[0].price[0] + "," + currentPro[0].price.substring(1,  currentPro[0].price.length);
     btn.append(btnCart);
@@ -66,7 +71,7 @@ function showPriceRating(){
 
 function showProductname(){
     let productName = document.getElementById("productName");
-
+    productName.textContent = null;
     let headding = document.createElement("h1");
     headding.textContent = currentPro[0].name;
 
@@ -77,6 +82,7 @@ let descriptionData = ["Pull On closure.", "Are Rinse by hand in warm water max 
 
 function showDescription(){
     let descriptionBox = document.getElementById("descriptionBox");
+    descriptionBox.textContent = null;
     let ul = document.createElement("ul");
 
     descriptionData.forEach(function(data){
@@ -113,6 +119,7 @@ let reviewData = [
 
 function showReview(){
     let reviewBox = document.getElementById("reviewBox");
+    reviewBox.textContent = null;
     reviewData.forEach(function(rev){
         let div = document.createElement("div");
 
@@ -143,8 +150,6 @@ function productReview(){
     showReview();
 }
 
-productReview()
-
 // add Item to cart
 if(localStorage.getItem("disertCartItem") === null){
     localStorage.setItem("disertCartItem", JSON.stringify([]));
@@ -153,23 +158,42 @@ if(localStorage.getItem("disertCartItem") === null){
 function changePageToCart(b, c){
     let cartItemArr = JSON.parse(localStorage.getItem("disertCartItem"));
     let itemArrThis = JSON.parse(localStorage.getItem("disertCurrentItem"));
+    let curQuant = document.getElementById("showQuantity");
+    if(Number(curQuant.value) > 0){
+        itemArrThis[0].quantity = Number(curQuant.value);
+    }else{
+        alert(curQuant.value + " Please select quantity!")
+        return false;
+    }
     let flag = true;
     for(let i = 0; i < cartItemArr.length; i++){
-        if(itemArrThis[0].image == cartItemArr[i].image){
+        if(itemArrThis[0].image == cartItemArr[i].image && itemArrThis[0].quantity == cartItemArr[i].quantity){
             flag = false;
             alert("Item already added, please visit cart!");
             break;
+        }
+        else{
+            if(itemArrThis[0].image == cartItemArr[i].image && itemArrThis[0].quantity !== cartItemArr[i].quantity){
+                cartItemArr[i].quantity = Number(curQuant.value);
+                localStorage.setItem("disertCartItem", JSON.stringify(cartItemArr));
+                flag = false;
+                alert("Quantity updated, please visit cart!");
+                location.reload()
+                break;
+            }
         }
     }
     if(flag){
         cartItemArr.push(itemArrThis[0]);
         localStorage.setItem("disertCartItem", JSON.stringify(cartItemArr));
         alert("Item added to cart, please visit cart!")
+        location.reload()
     }
 
     b.textContent = "✓ Added " + c;
 }
 
+<<<<<<< HEAD
 
 
 
@@ -181,3 +205,51 @@ if (!link) {
     document.getElementsByTagName('head')[0].appendChild(link);
 }
 link.href = 'https://desertcart.com/favicon.ico'; 
+=======
+function subtractQuantity(){
+        let curQuant = document.getElementById("showQuantity");
+        let temp = Number(curQuant.value);
+        if(temp < 2){
+            return false;
+        }
+        curQuant.value = temp - 1;
+        currentPro[0].quantity = temp - 1;  
+        currentPro[0].price =  String((temp - 1) * (currentPro[0].itemPrice));
+        console.log(typeof(currentPro[0].price), currentPro[0].price);
+        localStorage.setItem("disertCurrentItem", JSON.stringify(currentPro));
+        document.getElementById("currentPrice").textContent = "Add to Cart " + "₹ " + currentPro[0].price[0] + "," + currentPro[0].price.substring(1,  currentPro[0].price.length);
+}
+function addQuantity(){
+        let curQuant = document.getElementById("showQuantity");
+        let temp = Number(curQuant.value);
+        if(temp > 9){
+            return false;
+        }
+        curQuant.value = temp + 1;
+        currentPro[0].quantity = temp + 1;
+        currentPro[0].price =  String((temp + 1) * (currentPro[0].itemPrice));
+        console.log(typeof(currentPro[0].price), currentPro[0].price);
+        localStorage.setItem("disertCurrentItem", JSON.stringify(currentPro));
+        document.getElementById("currentPrice").textContent = "Add to Cart " + "₹ " + currentPro[0].price[0] + "," + currentPro[0].price.substring(1,  currentPro[0].price.length);
+}
+
+function runCode(flag){
+    new Promise(function(resolve, reject){
+        if(flag){
+            document.getElementById("rightContainer").innerHTML = rightContainerJs();
+            return resolve("960+");
+        }
+        if(flag !== true){
+            document.getElementById("optionsJS").innerHTML =  option();
+            return resolve("960-");
+        }
+    })
+    .then((res) => {
+        console.log(res);
+        productReview();
+        document.getElementById("subtractQuantity").addEventListener("click", subtractQuantity);
+        document.getElementById("addQuantity").addEventListener("click", addQuantity);
+    });
+}
+export {runCode} ;
+>>>>>>> 60d093331a623b4b6946147a4fa03bf56ca4525a
