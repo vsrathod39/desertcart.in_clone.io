@@ -41,24 +41,7 @@ function header3_startSlideshow() {
     let img = document.createElement('img')
     img.src = header3_images[count]
     container.append(img)
-    count = count + 1
 
-    interval = setInterval(function () {
-
-        container.innerHTML = null
-
-        if (count === header3_images.length) {
-            count = 0
-        }
-
-        let img = document.createElement('img')
-        img.src = header3_images[count]
-
-        container.append(img)
-        count = count + 1
-
-
-    }, 3000)
 }
 
 header3_startSlideshow();
@@ -235,6 +218,9 @@ function show_product() {
             div2.onclick = function(){
                 changePageToSummerClothes();
             };
+            div3.onclick = function(){
+                changePageToSummerClothes();
+            };
         }
 
         if(product.name1 == "Her" || product.name2 == "Him" || product.name2 == "Unisex"){
@@ -244,6 +230,23 @@ function show_product() {
 
             div2.onclick = function(){
                 changePageToPerfume();
+            };
+            div3.onclick = function(){
+                changePageToPerfume();
+            };
+        }
+
+        if(product.heading=="Better Everyday"||product.heading=="All Game, All Season"||product.heading== "Transforming your outdoor space"||product.heading== "Look Fabulous"|| product.heading== "Your Electronic Dose" ){
+
+            div1.onclick = function(){
+                changePageToSummerClothes();
+            };
+
+            div2.onclick = function(){
+                changePageToSummerClothes();
+            };
+            div3.onclick = function(){
+                changePageToSummerClothes();
             };
         }
 
