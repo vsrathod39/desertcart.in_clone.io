@@ -1,4 +1,11 @@
-
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> parent of 60d0933 (local_Storage_issues_fixed)
+=======
+>>>>>>> parent of 60d0933 (local_Storage_issues_fixed)
 if(localStorage.getItem() !== null){
     let cartPro = JSON.parse(localStorage.getItem("disertCartItem"));
     console.log(cartPro);
@@ -13,6 +20,8 @@ document.getElementById("navCart").append(currentQuatity);
 else{
     localStorage.setItem("disertCartItem", JSON.stringify([]));
 }
+
+>>>>>>> parent of 60d0933 (local_Storage_issues_fixed)
 let header3_images = [
     'https://dc-marketing.s3.amazonaws.com/media/244800638Artboard_1.png',
     // 'https://dc-marketing.s3.amazonaws.com/media/370593577Artboard_1.1.png',
