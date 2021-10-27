@@ -20,15 +20,13 @@ body{
     margin: 70px auto 15px auto;
     justify-content: space-between;
 }
-#byPrice, #byCountry, #byDelivery{
-    height: 55px;
-}
 .filterBox{
     width: 30%;
-    border: 1px solid rgb(219, 219, 219);
+    border: 1px solid rgb(202, 202, 202);
     height: 45px;
     padding: 8px 12px 8px 12px;
     border-radius: 8px;
+
 }
 .filterBox label{
     font-size: 10px;
@@ -39,7 +37,6 @@ body{
     width: 100%;
     font-size: 14px;
     border: none;
-    outline: none;
 }
 .filterBox select:hover{
     cursor: pointer;
@@ -113,18 +110,6 @@ body{
 }
 
 @media  (max-width: 940px){
-    
-    #byPrice, #byCountry, #byDelivery{
-        height: 35px;
-        display: flex;
-        width: 32%;
-    }
-    .filterBox label, br{
-        display: none;
-    }
-    .filterBox select{
-        font-size: 11px;
-    }
     .globalProducts{
         width: 90%;
         grid-template-columns: 48% 48%;
@@ -134,6 +119,7 @@ body{
     }
     .filterBox{
         width: 28%;
+        border: 1px solid grey;
         height: 28px;
         padding: 6px 8px 6px 8px;
         border-radius: 2px;
@@ -151,6 +137,8 @@ body{
         width: 85%;
     }
     .filterBox{
+        width: 30%;
+        border: 1px solid rgb(202, 202, 202);
         height: 42px;
         padding: 2px 8px 6px 8px;
         border-radius: 5px;
