@@ -21,7 +21,7 @@ let productData = [
         brand: "euow",
         rating: "4.5",
         price: "4729",
-        origin: "UK"
+        origin: "USA"
     },
     {
         image: "https://m.media-amazon.com/images/I/61yrclbiu2S.jpg",
@@ -61,7 +61,7 @@ let productData = [
         brand: "Daupanzees",
         rating: "4.5",
         price: "9479",
-        origin: "DC"
+        origin: "USA"
     },
     {
         image: "https://m.media-amazon.com/images/I/71oOfcIVEfL.jpg",
@@ -85,7 +85,7 @@ let productData = [
         brand: "Sirou",
         rating: "3.1",
         price: "7049",
-        origin: "DC"
+        origin: "USA"
     },
     {
         image: "https://m.media-amazon.com/images/I/61yX-skN5dL.jpg",
@@ -125,7 +125,7 @@ let productData = [
         brand: "Faskunoie",
         rating: "4.4",
         price: "4609",
-        origin: "India"
+        origin: "USA"
     },
     {
         image: "https://m.media-amazon.com/images/I/81nnx0PsJbL.jpg",
@@ -165,7 +165,7 @@ let productData = [
         brand: "Other",
         rating: "3.5",
         price: "2009",
-        origin: "India"
+        origin: "UAE"
     }
 ];
 
@@ -208,7 +208,7 @@ let productData2 = [
         brand: "Ecowish",
         rating: "4",
         price: "6769",
-        origin: "India"
+        origin: "USA"
     },
     {
         image: "https://m.media-amazon.com/images/I/81XDGPZwdYL.jpg",
@@ -216,7 +216,7 @@ let productData2 = [
         brand: "Shein",
         rating: "3.8",
         price: "3729",
-        origin: "UK"
+        origin: "USA"
     },
     {
         image: "https://m.media-amazon.com/images/I/61chrqCkskL.jpg",
@@ -232,7 +232,7 @@ let productData2 = [
         brand: "Zilcremo",
         rating: "3.8",
         price: "7449",
-        origin: "Uk"
+        origin: "USA"
     },
     {
         image: "https://m.media-amazon.com/images/I/71xxyK6dqQS.jpg",
@@ -248,7 +248,7 @@ let productData2 = [
         brand: "vonda",
         rating: "3.4",
         price: "1349",
-        origin: "DC"
+        origin: "UAE"
     },
     {
         image: "https://m.media-amazon.com/images/I/615oUasaNKL.jpg",
@@ -377,11 +377,9 @@ showProducts(productData2, womenContainer);
 let sortPrice = document.getElementById("price");
 sortPrice.addEventListener("change", sortByPrice);
 let sortCountry = document.getElementById("country");
-sortCountry.addEventListener("change", sortByCountry);
-let sortRating = document.getElementById("rating");
-sortRating.addEventListener("change", sortByRating)
 
 function sortByPrice(){
+    console.log(this.value);
     let menArr = [];
     let womenArr = [];
 
@@ -450,111 +448,6 @@ function sortByPrice(){
 
 }
 
-function sortByCountry(){
-    let menArr = [];
-    let womenArr = [];
-
-    switch(this.value){
-        case "any":
-            showProducts(productData, menContainer);
-            showProducts(productData2, womenContainer);
-            break;
-        case "uk":
-            
-            productData.forEach(function(element){
-                if(element.origin == "UK")
-                 menArr.push(element);
-            });
-            
-            productData2.forEach(function(element){
-                if(element.origin == "UK")
-                womenArr.push(element);
-            });
-            showProducts(menArr, menContainer);
-            showProducts(womenArr, womenContainer);
-            break;
-        case "usa":
-            
-            productData.forEach(function(element){
-                if(element.origin == "USA")
-                 menArr.push(element);
-            });
-            
-            productData2.forEach(function(element){
-                if(element.origin == "USA")
-                womenArr.push(element);
-            });
-            showProducts(menArr, menContainer);
-            showProducts(womenArr, womenContainer);
-            break;
-        case "india":
-            
-            productData.forEach(function(element){
-                if(element.origin == "India")
-                 menArr.push(element);
-            });
-            
-            productData2.forEach(function(element){
-                if(element.origin == "India")
-                womenArr.push(element);
-            });
-            showProducts(menArr, menContainer);
-            showProducts(womenArr, womenContainer);
-            break;
-        case "dc":
-            
-            productData.forEach(function(element){
-                if(element.origin == "DC")
-                 menArr.push(element);
-            });
-            
-            productData2.forEach(function(element){
-                if(element.origin == "DC")
-                womenArr.push(element);
-            });
-            showProducts(menArr, menContainer);
-            showProducts(womenArr, womenContainer);
-            break;
-    }   
-}
-
-function sortByRating(){
-    let menArr = [];
-    let womenArr = [];
-
-    switch(this.value){
-        case "any":
-            showProducts(productData, menContainer);
-            showProducts(productData2, womenContainer);
-            break;
-        case "High-Low":
-            menArr = productData.sort( (a, b) => {return b.rating - a.rating});
-            womenArr = productData2.sort( (a, b) => {return b.rating - a.rating})
-            showProducts(menArr, menContainer);
-            showProducts(womenArr, womenContainer);
-            break;
-        case "Low-High":
-            menArr = productData.sort( (a, b) => {return a.rating - b.rating});
-            womenArr = productData2.sort( (a, b) => {return a.rating - b.rating})
-            showProducts(menArr, menContainer);
-            showProducts(womenArr, womenContainer);
-            break;
-        case "4to5":
-            
-            productData.forEach(function(element){
-                if(element.rating >= 4)
-                 menArr.push(element);
-            });
-            
-            productData2.forEach(function(element){
-                if(element.rating >= 4)
-                womenArr.push(element);
-            });
-            showProducts(menArr, menContainer);
-            showProducts(womenArr, womenContainer);
-            break;
-    }  
-}
 // adding Item to cart dataBase and switch page
 if(localStorage.getItem("disertCurrentItem") === null){
     localStorage.setItem("disertCurrentItem", JSON.stringify([]));
@@ -582,8 +475,6 @@ function changePage(e){
             }
         })
     }
-    itemArr[0].quantity = 1;
-    itemArr[0].itemPrice = itemArr[0].price;
     localStorage.setItem("disertCurrentItem", JSON.stringify(itemArr));
     window.location.href = "productReview.html"
 }

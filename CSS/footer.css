@@ -1,207 +1,122 @@
 *{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-#footer{
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(248, 247, 247);
-}
-/* Top horizontal box */
-#footerTopBox{
-    border-top: 1.5px solid rgb(216, 216, 216);
-    border-bottom: 1.5px solid rgb(216, 216, 216);
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
-    gap: 20px;
-    width: 100%;
-    height: 65px;
-}
-.childTopFooter{
-    height: 50px;
-    width: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    /* font-family: Lato,sans-serif; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-.childTopFooter img{
-    width: 30px;
-}
-#childTopFooterSUbBx{
-    width: 100%;
-    font-size: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.childTopFooter a{
-    text-decoration: none;
-    color: rgb(119, 119, 119);
-    font-size: 13px;
-}
-.childTopFooter >div:nth-child(2){
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.childTopFooter >div:nth-child(2) p{
     font-size: 12px;
 }
-/* secound horizontal box footer */
-#footerSecoundBox{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    justify-content: center;
-    padding: 60px 0;
-    background-image: url("https://cdn.desertcart.com/static/media/footer-bg.6db5b996.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-#part1{
-    display: flex;
-    color: rgb(85, 85, 85);
-    font-size: 11px;
-}
-#wrapper{
-    display: grid;
-    grid-template-areas: "a b"
-                         "c c";
-    justify-content: space-around;
-}
-.wrapperA{
-    grid-area: a;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    cursor: pointer;
-}
-.wrapperB{
-    grid-area: b;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    cursor: pointer;
-}
-.wrapperC{
-    grid-area: c;
-    display: flex;
-    cursor: pointer;
-    gap: 20px;
-    align-items: center;
-    margin-top: 30px;
-}
-#part1 > div:nth-child(1){
-    width: 80%;
-}
-#paymentIcon div{
-    width: 50px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    box-shadow: 0 0 0.5px 1px rgb(216, 216, 216);
-}
-#paymentIcon img{
-    width: 80%;
-    height: 20px;
-}
-#part1_B{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    cursor: pointer;
-}
-#part2{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 11px;
-}
-#appStoreIcon{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    margin-top: 30px;
-}
-#appStoreIcon img{
-    width: 135px;
-    height: 40px;
-}
-#iconsFav{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
-}
-#iconsFav > div{
-    height: 30px;
-    width: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(230, 230, 230);
-    border-radius: 5px;
-}
-#iconsFav img{
+.footer{
     width: 100%;
+    height: auto;
+    background-color: whitesmoke;
 }
-#copyRoght{
+.footer1{
     text-align: center;
-    margin-top: 30px;
+    display:inline-block;
+    width: 23%;
+    margin: 0px 5px;
+    color: silver;
 }
+.box{
+    border-top: 0.5px solid gray;
+    border-bottom: 0.5px solid gray;
+     color: silver;
+     padding: 10px;
+}
+.footer img{
+    width: 35px;
+}
+#icons{
+    width: 100px;
+    margin: 10px;
 
-@media (max-width: 985px) {
-    #footerSecoundBox{
-        display: flex;
-        flex-direction: column;
-        /* border: 1px solid red; */
+}
+.box2{
+    display: grid;
+    grid-template-columns: 60% 30%;
+    font-size: 12px;
+    font-family: Lato,sans-serif;
+     color: rgb(182, 178, 178);
+     /* background-image: url("https://cdn.desertcart.com/static/media/footer-bg-mobile.11832ed8.png"); */
+     background-image: url("https://cdn.desertcart.com/static/media/footer-bg.6db5b996.png");
+     background-repeat: no-repeat;
+     background-size: cover;
+     height: inherit;
+}
+.subbox{
+    display: inline-block;
+    margin-left: 50px;
+    text-align: left;
+    vertical-align: top;
+    gap: 80px;
+
+}
+.subbox>div{
+    padding: 4px;
+}
+#social{
+    text-align: center;
+    vertical-align: middle;
+    gap: 10px;
+    margin-top: 20px;
+}
+h3 a{
+    color:silver;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
     }
-    #part1{
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 40px;
-    }
-    #wrapper{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    .wrapperA{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-    }
-    .wrapperB{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        margin-top: 40px;
-    }
-    #part1_B{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        margin-top: 40px;
-    }
-    #footerTopBox{
+
+.help{
+    display: inline-block;
+    margin: 0px 5px;
+    /* border: 1px solid red; */
+}
+@media(max-width:600px){
+    .footer{
+        width: 50%;
         height: auto;
+        background-color: whitesmoke;
+        border: 0.5px solid gray;
     }
+    .footer1{
+        text-align: center;
+        display: grid;
+        grid-template-columns: 15% 15% 15% 15%;
+        grid-template-rows: max-content;
+        margin: 5px;
+    }
+    .box{
+        border: 0.5px solid gray;
+    }
+    .help{
+        display: flex;
+        flex-direction: row;
+        margin: 2px;
+    }
+    .footer img{
+        width: 20px;
+    }
+}
+@media(max-width: 900px){
+    .box2{
+        display: grid;
+        grid-template-columns: 100%;
+        gap: 5%;
+    }
+    .footerfold>div{
+        display: grid;
+        grid-template-columns: 10% 10% 10% 10% 10% 10% ;
+        gap: 30px;
+    }
+    .icon{
+        display: flex;
+        margin: 20px
+    }
+    .footer img{
+        margin: 10px;
+    }
+    .help{
+        margin: 2px;
+    }    
 }
