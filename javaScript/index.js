@@ -1,12 +1,17 @@
-let cartPro = JSON.parse(localStorage.getItem("disertCartItem"));
-console.log(cartPro);
-let totalQuantity = 0;
-cartPro.forEach(({quantity}) => {
+if(localStorage.getItem() !== null){
+    let cartPro = JSON.parse(localStorage.getItem("disertCartItem"));
+    console.log(cartPro);
+    let totalQuantity = 0;
+    cartPro.forEach(({quantity}) => {
     totalQuantity += Number(quantity);
 })
 let currentQuatity = document.createElement("p");
 currentQuatity.textContent = totalQuantity;
 document.getElementById("navCart").append(currentQuatity);
+}
+else{
+    localStorage.setItem("disertCartItem", JSON.stringify([]));
+}
 
 let header3_images = [
     'https://dc-marketing.s3.amazonaws.com/media/244800638Artboard_1.png',
