@@ -1,6 +1,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 60d0933 (local_Storage_issues_fixed)
 =======
 >>>>>>> parent of 60d0933 (local_Storage_issues_fixed)
 if(localStorage.getItem() !== null){
