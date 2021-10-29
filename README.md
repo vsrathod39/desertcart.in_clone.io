@@ -1,5 +1,5 @@
  # Clone of desertcart.in
- Masai_school_construct_week_project
+ Masai school construct week project
 
  Desertcart is an E-Commerce website, With over 100 Million products cataloged on the website being shipped from all around the world at a delivery speed previously unimaginable, desertcart.in are pushing the limits of what can be achieved by merging bleeding edge technology and efficient supply chain management.
 
