@@ -24,5 +24,5 @@ function signine() {
         return;
     }
     alert("Signin success.");
-    window.location.href ="./index.html";
+    window.location.href = "index.html"
 }
