@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Account</title>
     <link rel="shortcut icon" href="https://cdn.desertcart.com/images/logo57.png" type="image/x-icon">
-    <link rel="stylesheet" href="CSS/index.css">
-    <link rel="stylesheet" href="CSS/footer.css">
-    <link rel="stylesheet" href="CSS/creataccount.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/creataccount.css">
     
 </head>
 <body><div>
@@ -45,7 +45,7 @@
     <!-- signup form -->
         <div class="signi">
                 <img src="https://cdn.desertcart.com/static/media/logo.5821c90d.png"/>
-            <form onsubmit="signup(event)" id="myForm" action="">
+            <!-- <form onsubmit="signup(event)" id="myForm" action=""> -->
             <h1>Create Account</h1>
             <div>
             <input type="text" id="email" placeholder="Email or Phone"  required>
@@ -55,9 +55,9 @@
                 <div>
                     <h5>Want to enter your Password insted ?<br> <a href="signin.html">Try our legacy signin</a></h5>
                 </div>
-                <input type="submit"  class="btn" value="Sign up" ></input>
+                <input onclick="validEmail()" class="btn" value="Sign up" ></input>
             </div> 
-        </form>
+        <!-- </form> -->
         <div>
             <div>
                 <button class="apple"><svg width="25" height="25" viewBox="0 0 25 25" fill="none" class="Auth__action-button-apple-icon"><path d="M16.86 12.48c.02 2.42 2.12 3.22 2.14 3.23-.02.06-.34 1.15-1.1 2.27-.67.98-1.36 1.94-2.45 1.96-1.07.02-1.41-.63-2.63-.63-1.23 0-1.6.61-2.62.65-1.05.04-1.85-1.05-2.52-2.02-1.37-1.98-2.42-5.6-1.01-8.04a3.9 3.9 0 0 1 3.3-2c1.03-.02 2 .7 2.64.7.63 0 1.8-.87 3.05-.74.52.02 1.98.21 2.92 1.58-.07.05-1.74 1.02-1.72 3.04zm-2.01-5.93c.56-.68.93-1.62.83-2.55-.8.03-1.78.54-2.35 1.21-.52.6-.97 1.55-.85 2.47.9.07 1.81-.46 2.37-1.13" fill="#fff"></path>
@@ -170,8 +170,8 @@
     </div>
 </body>
 </html>
-<script src="javaScript/cart.js"></script>
-<script src="javaScript/creataccount.js"></script>
-<script src="javaScript/productReview.js"></script>
-<script src="javaScript/summerClothes.js"></script>
-<script src="javaScript/index.js"></script>
+<script src="./scripts/creataccount.js"></script>
+<script src="./scripts/cart.js"></script>
+<script src="./scripts/productReview.js"></script>
+<script src="./scripts/summerClothes.js"></script>
+<script src="./scripts/index.js"></script>
