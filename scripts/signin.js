@@ -3,7 +3,7 @@ if (localStorage.getItem('userLoginDetailsDiserCart')=== null){
 }
 let users = JSON.parse(localStorage.getItem("userLoginDetailsDiserCart"))
 
-function validEmail() {
+function signine() {
     let email = document.getElementById('email').value;
     let password = document.getElementById("password").value;
     let emailFlag = false, passwordFlag = false;
