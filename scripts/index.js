@@ -272,8 +272,8 @@ function homeLogo() {
     window.location.href = "index.html";
 }
 function changePageToSummerClothes(){
-    window.location.href = "summerClothes.html";
+    window.location.href = "./summerClothes.html";
 }
 function changePageToPerfume(){
-    window.location.href = "perfumeMenAndWomen.html";
+    window.location.href = "./perfumeMenAndWomen.html";
 }
