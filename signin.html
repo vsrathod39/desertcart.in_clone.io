@@ -44,7 +44,7 @@
     <!-- signin form -->
     <div class="signi">
          <div>        
-        <form onsubmit="signin(event)" id="myForm" action="">
+        <form onsubmit="signine(event)" id="myForm" action="">
             <img src="https://cdn.desertcart.com/static/media/logo.5821c90d.png"/>
             <h1>Sign In</h1>
             <div>
@@ -56,7 +56,7 @@
                     <h5>Dont Remember your Password <br><a href="signinfirst.html">Connect With Out Password</a></h5>
                 </div>
                 <div>
-                <input type="submit" class="btn" value="Login">
+                <input type="submit" onclick=" return validEmail()" class="btn" value="Login">
                 </div>
             </div>
           </form>
@@ -166,7 +166,19 @@
     </div>
 </body>
 <script>
-           function signin(e){
+
+        function validEmail() {
+
+        var email = document.getElementById('email').value;
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        if (!filter.test(email.value)) {
+        alert('Please provide a valid email address');
+        email.focus;
+        return false;
+        }
+        }
+           function signine(e){
     
                e.preventDefault();
         let myform = document.getElementById("myForm");
@@ -177,7 +189,7 @@
     
             all_users.forEach(function (desertcartdb) {
                 if(email === desertcartdb.email && password === desertcartdb.password){
-                    location.href = "shivam.html"
+                    location.href = "index.html"
                 }
                 else{
                     alert("Username or Password not Found")

@@ -1,3 +1,15 @@
+function validEmail() {
+
+    var email = document.getElementById('email').value;
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+    if (!filter.test(email.value)) {
+    alert('Please provide a valid email address');
+    email.focus;
+    return false;
+ }
+}
+
 function signup(e){
 
     e.preventDefault();
@@ -16,6 +28,7 @@ let user ={
     let arr = JSON.parse(localStorage.getItem("desertcartdb"))
 
     arr.push(user);
+    window.location.href ="index.html"
 
     localStorage.setItem("desertcartdb", JSON.stringify(arr))
 
