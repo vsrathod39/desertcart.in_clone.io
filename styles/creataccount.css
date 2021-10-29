@@ -6,12 +6,12 @@
 }
 .signi{
     width: 25%;
-    height: 350px;
     margin: 70px auto 20px auto;
     padding: 20px;
     background-color:rgb(247, 243, 235);
     border-radius: 3%;
     text-align: center;
+    border: 1px solid red;
 }
 .signi input{
     width: 90%;

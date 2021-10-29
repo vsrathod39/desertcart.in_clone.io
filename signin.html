@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign in</title>
     <link rel="shortcut icon" href="https://cdn.desertcart.com/images/logo57.png" type="image/x-icon">
-    <link rel="stylesheet" href="CSS/index.css">
-    <link rel="stylesheet" href="CSS/footer.css">
-    <link rel="stylesheet" href="CSS/signin.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/signin.css">
 </head>
 <body>
      <!-- Nav -->
@@ -165,43 +165,9 @@
         </div>
     </div>
 </body>
-<script>
-
-        function validEmail() {
-
-        var email = document.getElementById('email').value;
-        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-
-        if (!filter.test(email.value)) {
-        alert('Please provide a valid email address');
-        email.focus;
-        return false;
-        }
-        }
-           function signine(e){
-    
-               e.preventDefault();
-        let myform = document.getElementById("myForm");
-        let email = myForm.email.value;
-        let password = myForm.password.value;
-    
-            let all_users =JSON.parse(localStorage.getItem("desertcartdb"));
-    
-            all_users.forEach(function (desertcartdb) {
-                if(email === desertcartdb.email && password === desertcartdb.password){
-                    location.href = "index.html"
-                }
-                else{
-                    alert("Username or Password not Found")
-                }
-                
-            });
-    
-           }
-</script>
 </html>
-<script src="javaScript/cart.js"></script>
-<script src="javaScript/creataccount.js"></script>
-<script src="javaScript/productReview.js"></script>
-<script src="javaScript/summerClothes.js"></script>
-<script src="javaScript/index.js"></script>
+<script src="./scripts/signin.js"></script>
+<script src="./scripts/cart.js"></script>
+<script src="./scripts/productReview.js"></script>
+<script src="./scripts/summerClothes.js"></script>
+<script src="./scripts/index.js"></script>

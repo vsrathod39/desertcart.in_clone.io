@@ -40,12 +40,17 @@ body{
     border: 1px solid rgb(235, 235, 235);
     margin-bottom: 10px;
     border-radius: 8px;
+    gap: 3px;
 }
 #proImg{
     width: 25%;
 }
 #proImg img{
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 #proName{
     width: 50%;
@@ -67,7 +72,7 @@ body{
     margin-top: 16%;
 }
 #proSize{
-    width: 25%;
+    width: 26%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -78,19 +83,26 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 82%;
-    height: 30px;
+    width: 100%;
+    height: 40px;
     border-radius: 5px;
+    flex-wrap: wrap;
+    text-align: center;
 }
 #divFit{
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    height: 32px;
+    height: 40px;
     border-radius: 5px;
     width: 93%;
+    flex-wrap: wrap;
+    text-align: center;
     background-color: rgb(235, 235, 235);
+}
+#divCount::-webkit-scrollbar {
+    display: none;
 }
 .showQuantity{
     width: 35px;
@@ -185,6 +197,7 @@ body{
     border: 1px solid rgb(212, 212, 212);
     border-radius: 5px;
     cursor: pointer;
+    text-align: center;
 }
 
 #cartDetails label{
@@ -215,7 +228,6 @@ body{
     #productDetails{
         width: 90%;
         margin: auto;
-        /* overflow: unset; */
     }
     #product{
         display: grid;
@@ -240,5 +252,17 @@ body{
     }
     #cnfButton{
         width: 90%;
+    }
+    #divCount{
+        width: 100%;
+        padding: 0 5px;
+    }
+    #divFit{
+        width: 100%;
+        overflow: scroll;
+        text-align: center;
+    }
+    #divFit::-webkit-scrollbar {
+        display: none;
     }
 }

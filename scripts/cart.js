@@ -204,13 +204,13 @@ function myForm(formParrent){
 
     let pinCode = document.createElement("input");
     pinCode.setAttribute("class", "inputBox");
-    pinCode.setAttribute("type", "text");
+    pinCode.setAttribute("type", "Number");
     pinCode.setAttribute("name", "pinCode");
     pinCode.setAttribute("placeholder", "PIN Code")
 
     let phone = document.createElement("input");
     phone.setAttribute("class", "inputBox");
-    phone.setAttribute("type", "number");
+    phone.setAttribute("type", "Number");
     phone.setAttribute("name", "phone");
     phone.setAttribute("placeholder", "Phone")
 
@@ -238,8 +238,41 @@ function setDeliveryLocation(e, formParrent){
 
     if(addressForm.firstName.value.trim().length == 0 || addressForm.lastName.value.trim().length == 0 || addressForm.address.value.trim().length == 0 || addressForm.city.value.trim().length == 0 || addressForm.state.value.trim().length == 0 || addressForm.pinCode.value.trim().length == 0 || addressForm.phone.value.trim().length == 0 || addressForm.email.value.trim().length == 0){
         alert("any one or all from the field is empty, please fill all the fields!");
+        return;
     }
-    else{
+    if(addressForm.pinCode.value.trim().length < 6 || addressForm.pinCode.value.trim().length > 6){
+        alert("Pin code must be exact 6 char long.");
+        return;
+    }
+    if(addressForm.phone.value.trim().length < 10 || addressForm.phone.value.trim().length > 10){
+        alert("Phone number must be exact 10 char long.");
+        return;
+    }
+
+    let obj = {};
+    let email = addressForm.email.value;
+    for(let i = 0; i < email.length; i++){
+        if(obj[email[i]] === undefined){
+            obj[email[i]] = 1;
+        }
+        else{
+            obj[email[i]] += 1;
+        }
+    }
+    if(obj[' '] !== undefined){
+        alert('Email should not contain any white-spaces!');
+        return false;
+    }
+    if(obj['@'] !== 1){
+        alert('Email should contain exactly 1 "@"!');
+        return;
+    }
+    if(obj['.'] !== 1){
+        alert('Email should contain exactly 1 "."');
+        return;
+    }
+
+    {
         alert("Delivery address added successful, please make payment!")
         formParrent.innerHTML = null;
 
@@ -276,7 +309,7 @@ function paymentForm(formParrent){
 
     let card = document.createElement("input");
     card.setAttribute("class", "inputBox");
-    card.setAttribute("number", "text");
+    card.setAttribute("type", "Number");
     card.setAttribute("name", "card");
     card.setAttribute("placeholder", "1111 1111 1111 1111")
 
@@ -295,7 +328,7 @@ function paymentForm(formParrent){
     lCvv.textContent = "CVV";
 
     let cvv = document.createElement("input");
-    cvv.setAttribute("number", "text");
+    cvv.setAttribute("type", "Number");
     cvv.setAttribute("class", "inputBox");
     cvv.setAttribute("name", "cvv");
     cvv.setAttribute("placeholder", "111")
@@ -329,8 +362,34 @@ function paymentConfermation(e, formParrent){
 
     if(addressForm.card.value.trim().length == 0 || addressForm.expDate.value.trim().length == 0 || addressForm.cvv.value.trim().length == 0 || addressForm.chName.value.trim().length == 0 ){
         alert("any one or all from the field is empty, please fill all the fields!");
+        return
     }
-    else{
+    if(addressForm.card.value.trim().length < 16 || addressForm.card.value.trim().length > 16){
+        alert("Card number must be exact 16 char long.");
+        return;
+    }
+    if(addressForm.expDate.value.trim().length < 5 || addressForm.expDate.value.trim().length > 5){
+        alert("Expiry date should be MM/YY formate.");
+        return;
+    }
+    if(addressForm.cvv.value.trim().length < 3 || addressForm.cvv.value.trim().length > 3){
+        alert("CVV must be exact 3 char long.");
+        return;
+    }
+    let cardExpDate = addressForm.expDate.value;
+    let flag = false;
+    for(let i = 0; i < cardExpDate.length; i++){
+        if(cardExpDate[i] === "/")
+            flag = true;
+    }
+    if(flag !== true){
+        alert("Expiry date should be MM/YY formate.");
+        return;
+    }
+    if(cardExpDate[2] !== "/"){
+        alert("Expiry date should be MM/YY formate.");
+    }
+       {
         let globalContainer = document.getElementById("globalContainer");
         globalContainer.textContent = null;
 
