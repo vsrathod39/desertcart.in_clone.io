@@ -57,7 +57,7 @@ function validEmail() {
     for(let i = 0; i < users.length; i++){
         if(users[i].email === email){
             alert("User allready exist!")
-            window.location.href ="./signin.html"
+            window.location.href ="/pages/signin.html"
             return;
         }
     }

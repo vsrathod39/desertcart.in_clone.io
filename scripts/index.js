@@ -259,17 +259,17 @@ function show_product() {
 show_product()
 
 function signIn(){
-    window.location.href = "signin.html";
+    window.location.href = "/pages/signin.html";
 }
 
 function creatAccount(){
     window.location.href = "creataccount.html";
 }
 function goToCart(){
-    window.location.href = "cart.html";
+    window.location.href = "/pages/cart.html";
 }
 function homeLogo() {
-    window.location.href = "index.html";
+    window.location.href = "/index.html";
 }
 function changePageToSummerClothes(){
     window.location.href = "/pages/summerClothes.html";

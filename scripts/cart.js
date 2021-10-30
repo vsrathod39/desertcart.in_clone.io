@@ -412,7 +412,7 @@ function paymentConfermation(e, formParrent){
 
         let goToCartPage = setInterval(() => {
             clearInterval(goToCartPage);
-            window.location.href = "./index.html";
+            window.location.href = "/index.html";
         }, 10000);
     }
 }
