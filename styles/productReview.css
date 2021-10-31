@@ -64,7 +64,6 @@ body{
     text-align: right;
     font-size: 11px;
 }
-
 /* right container */
 #rightContainer{
     width: 50%;
@@ -86,6 +85,9 @@ body{
     display: flex;
     justify-content: space-between;
     gap: 15px;
+}
+.buttonBox >div:nth-child(2){
+    border: 3px solid #5eb2d9;;
 }
 .buttonTitle{
     font-size: 15px;

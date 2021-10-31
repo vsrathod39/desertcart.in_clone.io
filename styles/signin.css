@@ -5,7 +5,7 @@
     font-size: 12px;
 }
 #myForm{
-    width: 25%;
+    width: 35%;
     margin: 70px auto 20px auto;
     padding: 20px;
     background-color:rgb(247, 243, 235);
@@ -47,8 +47,11 @@ img{
     margin-left: 30px;
 }
 @media(max-width:800px){
-input{
-    display: flex;
-    flex-direction: row;
-}
+    input{
+        display: flex;
+        flex-direction: row;
+    }
+    #myForm{
+        width: 75%;
+    }
 }

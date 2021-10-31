@@ -170,6 +170,9 @@ body{
     color: white;
     font-size: 18px;
 }
+#shipMethod > div:first-child{
+    border: 3px solid #5eb2d9;;
+}
 .payBtn{
     position: fixed;
     bottom: 5px;

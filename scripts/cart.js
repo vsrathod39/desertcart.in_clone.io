@@ -361,7 +361,7 @@ function paymentConfermation(e, formParrent){
     // forms["payForm"];
 
     if(addressForm.card.value.trim().length == 0 || addressForm.expDate.value.trim().length == 0 || addressForm.cvv.value.trim().length == 0 || addressForm.chName.value.trim().length == 0 ){
-        alert("any one or all from the field is empty, please fill all the fields!");
+        alert("any one or all fields are empty, please fill all the fields!");
         return
     }
     if(addressForm.card.value.trim().length < 16 || addressForm.card.value.trim().length > 16){
@@ -388,6 +388,17 @@ function paymentConfermation(e, formParrent){
     }
     if(cardExpDate[2] !== "/"){
         alert("Expiry date should be MM/YY formate.");
+        return;
+    }
+    const dates = new Date();
+    let year = String(dates.getUTCFullYear());
+    year = year.substr(2, (year.length))
+    year = Number(year);
+    let months =(dates.getMonth() + 1);
+    cardExpDate = cardExpDate.trim().split("/").map(Number);
+    if((cardExpDate[0] < months && cardExpDate[0] > 13) || cardExpDate[1] < year){
+        alert("Card already expired.");
+        return;
     }
        {
         let globalContainer = document.getElementById("globalContainer");
