@@ -263,7 +263,7 @@ function signIn(){
 }
 
 function creatAccount(){
-    window.location.href = "creataccount.html";
+    window.location.href = "/pages/creataccount.html";
 }
 function goToCart(){
     window.location.href = "/pages/cart.html";

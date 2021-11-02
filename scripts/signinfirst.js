@@ -37,5 +37,6 @@ function validEmail() {
         alert('Email should contain exactly 1 "."');
         return;
     }
-    window.location.href = "index.html"
+    alert("Signin success!")
+    window.location.href = "../index.html"
 }

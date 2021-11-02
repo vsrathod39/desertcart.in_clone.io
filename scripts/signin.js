@@ -3,7 +3,8 @@ if (localStorage.getItem('userLoginDetailsDiserCart')=== null){
 }
 let users = JSON.parse(localStorage.getItem("userLoginDetailsDiserCart"))
 
-function signine() {
+function signin(e) {
+    e.preventDefault();
     let email = document.getElementById('email').value;
     let password = document.getElementById("password").value;
     let emailFlag = false, passwordFlag = false;
@@ -24,5 +25,5 @@ function signine() {
         return;
     }
     alert("Signin success.");
-    window.location.href = "index.html"
+    window.location.href = "../index.html";
 }
