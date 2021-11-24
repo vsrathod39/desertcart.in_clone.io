@@ -1,11 +1,14 @@
-if (localStorage.getItem('userLoginDetailsDiserCart')=== null){
-    localStorage.setItem("userLoginDetailsDiserCart", JSON.stringify([]));
-}
-let users = JSON.parse(localStorage.getItem("userLoginDetailsDiserCart"))
+if (localStorage.getItem('purpleDataBase')=== null){
+    localStorage.setItem("purpleDataBase", JSON.stringify([]));
+    }
+    let arr = JSON.parse(localStorage.getItem("purpleDataBase"))
 
 function validEmail() {
-    let email = document.getElementById('email').value;
-    let password = document.getElementById("password").value;
+    let myForm = document.getElementById("signup-form");
+    let name = myForm.name.value
+    let email = myForm.email.value
+    let mobile  = myForm.mobile.value
+    let password = myForm.password.value
 
     let obj = {};
     if(email.length === 0){
@@ -61,10 +64,10 @@ function validEmail() {
             return;
         }
     }
-    signup(email, password);
+    signup(name, mobile,email, password);
 }
 
-function signup(email, password){
+function signup( name, mobile,email, password){
     let user ={
         email: email,
         password:password,
@@ -74,3 +77,34 @@ function signup(email, password){
     alert("Signup success.")
     window.location.href ="./signin.html"
 }
+function createAcc(e){
+
+    e.preventDefault();
+    let myForm = document.getElementById("signup-form");
+    let name = myForm.name.value
+    let email = myForm.email.value
+    let mobile  = myForm.mobile.value
+    let password = myForm.password.value
+    console.log("data:",name,email, mobile, password);
+    
+    
+    if (localStorage.getItem('purpleDataBase')=== null){
+    localStorage.setItem("purpleDataBase", JSON.stringify([]));
+    }
+    
+    
+    let user ={
+    name: name,
+    email: email,
+    mobile: mobile,
+    password: password,
+    };
+    
+    let arr = JSON.parse(localStorage.getItem("purpleDataBase"))
+    
+    arr.push(user);
+    window.location.href ="demo.html"
+    
+    localStorage.setItem("purpleDataBase", JSON.stringify(arr))
+    
+    }

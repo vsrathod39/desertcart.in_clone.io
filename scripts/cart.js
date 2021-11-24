@@ -1,4 +1,4 @@
-// Vikas Kumar - fw_12_132
+
 
 let cartPro = JSON.parse(localStorage.getItem("disertCartItem"));
 
