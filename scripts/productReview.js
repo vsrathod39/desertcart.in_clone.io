@@ -1,4 +1,4 @@
-
+// Vikas Kumar - fw_12_132
 import {option, rightContainerJs} from "../components/options.js";
 let currentPro = JSON.parse(localStorage.getItem("disertCurrentItem"));
 console.log("hi");
