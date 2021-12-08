@@ -256,7 +256,7 @@ function show_product() {
 }
 
 
-show_product()
+show_product();
 
 function signIn(){
     window.location.href = "/pages/signin.html";
